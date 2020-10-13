@@ -1,6 +1,6 @@
 # eCars
 
-[![Github Workflow](<https://github.com/trailheadapps/ecars/workflows/Salesforce%20DX%20(scratch%20org)/badge.svg?branch=master>)](https://github.com/trailheadapps/ecars/actions?query=workflow%3A%22Salesforce+DX+%28scratch+org%29%22) [![codecov](https://codecov.io/gh/trailheadapps/ecars/branch/master/graph/badge.svg)](https://codecov.io/gh/trailheadapps/ecars) [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
+[![Github Workflow](<https://github.com/trailheadapps/ecars/workflows/Salesforce%20DX%20(scratch%20org)/badge.svg?branch=main>)](https://github.com/trailheadapps/ecars/actions?query=workflow%3A%22Salesforce+DX+%28scratch+org%29%22) [![codecov](https://codecov.io/gh/trailheadapps/ecars/branch/main/graph/badge.svg)](https://codecov.io/gh/trailheadapps/ecars) [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 
 ![ecars-logo](ecars-logo.png)
 
@@ -246,7 +246,7 @@ Note that we have not enabled this by default because there currently isn't a fr
 
 ### Archive IoT Car Diagnostic Data with Postgres
 
-Looking at real-time car diagnostic data is useful, but often it's useful to be able to look at historical data. You can persist this data to a Postgres database by enabling the [`sensor-persistence` process type](https://github.com/trailheadapps/ecars/blob/master/apps/ecars-realtime/Procfile).
+Looking at real-time car diagnostic data is useful, but often it's useful to be able to look at historical data. You can persist this data to a Postgres database by enabling the [`sensor-persistence` process type](https://github.com/trailheadapps/ecars/blob/main/apps/ecars-realtime/Procfile).
 
 Note that we have not enabled this by default because it will quickly consume the maximum 10,000 rows allowed in the `hobby-dev` (free) Heroku Postgres plan. If you enable the `sensor-persistence` process type for more than a few hours, you should use a larger Heroku Postgres plan.
 
