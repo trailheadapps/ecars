@@ -1,0 +1,52 @@
+version: 2
+updates:
+    - package-ecosystem: npm
+      directory: '/apps/ecars-realtime/packages/ecars-utils'
+      schedule:
+          interval: monthly
+      open-pull-requests-limit: 10
+    - package-ecosystem: npm
+      directory: '/apps/ecars-realtime/packages/ecars-mqtt-agent'
+      schedule:
+          interval: monthly
+      open-pull-requests-limit: 10
+    - package-ecosystem: npm
+      directory: '/apps/ecars-realtime/packages/ecars-events-persistence'
+      schedule:
+          interval: monthly
+      open-pull-requests-limit: 10
+    - package-ecosystem: npm
+      directory: '/apps/ecars-realtime/packages/ecars-events-connector'
+      schedule:
+          interval: monthly
+      open-pull-requests-limit: 10
+    - package-ecosystem: npm
+      directory: '/apps/ecars-realtime/packages/ecars-db'
+      schedule:
+          interval: monthly
+      open-pull-requests-limit: 10
+    - package-ecosystem: npm
+      directory: '/apps/ecars-mqtt-broker'
+      schedule:
+          interval: monthly
+      open-pull-requests-limit: 10
+    - package-ecosystem: npm
+      directory: '/apps/ecars-pwa'
+      schedule:
+          interval: monthly
+      open-pull-requests-limit: 10
+    - package-ecosystem: npm
+      directory: '/apps/ecars-services'
+      schedule:
+          interval: monthly
+      open-pull-requests-limit: 10
+    - package-ecosystem: npm
+      directory: '/apps/ecars-realtime'
+      schedule:
+          interval: monthly
+      open-pull-requests-limit: 10
+    - package-ecosystem: npm
+      directory: '/'
+      schedule:
+          interval: monthly
+      open-pull-requests-limit: 10
