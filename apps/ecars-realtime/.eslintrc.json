@@ -1,0 +1,20 @@
+{
+    "root": true,
+    "extends": ["eslint:recommended"],
+    "env": {
+        "node": true,
+        "es2021": true,
+        "jest/globals": true
+    },
+    "rules": {
+        "no-unused-vars": [
+            "error",
+            {
+                "args": "after-used",
+                "argsIgnorePattern": "^_",
+                "varsIgnorePattern": "^_"
+            }
+        ]
+    },
+    "plugins": ["jest"]
+}

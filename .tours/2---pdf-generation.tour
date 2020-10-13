@@ -1,0 +1,36 @@
+{
+  "title": "3 - PDF generation",
+  "steps": [
+    {
+      "file": "force-app/main/default/lwc/carConfigurator/carConfigurator.js",
+      "line": 4,
+      "description": "From the Car Configurator component in Salesforce sales reps can invoke an Apex method to generate a new PDF using the provided Heroku service.",
+      "selection": {
+        "start": {
+          "line": 4,
+          "character": 1
+        },
+        "end": {
+          "line": 5,
+          "character": 1
+        }
+      }
+    },
+    {
+      "file": "force-app/main/default/namedCredentials/Heroku_App.namedCredential-meta.xml",
+      "line": 2,
+      "description": "For simplification in the HTTP callout a `NamedCredential` is used, where for demo purposes we're ommitting authentication."
+    },
+    {
+      "file": "apps/ecars-services/routes/pdf/Salesforce.ts",
+      "line": 12,
+      "description": "In the Heroku app we're leveraging a 3rd party library, [jsforce](https://jsforce.github.io/), to set up the connection to Salesforce."
+    },
+    {
+      "file": "apps/ecars-services/routes/pdf/PdfGenerator.ts",
+      "line": 32,
+      "description": "Creating the PDF needs a couple of steps: query lead details, generate the PDF, and then attach it back to Salesforce."
+    }
+  ],
+  "ref": "master"
+}

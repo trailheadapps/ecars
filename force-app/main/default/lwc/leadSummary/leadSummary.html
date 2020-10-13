@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Lead" icon-name="standard:lead">
+        <lightning-button-icon
+            icon-name="utility:down"
+            slot="actions"
+        ></lightning-button-icon>
+        <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+            <lightning-record-form
+                record-id={lead}
+                object-api-name="Lead"
+                columns="2"
+                fields={leadFields}
+                mode="view"
+            >
+            </lightning-record-form>
+        </div>
+    </lightning-card>
+</template>

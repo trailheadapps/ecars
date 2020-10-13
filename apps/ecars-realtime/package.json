@@ -1,0 +1,45 @@
+{
+    "name": "ecars-realtime",
+    "version": "1.0.0",
+    "private": true,
+    "description": "eCars - Realtime Services and Utilities (Kafka, MQTT, WS)",
+    "author": "Salesforce Developer Relations",
+    "license": "CC0-1.0",
+    "scripts": {
+        "postinstall": "lerna exec -- npm install && lerna link",
+        "clean": "lerna clean && rimraf node_modules **/node_modules",
+        "test": "jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/trailheadapps/ecars.git"
+    },
+    "bugs": {
+        "url": "https://github.com/trailheadapps/ecars/issues"
+    },
+    "homepage": "https://github.com/trailheadapps/ecars#readme",
+    "dependencies": {
+        "@ecars/db": "file:packages/ecars-db",
+        "@ecars/events-connector": "file:packages/ecars-events-connector",
+        "@ecars/events-persistence": "file:packages/ecars-events-persistence",
+        "@ecars/mqtt-agent": "file:packages/ecars-mqtt-agent",
+        "@ecars/utils": "file:packages/ecars-utils",
+        "aedes": "^0.43.0",
+        "body-parser": "^1.19.0",
+        "debug": "^4.2.0",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "faker": "^5.1.0",
+        "node-rdkafka": "^2.9.1",
+        "sinek": "^9.0.0",
+        "ws": "^7.2.1"
+    },
+    "engines": {
+        "node": "12.x"
+    },
+    "devDependencies": {
+        "jest": "^26.5.2",
+        "lerna": "^3.20.2",
+        "rimraf": "^3.0.2"
+    }
+}

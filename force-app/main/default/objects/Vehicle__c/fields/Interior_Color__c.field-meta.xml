@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Interior_Color__c</fullName>
+    <defaultValue>&quot;White&quot;</defaultValue>
+    <externalId>false</externalId>
+    <label>Interior Color</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Vegan_White</fullName>
+                <default>false</default>
+                <label>Vegan White</label>
+            </value>
+            <value>
+                <fullName>Vegan_Black</fullName>
+                <default>false</default>
+                <label>Vegan Black</label>
+            </value>
+            <value>
+                <fullName>Vegan_Tan</fullName>
+                <default>false</default>
+                <label>Vegan Tan</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,16 @@
+.toast {
+    position: absolute;
+    left: 50%;
+    margin-left: -246px;
+    opacity: 1;
+    overflow-y: hidden;
+    transition-property: all;
+    transition-duration: 1.5s;
+    z-index: 99999;
+}
+
+.toast.hide {
+    transition-property: all;
+    transition-duration: 1.5s;
+    opacity: 0;
+}

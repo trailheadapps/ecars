@@ -1,0 +1,22 @@
+[
+    {
+        "sobject": "Contact",
+        "saveRefs": true,
+        "files": ["Contacts.json"]
+    },
+    {
+        "sobject": "Vehicle__c",
+        "saveRefs": true,
+        "files": ["Vehicles.json"]
+    },
+    {
+        "sobject": "Case",
+        "resolveRefs": true,
+        "files": ["Cases.json"]
+    },
+    {
+        "sobject": "Lead",
+        "resolveRefs": true,
+        "files": ["Leads.json"]
+    }
+]

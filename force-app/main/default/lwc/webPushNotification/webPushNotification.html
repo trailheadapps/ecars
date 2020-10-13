@@ -1,0 +1,18 @@
+<template>
+    <lightning-card
+        icon-name="standard:announcement"
+        title="Web Push Notification"
+    >
+        <div class="slds-m-around--small">
+            <lightning-textarea
+                label="Message"
+                value={message}
+                onchange={handleTextareaChange}
+            ></lightning-textarea>
+            <lightning-button
+                label="Send notification"
+                onclick={handleButtonClick}
+            ></lightning-button>
+        </div>
+    </lightning-card>
+</template>

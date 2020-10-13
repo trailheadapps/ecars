@@ -1,0 +1,37 @@
+<template>
+    <lightning-card title="Car Options" icon-name="standard:slider">
+        <lightning-button-icon
+            icon-name="utility:down"
+            slot="actions"
+        ></lightning-button-icon>
+        <template if:false={error}>
+            <div class="slds-p-horizontal_medium">
+                <template if:true={selectedRange}>
+                    <div class="row">
+                        <span>Range:</span>
+                        <div class="summary-value">
+                            <span>{selectedRange}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <span>Exterior Color:</span>
+                        <div class="summary-value">
+                            <div class={selectedExteriorColor.code}></div>
+                            <span>{selectedExteriorColor.label}</span>
+                        </div>
+                    </div>
+                    <div class="row slds-m-bottom_large">
+                        <span>Interior Color:</span>
+                        <div class="summary-value">
+                            <div class={selectedInteriorColor.code}></div>
+                            <span>{selectedInteriorColor.label}</span>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </template>
+        <template if:true={error}>
+            <c-error-panel errors={error}></c-error-panel>
+        </template>
+    </lightning-card>
+</template>

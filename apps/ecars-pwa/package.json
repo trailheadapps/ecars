@@ -1,0 +1,58 @@
+{
+    "name": "ecars-pwa",
+    "private": true,
+    "version": "1.0.0",
+    "main": "./src/server/server.js",
+    "author": "Salesforce Developer Relations",
+    "license": "CC0-1.0",
+    "scripts": {
+        "build": "lwc-services build -m production -w scripts/webpack.config.js",
+        "build:development": "lwc-services build -w scripts/webpack.config.js",
+        "keys": "web-push generate-vapid-keys --json",
+        "postinstall": "npm run prepare:slds",
+        "prepare:slds": "node scripts/copySldsAssets.js",
+        "serve": "node src/server/server.js",
+        "test:unit": "lwc-services test:unit",
+        "test:unit:coverage": "lwc-services test:unit --coverage",
+        "test:unit:debug": "lwc-services test:unit --debug",
+        "test:unit:watch": "lwc-services test:unit --watch",
+        "watch": "run-p watch:client watch:server",
+        "watch:client": "lwc-services watch",
+        "watch:server": "nodemon",
+        "heroku-postbuild": "npm run build && node scripts/createPostgresTable.js"
+    },
+    "dependencies": {
+        "@salesforce-ux/design-system": "^2.13.5",
+        "body-parser": "^1.18.2",
+        "compression": "^1.7.4",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "express-pino-logger": "^5.0.0",
+        "jsforce": "^1.9.3",
+        "lightning-base-components": "^1.10.2-alpha",
+        "pg": "^8.4.1",
+        "pino": "^6.3.2",
+        "pino-pretty": "^4.3.0",
+        "web-push": "^3.2.5"
+    },
+    "devDependencies": {
+        "lwc-services": "^2.2.1",
+        "npm-run-all": "^4.1.5"
+    },
+    "engines": {
+        "node": ">=10.13.0 <13.0.0",
+        "npm": ">=6.4.1",
+        "yarn": ">=1.9.4"
+    },
+    "nodemonConfig": {
+        "watch": [
+            "src/server/**/*.js"
+        ],
+        "ext": "js",
+        "ignore": [
+            "src/**/*.spec.js",
+            "src/**/*.test.js"
+        ],
+        "exec": "node ./src/server/server.js"
+    }
+}

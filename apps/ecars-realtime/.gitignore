@@ -1,0 +1,5 @@
+.env
+node_modules
+client.crt
+client.key
+trusted.crt

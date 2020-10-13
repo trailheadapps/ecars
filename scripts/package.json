@@ -1,0 +1,20 @@
+{
+    "name": "scripts",
+    "version": "1.0.0",
+    "description": "Scripts for ecars sample app",
+    "main": "ecarsDeploy.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "Apache-2.0",
+    "dependencies": {
+        "chalk": "^4.1.0",
+        "enquirer": "^2.3.6",
+        "haikunator": "^2.1.2",
+        "lookpath": "^1.1.0",
+        "semver": "^7.3.2",
+        "shelljs": "^0.8.4",
+        "wrap-ansi": "^7.0.0"
+    }
+}

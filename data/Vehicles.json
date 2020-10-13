@@ -1,0 +1,67 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Vehicle__c",
+                "referenceId": "VehicleRef1"
+            },
+            "VIN__c": "256385652218554",
+            "Model__c": "Model One",
+            "Year__c": "2020",
+            "Package__c": "Performance",
+            "Range__c": "Long Range",
+            "Exterior_Color__c": "Pearl_White",
+            "Interior_Color__c": "Vegan_Black",
+            "Wheels__c": "Aero",
+            "Price__c": "45000",
+            "Status__c": "Available"
+        },
+        {
+            "attributes": {
+                "type": "Vehicle__c",
+                "referenceId": "VehicleRef2"
+            },
+            "VIN__c": "256385652218555",
+            "Model__c": "Model One",
+            "Year__c": "2020",
+            "Package__c": "Long Range",
+            "Range__c": "Long Range",
+            "Exterior_Color__c": "VIP_Black",
+            "Interior_Color__c": "Vegan_White",
+            "Wheels__c": "Aero",
+            "Price__c": "40000",
+            "Status__c": "Available"
+        },
+        {
+            "attributes": {
+                "type": "Vehicle__c",
+                "referenceId": "VehicleRef3"
+            },
+            "VIN__c": "256385652218501",
+            "Model__c": "Model One",
+            "Year__c": "2020",
+            "Package__c": "Standard",
+            "Range__c": "Medium Range",
+            "Exterior_Color__c": "Pulsar_Red",
+            "Interior_Color__c": "Vegan_Black",
+            "Wheels__c": "Aero",
+            "Price__c": "35000",
+            "Status__c": "Available"
+        },
+        {
+            "attributes": {
+                "type": "Vehicle__c",
+                "referenceId": "VehicleRef4"
+            },
+            "VIN__c": "256385652209552",
+            "Model__c": "Model One",
+            "Year__c": "2019",
+            "Package__c": "Standard",
+            "Range__c": "Short Range",
+            "Exterior_Color__c": "VIP_Black",
+            "Interior_Color__c": "Vegan_Black",
+            "Wheels__c": "Aero",
+            "Status__c": "Sold"
+        }
+    ]
+}

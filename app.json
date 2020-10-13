@@ -1,0 +1,24 @@
+{
+    "name": "eCars Sample App",
+    "description": "eCars - Salesforce Platform application demo",
+    "keywords": ["Salesforce", "Kafka", "Postgres", "MQTT", "LWC"],
+    "website": "https://github.com/trailheadapps/ecars",
+    "logo": "https://developer.salesforce.com/resources2/images/salesforce-header-logo.png",
+    "env": {
+        "APP_BASE": {
+            "description": "Subdirectory within monorepo to deploy from"
+        },
+        "USE_KAFKA": {
+            "description": "Optionally include Kafka in the architecture. See the Demo Highlights section of the README for more details. https://github.com/trailheadapps/ecars#demo-highlights",
+            "value": "false"
+        }
+    },
+    "buildpacks": [
+        {
+            "url": "https://github.com/lstoll/heroku-buildpack-monorepo.git"
+        },
+        {
+            "url": "heroku/nodejs"
+        }
+    ]
+}

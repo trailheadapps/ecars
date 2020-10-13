@@ -1,0 +1,18 @@
+<template>
+    <div class="content">
+        <lightning-combobox
+            name="progress"
+            label="Range"
+            options={options}
+            placeholder="Select range"
+            onchange={handleChange}
+        ></lightning-combobox>
+        <template if:true={loading}>
+            <lightning-spinner
+                alternative-text="Loading"
+                size="medium"
+            ></lightning-spinner>
+        </template>
+        <div class="chart slds-var-m-around_medium" lwc:dom="manual"></div>
+    </div>
+</template>

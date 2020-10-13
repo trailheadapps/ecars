@@ -1,0 +1,35 @@
+<template>
+    <footer>
+        <lightning-input
+            label="First Name"
+            onchange={handleFirstNameChange}
+        ></lightning-input>
+        <lightning-input
+            label="Last Name"
+            onchange={handleLastNameChange}
+        ></lightning-input>
+        <lightning-input
+            label="Mobile Phone"
+            type="tel"
+            onchange={handleCellPhoneChange}
+        ></lightning-input>
+        <lightning-input
+            label="Email"
+            type="email"
+            onchange={handleEmailChange}
+        ></lightning-input>
+        <div class="buttons">
+            <lightning-button
+                if:false={hasSubscription}
+                label="Contact Me"
+                onclick={handleSubscribe}
+                style="padding-right: 4px"
+            ></lightning-button>
+            <lightning-button
+                if:true={hasSubscription}
+                label="Unsubscribe"
+                onclick={handleUnsubscribe}
+            ></lightning-button>
+        </div>
+    </footer>
+</template>

@@ -1,0 +1,9 @@
+{
+    "name": "@ecars/utils",
+    "version": "1.0.0",
+    "private": true,
+    "description": "eCars - Kafka Utilities",
+    "main": "index.js",
+    "author": "Salesforce Developer Relations",
+    "license": "CC0-1.0"
+}

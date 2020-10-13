@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "target": "es2017",
+        "lib": ["es2017"],
+        "types": ["node"],
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "outDir": "dist",
+        "baseUrl": ".",
+        "paths": {
+            "*": ["node_modules/*"]
+        },
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "alwaysStrict": true,
+        "pretty": true,
+        "resolveJsonModule": true
+    },
+    "include": ["routes/**/*.ts", "plugins/**/*.ts", "app.ts"]
+}

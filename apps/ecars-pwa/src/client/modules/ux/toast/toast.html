@@ -1,0 +1,27 @@
+<template>
+    <div class="demo-only" style="height: 4rem">
+        <div class="slds-notify_container slds-is-relative">
+            <div class={cssToastTheme} role="status">
+                <div class="slds-notify__content">
+                    <h2 class="slds-text-heading_small">{message}</h2>
+                </div>
+                <div class="slds-notify__close">
+                    <button
+                        class="slds-button slds-button_icon slds-button_icon-inverse"
+                        title="Close"
+                    >
+                        <svg
+                            class="slds-button__icon slds-button__icon_large"
+                            aria-hidden="true"
+                        >
+                            <use
+                                xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"
+                            ></use>
+                        </svg>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,4 @@
+ignore:
+    - 'force-app/main/default/lwc/**'
+    - 'force-app/main/default/staticresources/**'
+    - 'apps'
