@@ -1,0 +1,38 @@
+<template>
+    <lightning-card title="Ordered Vehicle" icon-name="standard:slider">
+        <template if:true={selectedExteriorColor}>
+            <div class="slds-card container">
+                <div class="container-images">
+                    <img src={imgUrl} />
+                </div>
+            </div>
+            <div class="slds-p-horizontal_medium">
+                <template if:true={selectedRange}>
+                    <div class="row">
+                        <span>Range:</span>
+                        <div class="summary-value">
+                            <span>{selectedRange}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <span>Exterior Color:</span>
+                        <div class="summary-value">
+                            <div class={selectedExteriorColor.code}></div>
+                            <span>{selectedExteriorColor.label}</span>
+                        </div>
+                    </div>
+                    <div class="row slds-m-bottom_large">
+                        <span>Interior Color:</span>
+                        <div class="summary-value">
+                            <div class={selectedInteriorColor.code}></div>
+                            <span>{selectedInteriorColor.label}</span>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </template>
+        <template if:true={error}>
+            <c-error-panel errors={error}></c-error-panel>
+        </template>
+    </lightning-card>
+</template>

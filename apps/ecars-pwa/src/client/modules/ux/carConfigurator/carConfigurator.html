@@ -1,0 +1,160 @@
+<template>
+    <div class="container">
+        <div class={imgClass}>
+            <img src={imgUrl} />
+        </div>
+        <div class="container-options">
+            <template if:true={isSection1}>
+                <div class="slds-text-heading_medium slds-m-bottom_large">
+                    Select Range
+                </div>
+                <template for:each={ranges} for:item="range">
+                    <a
+                        key={range.label}
+                        data-range={range.label}
+                        class={range.className}
+                        onclick={handleRangeChange}
+                    >
+                        <div class="label">{range.label}</div>
+                        <div>
+                            <lightning-formatted-number
+                                value={range.price}
+                                format-style="currency"
+                                currency-code="USD"
+                            ></lightning-formatted-number>
+                        </div>
+                    </a>
+                </template>
+                <div class="buttons slds-m-top_x-large">
+                    <lightning-button
+                        icon-name="utility:chevronright"
+                        icon-position="right"
+                        class="button-next"
+                        label="Next"
+                        type="base"
+                        onclick={handleNext}
+                    ></lightning-button>
+                </div>
+            </template>
+            <template if:true={isSection2}>
+                <div class="slds-text-heading_medium slds-m-bottom_large">
+                    Select Exterior Color
+                </div>
+                <div class="color-palette slds-m-bottom_large">
+                    <template for:each={exteriorColors} for:item="color">
+                        <a
+                            key={color.code}
+                            data-color={color.code}
+                            class={color.className}
+                            onclick={handleExteriorColorChange}
+                        >
+                            <div class="color-swatch"></div>
+                        </a>
+                    </template>
+                </div>
+                <div class="row">
+                    <span>{selectedExteriorColor.label}</span>
+                    <span>
+                        <lightning-formatted-number
+                            value={selectedExteriorColor.price}
+                            format-style="currency"
+                            currency-code="USD"
+                        ></lightning-formatted-number
+                    ></span>
+                </div>
+                <div class="buttons slds-m-top_x-large">
+                    <lightning-button
+                        icon-name="utility:chevronleft"
+                        label="Previous"
+                        type="brand"
+                        onclick={handlePrevious}
+                    ></lightning-button>
+                    <lightning-button
+                        icon-name="utility:chevronright"
+                        icon-position="right"
+                        class="button-next"
+                        label="Next"
+                        type="brand"
+                        onclick={handleNext}
+                    ></lightning-button>
+                </div>
+            </template>
+            <template if:true={isSection3}>
+                <div class="slds-text-heading_medium slds-m-bottom_large">
+                    Select Interior Color
+                </div>
+                <div class="color-palette slds-m-bottom_large">
+                    <template for:each={interiorColors} for:item="color">
+                        <a
+                            key={color.code}
+                            data-color={color.code}
+                            class={color.className}
+                            onclick={handleInteriorColorChange}
+                        >
+                            <div class="color-swatch"></div>
+                        </a>
+                    </template>
+                </div>
+                <div class="row">
+                    <span>{selectedInteriorColor.label}</span>
+                    <span
+                        ><lightning-formatted-number
+                            value={selectedInteriorColor.price}
+                            format-style="currency"
+                            currency-code="USD"
+                        ></lightning-formatted-number
+                    ></span>
+                </div>
+                <div class="buttons slds-m-top_x-large">
+                    <lightning-button
+                        icon-name="utility:chevronleft"
+                        label="Previous"
+                        type="brand"
+                        onclick={handlePrevious}
+                    ></lightning-button>
+                    <lightning-button
+                        icon-name="utility:chevronright"
+                        icon-position="right"
+                        class="button-next"
+                        label="Next"
+                        type="brand"
+                        onclick={handleNext}
+                    ></lightning-button>
+                </div>
+            </template>
+            <template if:true={isSection4}>
+                <div class="slds-text-heading_medium slds-m-bottom_large">
+                    Summary
+                </div>
+                <div class="row">
+                    <span>Range:</span>
+                    <div class="summary-value">
+                        <span>{selectedRange.label}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <span>Exterior Color:</span>
+                    <div class="summary-value">
+                        <div class={selectedExteriorColor.code}></div>
+                        <span>{selectedExteriorColor.label}</span>
+                    </div>
+                </div>
+                <div class="row slds-m-bottom_large">
+                    <span>Interior Color:</span>
+                    <div class="summary-value">
+                        <div class={selectedInteriorColor.code}></div>
+                        <span>{selectedInteriorColor.label}</span>
+                    </div>
+                </div>
+
+                <div class="buttons slds-m-top_x-large">
+                    <ux-product
+                        selected-range={selectedRange.label}
+                        selected-exterior-color={selectedExteriorColor.label}
+                        selected-interior-color={selectedInteriorColor.label}
+                    ></ux-product>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

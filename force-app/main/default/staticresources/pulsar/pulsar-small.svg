@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="65px" height="82px" viewBox="0 0 65 82" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Slice</title>
+    <defs>
+        <path d="M67,0 L67,81 L0,81 L0,0 L67,0 Z M6.28125,32.1206897 C2.81221142,32.1206897 0,34.9343484 0,38.4051724 C0,41.8759964 2.81221142,44.6896552 6.28125,44.6896552 C9.75028858,44.6896552 12.5625,41.8759964 12.5625,38.4051724 C12.5625,34.9343484 9.75028858,32.1206897 6.28125,32.1206897 Z" id="path-1"></path>
+        <linearGradient x1="-6.64045321%" y1="11.4237883%" x2="79.8806946%" y2="97.0563616%" id="linearGradient-3">
+            <stop stop-color="#1A4A83" offset="0%"></stop>
+            <stop stop-color="#00A0DF" offset="100%"></stop>
+        </linearGradient>
+        <path d="M67,0 L67,81 L0,81 L0,0 L67,0 Z M6.28125,32.1206897 C2.81221142,32.1206897 0,34.9343484 0,38.4051724 C0,41.8759964 2.81221142,44.6896552 6.28125,44.6896552 C9.75028858,44.6896552 12.5625,41.8759964 12.5625,38.4051724 C12.5625,34.9343484 9.75028858,32.1206897 6.28125,32.1206897 Z" id="path-4"></path>
+        <linearGradient x1="-103.30054%" y1="11.4237883%" x2="130.873764%" y2="97.0563616%" id="linearGradient-6">
+            <stop stop-color="#1A4A83" offset="0%"></stop>
+            <stop stop-color="#00A0DF" offset="100%"></stop>
+        </linearGradient>
+        <path d="M67,0 L67,81 L0,81 L0,0 L67,0 Z M6.28125,32.1206897 C2.81221142,32.1206897 0,34.9343484 0,38.4051724 C0,41.8759964 2.81221142,44.6896552 6.28125,44.6896552 C9.75028858,44.6896552 12.5625,41.8759964 12.5625,38.4051724 C12.5625,34.9343484 9.75028858,32.1206897 6.28125,32.1206897 Z" id="path-7"></path>
+        <linearGradient x1="-103.30054%" y1="11.4237883%" x2="130.873764%" y2="97.0563616%" id="linearGradient-9">
+            <stop stop-color="#1A4A83" offset="0%"></stop>
+            <stop stop-color="#00A0DF" offset="100%"></stop>
+        </linearGradient>
+        <path d="M67,0 L67,81 L0,81 L0,0 L67,0 Z M6.28125,32.1206897 C2.81221142,32.1206897 0,34.9343484 0,38.4051724 C0,41.8759964 2.81221142,44.6896552 6.28125,44.6896552 C9.75028858,44.6896552 12.5625,41.8759964 12.5625,38.4051724 C12.5625,34.9343484 9.75028858,32.1206897 6.28125,32.1206897 Z" id="path-10"></path>
+        <linearGradient x1="-59.1368101%" y1="11.4237883%" x2="107.57517%" y2="97.0563616%" id="linearGradient-12">
+            <stop stop-color="#1A4A83" offset="0%"></stop>
+            <stop stop-color="#00A0DF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Pulsar-Logo-/-Small-Mark" transform="translate(-2.000000, 0.000000)">
+            <path d="M18.9721667,13.932 C24.9016667,13.932 29.2231667,15.3397241 33.4441667,18.4568276 C39.1726667,22.8811034 42.7906667,30.1208276 42.7906667,37.3605517 C42.7906667,44.4997241 39.4741667,51.3372414 33.7456667,55.9626207 C29.3236667,59.481931 25.2031667,60.8896552 19.0726667,60.8896552 L19.0726667,60.8896552 L13.3441667,60.8896552 L13.3441667,81 L2.59066667,81 L2.59002055,50.13 L19.6756667,50.1306207 C26.6072108,50.1306207 31.9777013,44.8593531 32.1341578,37.8754978 L32.1376667,37.5616552 C32.1376667,30.321931 26.8111667,24.6910345 19.8766667,24.6910345 L19.8766667,24.6910345 L2.59002055,24.691 L2.59066667,13.932 L18.9721667,13.932 Z" id="P" fill="#1A4A83" fill-rule="nonzero"></path>
+            <g id="Group-12">
+                <g id="Oval-Clipped">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="path-1"></g>
+                    <ellipse id="Oval" stroke="url(#linearGradient-3)" stroke-width="1.47276759" mask="url(#mask-2)" cx="28.6145833" cy="37.0086207" rx="21.6354167" ry="35.612069"></ellipse>
+                </g>
+                <g id="Oval-Clipped">
+                    <mask id="mask-5" fill="white">
+                        <use xlink:href="#path-4"></use>
+                    </mask>
+                    <g id="path-1"></g>
+                    <ellipse id="Oval" stroke="url(#linearGradient-6)" stroke-width="1.47276759" mask="url(#mask-5)" cx="35.9427083" cy="37.3577586" rx="28.9635417" ry="28.9784483"></ellipse>
+                </g>
+                <g id="Oval-Clipped">
+                    <mask id="mask-8" fill="white">
+                        <use xlink:href="#path-7"></use>
+                    </mask>
+                    <g id="path-1"></g>
+                    <ellipse id="Oval" stroke="url(#linearGradient-9)" stroke-width="1.47276759" mask="url(#mask-8)" cx="20.9375" cy="37.7068966" rx="13.9583333" ry="13.9655172"></ellipse>
+                </g>
+                <g id="Oval-Clipped">
+                    <mask id="mask-11" fill="white">
+                        <use xlink:href="#path-10"></use>
+                    </mask>
+                    <g id="path-1"></g>
+                    <ellipse id="Oval" stroke="url(#linearGradient-12)" stroke-width="1.47276759" mask="url(#mask-11)" cx="25.8229167" cy="37.0086207" rx="18.84375" ry="22.3448276"></ellipse>
+                </g>
+            </g>
+            <ellipse id="Oval" fill="#1A4A83" cx="6.28125" cy="38.4051724" rx="2.09375" ry="2.09482759"></ellipse>
+        </g>
+    </g>
+</svg>

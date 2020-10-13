@@ -1,0 +1,13 @@
+{
+    "name": "@ecars/events-connector",
+    "version": "1.0.0",
+    "private": true,
+    "description": "eCars - Events Connector",
+    "main": "index.js",
+    "author": "Salesforce Developer Relations",
+    "license": "CC0-1.0",
+    "dependencies": {
+        "dotenv": "^8.2.0",
+        "sinek": "^9.1.0"
+    }
+}

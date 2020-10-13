@@ -1,0 +1,55 @@
+div.black,
+a.color-option.black > div {
+    background: linear-gradient(#767676, #070707);
+}
+
+div.blue,
+a.color-option.blue > div {
+    background: linear-gradient(#3468c3, #04348b);
+}
+
+div.white,
+a.color-option.white > div {
+    background: linear-gradient(#f4f4f4, #cacaca);
+}
+
+div.green,
+a.color-option.green > div {
+    background: linear-gradient(#8ed65a, #0e7d10);
+}
+
+div.red,
+a.color-option.red > div {
+    background: linear-gradient(#fb7f69, #a2261a);
+}
+
+div.tan,
+a.color-option.tan > div {
+    background: linear-gradient(#ddc9a5, #b8915b);
+}
+
+.row {
+    display: flex;
+    border-bottom: dotted 1px #dddbda;
+    align-items: center;
+    padding: 4px 0;
+}
+
+.row > span:first-child {
+    flex: 1;
+}
+
+.row > .summary-value {
+    flex: 1;
+    display: flex;
+    width: 180px;
+    align-items: center;
+    height: 36px;
+}
+
+.row > .summary-value > div:first-child {
+    width: 36px;
+    height: 36px;
+    margin-right: 6px;
+    border-radius: 50%;
+}

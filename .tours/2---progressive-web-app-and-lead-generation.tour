@@ -1,0 +1,31 @@
+{
+  "title": "2 - Progressive Web App and Lead Generation",
+  "steps": [
+    {
+      "file": "apps/ecars-pwa/src/client/index.js",
+      "line": 12,
+      "description": "The Progressive Web App (PWA) uses native browser features for WebPush. The user interface is built using Lightning Web Components, which you can register as native custom elements using the new `CustomElementConstructor`."
+    },
+    {
+      "file": "apps/ecars-pwa/src/client/modules/ux/product/product.html",
+      "line": 3,
+      "description": "To simplify development the user interface is also built using Lightning Base Components for LWC, available [here on npm](https://www.npmjs.com/package/lightning-base-components)."
+    },
+    {
+      "file": "apps/ecars-pwa/src/server/api.js",
+      "line": 109,
+      "description": "For submitting the entered data to Salesforce the [Composite Graph API](https://developer.salesforce.com/blogs/2020/09/learn-moar-with-winter-21-composite-graph-api.html) is used, which allows you to commit up to 500 related objects within a single transaction."
+    },
+    {
+      "file": "apps/ecars-pwa/src/server/api.js",
+      "line": 60,
+      "description": "After successful lead submission the WebPush information is stored within a Heroku Postgres database."
+    },
+    {
+      "file": "force-app/main/default/classes/WebPushService.cls",
+      "line": 3,
+      "description": "From Salesforce anyone can then send a WebPush message using this simple Apex controller to an associated lead."
+    }
+  ],
+  "ref": "master"
+}

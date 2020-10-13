@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Inventory</masterLabel>
+    <promptVersions>
+        <body
+        >Custom Lightning Web Components enable Pulsar to create visually appealing user interfaces for their customers.&lt;br&gt;&lt;br&gt;Select a car for experiencing realtime updates.</body>
+        <customApplication>ECars</customApplication>
+        <delayDays>1</delayDays>
+        <dismissButtonLabel>Close</dismissButtonLabel>
+        <displayPosition>BottomCenter</displayPosition>
+        <displayType>FloatingPanel</displayType>
+        <isPublished>true</isPublished>
+        <masterLabel>Inventory Step 1</masterLabel>
+        <publishedDate>2020-10-13</publishedDate>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
+        <startDate>2020-10-12</startDate>
+        <stepNumber>1</stepNumber>
+        <targetAppDeveloperName>ECars</targetAppDeveloperName>
+        <targetPageKey1>Inventory</targetPageKey1>
+        <targetPageType>standard__navItemPage</targetPageType>
+        <timesToDisplay>2</timesToDisplay>
+        <title>Lightning Web Components</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+    <promptVersions>
+        <actionButtonLabel>Next Demo</actionButtonLabel>
+        <actionButtonLink
+        >/lightning/o/Case/list?filterName=Recent</actionButtonLink>
+        <body
+        >This record is using the empApi to listen to any record changes to update the user interface in realtime.&lt;br&gt;&lt;br&gt;Open this record in another browser window, and use &quot;Change Status&quot; to see how the update is made across windows.</body>
+        <customApplication>ECars</customApplication>
+        <dismissButtonLabel>Close</dismissButtonLabel>
+        <displayPosition>BottomRight</displayPosition>
+        <displayType>FloatingPanel</displayType>
+        <isPublished>false</isPublished>
+        <masterLabel>Inventory Step 2</masterLabel>
+        <shouldDisplayActionButton>true</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <stepNumber>2</stepNumber>
+        <targetAppDeveloperName>ECars</targetAppDeveloperName>
+        <targetPageKey1>Vehicle__c</targetPageKey1>
+        <targetPageKey2>view</targetPageKey2>
+        <targetPageType>standard__recordPage</targetPageType>
+        <title>Change Data Capture and empApi</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>

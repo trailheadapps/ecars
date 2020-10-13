@@ -1,0 +1,158 @@
+:host {
+    /* --sds-c-button-brand-color-background-hover: #939393; */
+    --sds-c-button-brand-color-background: #939393;
+    --sds-c-button-brand-color-border: #939393;
+    position: absolute;
+    top: 80px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+    padding: 30px;
+}
+
+.container-images {
+    flex: 3;
+    width: 100%;
+    height: 100%;
+    padding-right: 50px;
+    padding-bottom: 30px;
+    overflow: hidden;
+}
+
+.padded {
+    padding: 20px 90px 0 90px;
+}
+
+.container-images > div {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container-options {
+    width: 410px;
+}
+
+.options {
+    padding: 30px 20px;
+}
+
+.color-palette {
+    display: flex;
+}
+
+.buttons {
+    display: flex;
+}
+
+.button-next {
+    margin-left: auto;
+}
+
+a.range-option {
+    display: flex;
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: solid 1px #dddbda;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 0.25rem;
+    border-left-width: 4px;
+}
+
+a.range-option:hover {
+    border-color: #3a49da;
+    border-left-width: 4px;
+}
+
+a.range-option.selected {
+    border-color: #3a49da;
+    border-left-width: 4px;
+}
+
+a.range-option > .label {
+    flex: 1;
+}
+
+a.color-option {
+    margin: 0 8px;
+}
+
+a.color-option > div {
+    border: solid 4px #ffffff;
+}
+
+a.color-option.selected > div {
+    border: solid 4px #ccc;
+}
+
+a.color-option > div {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+}
+
+div.black,
+a.color-option.black > div {
+    background: linear-gradient(#767676, #070707);
+}
+
+div.blue,
+a.color-option.blue > div {
+    background: linear-gradient(#3468c3, #04348b);
+}
+
+div.white,
+a.color-option.white > div {
+    background: linear-gradient(#f4f4f4, #cacaca);
+}
+
+div.green,
+a.color-option.green > div {
+    background: linear-gradient(#8ed65a, #0e7d10);
+}
+
+div.red,
+a.color-option.red > div {
+    background: linear-gradient(#fb7f69, #a2261a);
+}
+
+div.tan,
+a.color-option.tan > div {
+    background: linear-gradient(#ddc9a5, #b8915b);
+}
+
+.row {
+    display: flex;
+    border-bottom: dotted 1px #dddbda;
+    align-items: center;
+    padding: 4px 0;
+}
+
+.row > span:first-child {
+    flex: 1;
+}
+
+.row > .summary-value {
+    display: flex;
+    width: 180px;
+    align-items: center;
+    height: 36px;
+}
+
+.row > .summary-value > div:first-child {
+    width: 36px;
+    height: 36px;
+    margin-right: 6px;
+    border-radius: 50%;
+}

@@ -1,0 +1,15 @@
+{
+  "title": "1 - Overview",
+  "steps": [
+    {
+      "file": "README.md",
+      "line": 57,
+      "description": "The eCars application consists out a Salesforce application (located in `force-app/main/default`), as well as some Heroku applications (to be found in `./apps`). The automated deploy gives you the fast-lane to success."
+    },
+    {
+      "file": "apps/README.md",
+      "line": 1,
+      "description": "Within this folder you will find the MQTT Broker, a Progressive Web App using Lightning Web Components, a realtime app powered by Apache Kafka, as well as a service app that provides WebPush and PDF generation functionality."
+    }
+  ]
+}

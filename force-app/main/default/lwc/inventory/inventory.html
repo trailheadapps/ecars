@@ -1,0 +1,13 @@
+<template>
+    <template if:true={vehicles.data}>
+        <template for:each={vehicles.data} for:item="vehicle">
+            <c-inventory-tile
+                vehicle={vehicle}
+                key={vehicle.Id}
+            ></c-inventory-tile>
+        </template>
+    </template>
+    <template if:true={vehicles.error}>
+        <c-error-panel errors={vehicles.error}></c-error-panel>
+    </template>
+</template>

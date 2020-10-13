@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_WebPush_notifications</name>
+        <label>Send WebPush notifications</label>
+        <locationX>590</locationX>
+        <locationY>58</locationY>
+        <actionName>WebPushService</actionName>
+        <actionType>apex</actionType>
+    </actionCalls>
+    <interviewLabel
+    >Send WebPush notification on new vehicle {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Send WebPush notification on new vehicle</label>
+    <loops>
+        <name>Iterate_over_leads</name>
+        <label>Iterate over leads</label>
+        <locationX>391</locationX>
+        <locationY>59</locationY>
+        <assignNextValueToReference>Lead</assignNextValueToReference>
+        <collectionReference>Fetch_Lead_records</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Send_WebPush_notifications</targetReference>
+        </nextValueConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Fetch_Lead_records</name>
+        <label>Fetch Lead records</label>
+        <locationX>228</locationX>
+        <locationY>60</locationY>
+        <assignNullValuesIfNoRecordsFound
+        >false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Iterate_over_leads</targetReference>
+        </connector>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Lead</object>
+        <queriedFields>Id</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>66</locationX>
+        <locationY>60</locationY>
+        <connector>
+            <targetReference>Fetch_Lead_records</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>Lead</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Lead</objectType>
+    </variables>
+</Flow>

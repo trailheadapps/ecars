@@ -1,0 +1,10 @@
+<template>
+    <template if:true={selectedExteriorColor}>
+        <div class="slds-p-horizontal_x-large">
+            <img src={imgUrl} />
+        </div>
+    </template>
+    <template if:true={error}>
+        <c-error-panel errors={error}></c-error-panel>
+    </template>
+</template>

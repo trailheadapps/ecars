@@ -1,0 +1,16 @@
+<template>
+    <div class="content" onclick={handleContentClick}>
+        <lightning-badge
+            label={vehicle.Status__c}
+            class={badgeCSS}
+        ></lightning-badge>
+        <img
+            src={imageURL}
+            class="vehicle slds-align_absolute-center"
+            alt="Vehicle picture"
+        />
+        <p class="title">{vehicle.Model__c}</p>
+        <p>{vehicle.Package__c}</p>
+        <p>VIN: {vehicle.VIN__c}</p>
+    </div>
+</template>

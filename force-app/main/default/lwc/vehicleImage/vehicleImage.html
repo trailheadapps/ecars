@@ -1,0 +1,16 @@
+<template>
+    <div class="content slds-card">
+        <template if:true={status}>
+            <lightning-badge label={status} class={badgeCSS}></lightning-badge>
+            <img
+                if:true={imageURL}
+                src={imageURL}
+                class="vehicle"
+                alt="Vehicle picture"
+            />
+        </template>
+        <template if:true={error}>
+            <c-error-panel errors={error}></c-error-panel>
+        </template>
+    </div>
+</template>

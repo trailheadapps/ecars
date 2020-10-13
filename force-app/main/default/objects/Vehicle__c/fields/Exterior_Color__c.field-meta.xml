@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exterior_Color__c</fullName>
+    <defaultValue>&quot;Black&quot;</defaultValue>
+    <externalId>false</externalId>
+    <label>Exterior Color</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pearl_White</fullName>
+                <default>false</default>
+                <label>Pearl White</label>
+            </value>
+            <value>
+                <fullName>VIP_Black</fullName>
+                <default>false</default>
+                <label>VIP Black</label>
+            </value>
+            <value>
+                <fullName>Pulsar_Red</fullName>
+                <default>false</default>
+                <label>Pulsar Red</label>
+            </value>
+            <value>
+                <fullName>Deep_Blue</fullName>
+                <default>false</default>
+                <label>Deep Blue</label>
+            </value>
+            <value>
+                <fullName>Modern_Green</fullName>
+                <default>false</default>
+                <label>Modern Green</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

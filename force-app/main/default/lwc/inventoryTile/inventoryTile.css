@@ -1,0 +1,39 @@
+.content {
+    padding: 40px 12px 12px 12px;
+    background-color: #ffffff;
+    position: relative;
+    border-radius: 0.25rem;
+    border: 1px solid #dddbda;
+}
+
+.content:hover {
+    cursor: pointer;
+}
+
+lightning-badge {
+    position: absolute;
+    top: 4px;
+    right: 8px;
+    color: white;
+    margin-left: 4px;
+    margin-top: 4px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+lightning-badge.available {
+    background-color: green;
+}
+
+lightning-badge.onhold {
+    background-color: orange;
+}
+
+lightning-badge.sold {
+    background-color: red;
+}
+
+.title {
+    font-weight: bold;
+}

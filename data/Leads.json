@@ -1,0 +1,16 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Lead",
+                "referenceId": "LeadRef1"
+            },
+            "FirstName": "Martha",
+            "LastName": "Bixby",
+            "MobilePhone": "1-222-505-424",
+            "Email": "martha.bixby@demo.mail",
+            "Company": "Private",
+            "LeadSource": "Web"
+        }
+    ]
+}

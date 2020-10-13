@@ -1,0 +1,31 @@
+{
+    "title": "Request Body Schema",
+    "type": "object",
+    "properties": {
+        "price": { "type": "integer" },
+        "range": {
+            "type": "string",
+            "enum": ["Short Range", "Medium Range", "Long Range"]
+        },
+        "exteriorColor": {
+            "type": "string",
+            "enum": [
+                "Pearl White",
+                "VIP Black",
+                "Pulsar Red",
+                "Deep Blue",
+                "Modern Green"
+            ]
+        },
+        "interiorColor": {
+            "type": "string",
+            "enum": ["Vegan Black", "Vegan White", "Vegan Tan"]
+        },
+        "wheels": {
+            "type": "string",
+            "enum": ["Standard", "Premium"]
+        },
+        "leadRecordId": { "type": "string" }
+    },
+    "required": ["range", "exteriorColor", "interiorColor", "leadRecordId"]
+}

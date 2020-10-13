@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<AnimationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <animationFrequency>always</animationFrequency>
+    <developerName>Vehicle_Order_Status</developerName>
+    <isActive>true</isActive>
+    <masterLabel>Vehicle Order Status</masterLabel>
+    <recordTypeContext>Master</recordTypeContext>
+    <recordTypeName>__MASTER__</recordTypeName>
+    <sobjectType>Vehicle_Order__c</sobjectType>
+    <targetField>Status__c</targetField>
+    <targetFieldChangeToValues>Approved</targetFieldChangeToValues>
+</AnimationRule>

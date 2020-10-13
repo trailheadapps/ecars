@@ -1,0 +1,10 @@
+{
+    "title": "Request Body Schema",
+    "type": "object",
+    "properties": {
+        "message": { "type": "string" },
+        "recordId": { "type": "string" },
+        "setSubscription": { "type": "string" }
+    },
+    "required": ["message", "recordId"]
+}

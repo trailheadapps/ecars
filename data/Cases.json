@@ -1,0 +1,15 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Case",
+                "referenceId": "CaseRef1"
+            },
+            "Vehicle__c": "@VehicleRef4",
+            "ContactId": "@ContactRef1",
+            "Origin": "Phone",
+            "Subject": "Battery doesn't hold charge",
+            "Description": "Range with full battery is 150 miles instead of 280"
+        }
+    ]
+}

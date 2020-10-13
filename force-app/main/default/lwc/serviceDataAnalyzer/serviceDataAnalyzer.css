@@ -1,0 +1,14 @@
+.content {
+    position: relative;
+    width: 100%;
+    padding: 0 8px;
+    height: 40vw;
+}
+
+lightning-combobox {
+    width: 200px;
+}
+
+lightning-spinner {
+    margin-top: 150px;
+}

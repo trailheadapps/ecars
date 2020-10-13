@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Car Configurator</masterLabel>
+    <promptVersions>
+        <body
+        >The Car Configurator shares its code base with the PWA - which means you can re-use your components on any platform.</body>
+        <customApplication>ECars</customApplication>
+        <delayDays>1</delayDays>
+        <dismissButtonLabel>Close</dismissButtonLabel>
+        <displayPosition>BottomCenter</displayPosition>
+        <displayType>FloatingPanel</displayType>
+        <isPublished>true</isPublished>
+        <masterLabel>Car Configurator Step 1</masterLabel>
+        <publishedDate>2020-10-13</publishedDate>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
+        <startDate>2020-10-12</startDate>
+        <stepNumber>1</stepNumber>
+        <targetAppDeveloperName>ECars</targetAppDeveloperName>
+        <targetPageKey1>Car_Configurator</targetPageKey1>
+        <targetPageType>standard__navItemPage</targetPageType>
+        <timesToDisplay>2</timesToDisplay>
+        <title>Lightning Web Components</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+    <promptVersions>
+        <body
+        >Click the &quot;PDF&quot; button after you clicked through the different configuration options, and selected a lead.&lt;br&gt;&lt;br&gt;The Heroku service will be called, generate a PDF, and attach it as related attachment to the lead record.</body>
+        <customApplication>ECars</customApplication>
+        <dismissButtonLabel>Close</dismissButtonLabel>
+        <displayPosition>BottomLeft</displayPosition>
+        <displayType>FloatingPanel</displayType>
+        <isPublished>false</isPublished>
+        <masterLabel>Car Configurator Step 2</masterLabel>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <stepNumber>2</stepNumber>
+        <targetAppDeveloperName>ECars</targetAppDeveloperName>
+        <targetPageKey1>Car_Configurator</targetPageKey1>
+        <targetPageType>standard__navItemPage</targetPageType>
+        <title>Heroku PDF Service</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+    <promptVersions>
+        <actionButtonLabel>Next Demo</actionButtonLabel>
+        <actionButtonLink>/lightning/n/Inventory</actionButtonLink>
+        <body
+        >Click on &lt;i&gt;Related&lt;/i&gt; to see the related documents with the newly generated PDF.</body>
+        <customApplication>ECars</customApplication>
+        <dismissButtonLabel>Close</dismissButtonLabel>
+        <displayPosition>BottomLeft</displayPosition>
+        <displayType>FloatingPanel</displayType>
+        <isPublished>false</isPublished>
+        <masterLabel>Car Configurator Step 3</masterLabel>
+        <shouldDisplayActionButton>true</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <stepNumber>3</stepNumber>
+        <targetAppDeveloperName>ECars</targetAppDeveloperName>
+        <targetPageKey1>Lead</targetPageKey1>
+        <targetPageKey2>view</targetPageKey2>
+        <targetPageType>standard__recordPage</targetPageType>
+        <title>Lead PDF</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>
