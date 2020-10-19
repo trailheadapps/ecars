@@ -113,13 +113,13 @@ The below steps do everything the [Automated Deploy](#automated-deploy) does. It
 
     1. Click the Heroku Deploy Button to deploy the application to Heroku. Provide a unique application name to be used as [MQTT APP NAME] below. Leave all other inputs as the defaults.
 
-        [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?env[APP_BASE]=apps/ecars-mqtt-broker)
+        [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/trailheadapps/ecars/tree/main&env[APP_BASE]=apps/ecars-mqtt-broker)
 
 1. Deploy and configure the **Heroku Streaming application**
 
     1. Click the Heroku Deploy Button to deploy the streaming data application to Heroku. Provide a unique application name to be used as [STREAMING APP NAME] below. Leave all other inputs as the defaults.
 
-        [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?env[APP_BASE]=apps/ecars-realtime)
+        [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/trailheadapps/ecars/tree/main&env[APP_BASE]=apps/ecars-realtime)
 
     1. Create a Heroku Postgres database and attach it to the application
 
@@ -151,7 +151,7 @@ The below steps do everything the [Automated Deploy](#automated-deploy) does. It
 
     1. Click the Heroku Deploy Button to deploy the progressive web application to Heroku. Provide a unique application name to be used as [PWA NAME] below. Leave all other inputs as the defaults.
 
-        [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?env[APP_BASE]=apps/ecars-pwa)
+        [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/trailheadapps/ecars/tree/main&env[APP_BASE]=apps/ecars-pwa)
 
     1. Attach [STREAMING APP NAME]'s Heroku Postgres database to the PWA.
 
@@ -175,7 +175,7 @@ The below steps do everything the [Automated Deploy](#automated-deploy) does. It
 
     1. Click the Heroku Deploy Button to deploy the microservices application to Heroku. Provide a unique application name to be used as [MICROSERVICES APP NAME] below. Leave all other inputs as the defaults.
 
-        [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?env[APP_BASE]=apps/ecars-services)
+        [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/trailheadapps/ecars/tree/main&env[APP_BASE]=apps/ecars-services)
 
     1. Attach [STREAMING APP NAME]'s Heroku Postgres database to the Microservices application.
 
