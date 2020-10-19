@@ -3,7 +3,7 @@
     "description": "eCars - Salesforce Platform application demo",
     "keywords": ["Salesforce", "Kafka", "Postgres", "MQTT", "LWC"],
     "website": "https://github.com/trailheadapps/ecars",
-    "logo": "https://developer.salesforce.com/resources2/images/salesforce-header-logo.png",
+    "logo": "https://avatars0.githubusercontent.com/u/29558898?s=200&v=4",
     "env": {
         "APP_BASE": {
             "description": "Subdirectory within monorepo to deploy from"
