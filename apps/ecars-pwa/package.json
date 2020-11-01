@@ -22,7 +22,7 @@
         "heroku-postbuild": "npm run build && node scripts/createPostgresTable.js"
     },
     "dependencies": {
-        "@salesforce-ux/design-system": "^2.13.5",
+        "@salesforce-ux/design-system": "^2.13.7",
         "body-parser": "^1.18.2",
         "compression": "^1.7.4",
         "dotenv": "^8.2.0",
