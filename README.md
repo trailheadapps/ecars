@@ -10,19 +10,19 @@ Sample car sales and service application. Pulsar is a fictitious electric car ma
 
 ## Table of Contents
 
-- [eCars](#ecars)
-  - [Table of Contents](#table-of-contents)
-  - [Installation](#installation)
-    - [Prerequisites](#prerequisites)
-      - [SSH Key For Heroku Deploys](#ssh-key-for-heroku-deploys)
-    - [Automated Deploy](#automated-deploy)
-    - [Manual Deploy](#manual-deploy)
-    - [Teardown](#teardown)
-  - [Demo Highlights](#demo-highlights)
-  - [Additional Resources](#additional-resources)
-    - [Scale IoT Car Diagnostic Data with Apache Kafka](#scale-iot-car-diagnostic-data-with-apache-kafka)
-    - [Archive IoT Car Diagnostic Data with Postgres](#archive-iot-car-diagnostic-data-with-postgres)
-  - [Development](#development)
+-   [eCars](#ecars)
+    -   [Table of Contents](#table-of-contents)
+    -   [Installation](#installation)
+        -   [Prerequisites](#prerequisites)
+            -   [SSH Key For Heroku Deploys](#ssh-key-for-heroku-deploys)
+        -   [Automated Deploy](#automated-deploy)
+        -   [Manual Deploy](#manual-deploy)
+        -   [Teardown](#teardown)
+    -   [Demo Highlights](#demo-highlights)
+    -   [Additional Resources](#additional-resources)
+        -   [Scale IoT Car Diagnostic Data with Apache Kafka](#scale-iot-car-diagnostic-data-with-apache-kafka)
+        -   [Archive IoT Car Diagnostic Data with Postgres](#archive-iot-car-diagnostic-data-with-postgres)
+    -   [Development](#development)
 
 ## Installation
 
