@@ -22,7 +22,7 @@ For a real-live implementation you should use the JWT Bearer Flow.
 */
 const SF_USERNAME = process.env.SF_USERNAME;
 const SF_PASSWORD = process.env.SF_PASSWORD;
-const SF_TOKEN = process.env.SF_TOKEN;
+const SF_TOKEN = process.env.SF_TOKEN || '';
 
 const conn = new jsforce.Connection({
     loginUrl: 'https://test.salesforce.com'

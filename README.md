@@ -101,12 +101,6 @@ The below steps do everything the [Automated Deploy](#automated-deploy) does. It
     $ sfdx force:user:password:generate -u ecars
     ```
 
-1. Generate a Security Token for the scratch org user. Run the following command and then click Reset Security Token. You will receive the security token in an email. This will be used later for the `SF_TOKEN` config var in the Heroku apps.
-
-    ```console
-    $ sfdx force:org:open -u ecars -p /lightning/settings/personal/ResetApiToken/home
-    ```
-
 1. (Optional) Activate the `Pulsar_Bold` theme on the `Themes and Branding` page by running the following command:
 
     ```console
@@ -172,7 +166,7 @@ The below steps do everything the [Automated Deploy](#automated-deploy) does. It
     1. Set config vars
 
         ```console
-        $ heroku config:set VAPID_PUBLIC_KEY=[VAPID PUBLIC KEY] VAPID_PRIVATE_KEY=[VAPID PRIVATE KEY] SF_USERNAME=[SCRATCH ORG USERNAME] SF_PASSWORD=[SCRATCH ORG USER'S PASSWORD] SF_TOKEN=[SCRATCH ORG USER'S TOKEN] --app=[PWA NAME]
+        $ heroku config:set VAPID_PUBLIC_KEY=[VAPID PUBLIC KEY] VAPID_PRIVATE_KEY=[VAPID PRIVATE KEY] SF_USERNAME=[SCRATCH ORG USERNAME] SF_PASSWORD=[SCRATCH ORG USER'S PASSWORD] --app=[PWA NAME]
         ```
 
 1. Deploy and configure the **Heroku Microservices Application**
@@ -190,7 +184,7 @@ The below steps do everything the [Automated Deploy](#automated-deploy) does. It
     1. Set config vars
 
         ```console
-        $ heroku config:set VAPID_PUBLIC_KEY=[VAPID PUBLIC KEY] VAPID_PRIVATE_KEY=[VAPID PRIVATE KEY] SF_USERNAME=[SCRATCH ORG USERNAME] SF_PASSWORD=[SCRATCH ORG USER'S PASSWORD] SF_TOKEN=[SCRATCH ORG USER'S TOKEN] SF_LOGIN_URL=[SCRATCH ORG LOGIN URL] --app=[MICROSERVICES APP NAME]
+        $ heroku config:set VAPID_PUBLIC_KEY=[VAPID PUBLIC KEY] VAPID_PRIVATE_KEY=[VAPID PRIVATE KEY] SF_USERNAME=[SCRATCH ORG USERNAME] SF_PASSWORD=[SCRATCH ORG USER'S PASSWORD] SF_LOGIN_URL=[SCRATCH ORG LOGIN URL] --app=[MICROSERVICES APP NAME]
         ```
 
 1. Deploy source to the **Saleforce scratch org**
