@@ -16,7 +16,7 @@ export default class Salesforce {
 
         await conn.login(
             process.env.SF_USERNAME,
-            process.env.SF_PASSWORD + (process.env.SF_TOKEN || '')
+            process.env.SF_PASSWORD + process.env.SF_TOKEN
         );
         this.conn = conn;
     }
