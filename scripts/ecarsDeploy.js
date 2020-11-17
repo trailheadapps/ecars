@@ -508,12 +508,49 @@ function showFinalInstructions() {
     log('');
     log(
         chalk.bgWhite.green.bold(
-            " Deploy done!! Here's how to start using the demo "
+            ' Almost done!! Now, please complete the following steps '
         )
     );
     log('');
+    log('1. Run this sfdx CLI command:');
     log(
-        '1. (Optional) Run this sfdx CLI command, and activate the `Pulsar Bold` theme:'
+        chalk.dim(
+            `       sfdx force:org:open -u ${sh.env.SFDX_SCRATCH_ORG} -p /lightning/settings/personal/ResetApiToken/home`
+        )
+    );
+    log("2. Click 'Reset Security Token' on the page that the above command");
+    log('    opens to generate a Security Token.');
+    log(
+        '3. Copy the Security Token from your email, and add it as a Config Var'
+    );
+    log('    named SF_TOKEN to two of the Heroku apps that were just deployed');
+    log(
+        '    (' +
+            chalk.bold(sh.env.HEROKU_SERVICES_APP_NAME) +
+            ' and ' +
+            chalk.bold(sh.env.HEROKU_PWA_APP_NAME) +
+            '):'
+    );
+    log('    Here are the two Heroku CLI commands to run to do this:');
+    log(
+        '    (Replace abc in each command with the Security Token from your email)'
+    );
+    log(
+        chalk.dim(
+            '       heroku config:set --app ' +
+                sh.env.HEROKU_SERVICES_APP_NAME +
+                ' SF_TOKEN=abc'
+        )
+    );
+    log(
+        chalk.dim(
+            '       heroku config:set --app ' +
+                sh.env.HEROKU_PWA_APP_NAME +
+                ' SF_TOKEN=abc'
+        )
+    );
+    log(
+        '4. (Optional) Run this sfdx CLI command, and activate the `Pulsar Bold` theme:'
     );
     log(
         chalk.dim(
@@ -521,11 +558,12 @@ function showFinalInstructions() {
         )
     );
     log(
-        '2. Now run the following two CLI commands to start playing with the demo:'
+        '5. Now run the following two CLI commands to start playing with the demo:'
     );
     log(
-        `       Start as a consumer interested in buying a Pulsar Motors car: 
-        ${chalk.dim(`heroku open --app ${sh.env.HEROKU_PWA_APP_NAME}`)}`
+        `       Start as a consumer interested in buying a Pulsar Motors car: ${chalk.dim(
+            'heroku open --app ' + sh.env.HEROKU_PWA_APP_NAME
+        )}`
     );
     log(`       Proceed as a Pulsar Motors Salesperson: 
         ${chalk.dim(
