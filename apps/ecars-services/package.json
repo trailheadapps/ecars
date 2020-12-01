@@ -21,7 +21,7 @@
     },
     "dependencies": {
         "@crcastle/fastify-piscina": "^2.0.0",
-        "copyfiles": "^2.3.0",
+        "copyfiles": "^2.4.1",
         "dotenv": "^8.2.0",
         "fastify": "^3.0.0",
         "fastify-autoload": "^3.0.2",
