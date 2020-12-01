@@ -14,6 +14,6 @@
         "websocket-stream": "^5.5.2"
     },
     "devDependencies": {
-        "eslint": "^7.11.0"
+        "eslint": "^7.14.0"
     }
 }
