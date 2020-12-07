@@ -1,3 +1,13 @@
+/**
+ * @description       : 
+ * @author            : bishwambhar.sen@sen-force.com
+ * @group             : 
+ * @last modified on  : 12-07-2020
+ * @last modified by  : bishwambhar.sen@sen-force.com
+ * Modifications Log 
+ * Ver   Date         Author                          Modification
+ * 1.0   12-07-2020   bishwambhar.sen@sen-force.com   Initial Version
+**/
 public with sharing class WebPushService {
     @AuraEnabled
     public static Boolean invokeWebPushService(ServiceInput input) {
@@ -11,14 +21,10 @@ public with sharing class WebPushService {
         HttpResponse res = http.send(req);
 
         if (res.getStatusCode() != 200) {
-            String error =
-                'The status code returned was not expected: ' +
-                res.getStatusCode() +
-                ' ' +
-                res.getStatus();
-            AuraHandledException e = new AuraHandledException(error);
-            e.setMessage(error);
-            throw e;
+            String error = String.format('he status code returned was not expected: {0} {1}', 
+                new List<String>{res.getStatusCode(), res.getStatus()}
+            ); 
+            throw new AuraHandledException(error);
         }
         return true;
     }
