@@ -11,7 +11,7 @@ public with sharing class WebPushService {
         HttpResponse res = http.send(req);
 
         if (res.getStatusCode() != 200) {
-            String error = String.format('he status code returned was not expected: {0} {1}', 
+            String error = String.format('The status code returned was not expected: {0} {1}', 
                 new List<String>{res.getStatusCode(), res.getStatus()}
             ); 
             throw new AuraHandledException(error);
