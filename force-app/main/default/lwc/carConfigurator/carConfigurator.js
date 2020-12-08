@@ -102,13 +102,14 @@ export default class CarConfigurator extends LightningElement {
         let ranges = [];
         this.ranges.forEach((range) => {
             let className = 'range-option';
-            if (range.label === rangeLabel) {
+            let { label, price } = range;
+            if (label === rangeLabel) {
                 this.selectedRange = range;
                 className = className + ' selected';
             }
             ranges.push({
-                label: range.label,
-                price: range.price,
+                label,
+                price,
                 className
             });
         });
@@ -120,14 +121,15 @@ export default class CarConfigurator extends LightningElement {
         let colors = [];
         this.exteriorColors.forEach((color) => {
             let className = 'color-option';
-            if (color.code === colorCode) {
+            let { label, code, price } = color;
+            if (code === colorCode) {
                 this.selectedExteriorColor = color;
                 className = className + ' selected';
             }
             colors.push({
-                label: color.label,
-                code: color.code,
-                price: color.price,
+                label,
+                code,
+                price,
                 className: className + ' ' + color.code
             });
         });
@@ -139,14 +141,15 @@ export default class CarConfigurator extends LightningElement {
         let colors = [];
         this.interiorColors.forEach((color) => {
             let className = 'color-option';
+            let { label, code, price } = color;
             if (color.code === colorCode) {
                 this.selectedInteriorColor = color;
                 className = className + ' selected';
             }
             colors.push({
-                label: color.label,
-                code: color.code,
-                price: color.price,
+                label,
+                code,
+                price,
                 className: className + ' ' + color.code
             });
         });

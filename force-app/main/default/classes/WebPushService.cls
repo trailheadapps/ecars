@@ -13,7 +13,10 @@ public with sharing class WebPushService {
         if (res.getStatusCode() != 200) {
             String error = String.format(
                 'The status code returned was not expected: {0} {1}',
-                new List<String>{ res.getStatusCode(), res.getStatus() }
+                new List<String>{
+                    String.valueOf(res.getStatusCode()),
+                    res.getStatus()
+                }
             );
             throw new AuraHandledException(error);
         }
