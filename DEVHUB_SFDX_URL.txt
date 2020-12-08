@@ -1,0 +1,4 @@
+{
+    "sfdxAuthUrl":"force://6Cel800D28000001zPxr8880K000000KnICvB5QgfdD2E9Bo0NWh1xAUb0PTJDa3dMiHO4ESwPtW7pAdlOKaAyAlZyDUUluyI47ftOyAbn0
+@https://bishwambhar-dev-ed.my.salesforce.com"
+}
