@@ -9,7 +9,6 @@ package.xml
 **objectTranslations
 **profiles
 **settings
-force-app/main/default/lwc/liveData*
 
 # LWC configuration files
 **/jsconfig.json
