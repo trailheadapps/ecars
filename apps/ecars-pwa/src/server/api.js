@@ -44,32 +44,36 @@ function getPublicKey(req, res) {
 
 async function createSubscription(req, res, next) {
     const graph = constructGraph(req.body);
-    conn.requestPost('/services/data/v50.0/composite/graph', graph)
-        .then(async (resp) => {
-            // Note, we only expect one graph in the response for the purpose of this
-            // demo, so we're accessing it directly via [0].
-            if (!resp.graphs[0].isSuccessful) {
-                req.log.error('Composite API request failed');
-                req.log.error(resp.graphs[0]);
-                throw new Error('Composite API request failed');
-            }
+    try {
+        const resp = await conn.requestPost(
+            '/services/data/v50.0/composite/graph',
+            graph
+        );
+        // Note, we only expect one graph in the response for the purpose of this
+        // demo, so we're accessing it directly via [0].
+        if (!resp.graphs[0].isSuccessful) {
+            req.log.error('Composite API request failed');
+            req.log.error(resp.graphs[0]);
+            throw new Error('Composite API request failed');
+        }
 
-            const leadId =
-                resp.graphs[0].graphResponse.compositeResponse[0].body.id;
-            await client.query(
-                'INSERT INTO ecars_subscriptions(lead_record_id, endpoint, keys_p256dh, keys_auth, notification_sent) VALUES($1,$2,$3,$4,$5)',
-                [
-                    leadId,
-                    req.body.subscription.endpoint,
-                    req.body.subscription.keys.p256dh,
-                    req.body.subscription.keys.auth,
-                    0
-                ]
-            );
-            req.log.info(`Subscription created, lead id: ${leadId}`);
-            res.sendStatus(200);
-        })
-        .catch((err) => next(err));
+        const leadId =
+            resp.graphs[0].graphResponse.compositeResponse[0].body.id;
+        await client.query(
+            'INSERT INTO ecars_subscriptions(lead_record_id, endpoint, keys_p256dh, keys_auth, notification_sent) VALUES($1,$2,$3,$4,$5)',
+            [
+                leadId,
+                req.body.subscription.endpoint,
+                req.body.subscription.keys.p256dh,
+                req.body.subscription.keys.auth,
+                0
+            ]
+        );
+        req.log.info(`Subscription created, lead id: ${leadId}`);
+        res.sendStatus(200);
+    } catch (err) {
+        next(err);
+    }
 }
 
 async function deleteSubscription(req, res, next) {
