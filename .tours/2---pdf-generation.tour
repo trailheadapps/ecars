@@ -31,6 +31,5 @@
       "line": 32,
       "description": "Creating the PDF needs a couple of steps: query lead details, generate the PDF, and then attach it back to Salesforce."
     }
-  ],
-  "ref": "master"
+  ]
 }
