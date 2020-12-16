@@ -26,6 +26,5 @@
       "line": 3,
       "description": "From Salesforce anyone can then send a WebPush message using this simple Apex controller to an associated lead."
     }
-  ],
-  "ref": "master"
+  ]
 }
