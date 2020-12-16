@@ -31,11 +31,15 @@ export default class LiveData extends LightningElement {
                 // first car that sends its telemetry data.
                 //
                 // In an upcoming iteration of eCars this will be enhanced by
-                // specifying a car from Postgres in combination with
+                // specifying a car from Postgres
                 ws.onmessage = (event) => {
                     if (!this._updateChart) return;
+                    // A double JSON.parse is needed due to how the WebSocket message is sent
                     const wsElement = JSON.parse(JSON.parse(event.data));
-                    if (!this.firstCar) this.firstCar = wsElement.name;
+                    if (!this.firstCar) {
+                        this.firstCar = wsElement.name;
+                    }
+
                     if (wsElement.name === this.firstCar) {
                         this.wsData.push(wsElement);
                         this.chart.data.datasets[0].data.push(wsElement.mpge);
