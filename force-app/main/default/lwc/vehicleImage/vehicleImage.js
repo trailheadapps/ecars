@@ -1,6 +1,6 @@
 import { LightningElement, api, wire } from 'lwc';
 import { getRecord, getFieldValue } from 'lightning/uiRecordApi';
-import { subscribe, unsubscribe } from 'lightning/empApi';
+import { subscribe, unsubscribe, onError } from 'lightning/empApi';
 import FIELD_EXTERIOR_COLOR from '@salesforce/schema/Vehicle__c.Exterior_Color__c';
 import FIELD_STATUS from '@salesforce/schema/Vehicle__c.Status__c';
 
@@ -11,6 +11,7 @@ export default class VehicleImage extends LightningElement {
     @api recordId;
     color;
     status = undefined;
+    subscription = {};
 
     @wire(getRecord, {
         recordId: '$recordId',
@@ -28,20 +29,34 @@ export default class VehicleImage extends LightningElement {
     }
 
     connectedCallback() {
-        // Handles subscribe button click
-        const that = this;
-        const messageCallback = function (response) {
+        this.registerErrorListener();
+        this.subscribeToChangeEvent();
+    }
+
+    subscribeToChangeEvent() {
+        const messageCallback = (response) => {
             if (
                 response.data.payload.ChangeEventHeader.changedFields.indexOf(
                     'Status__c'
                 ) > -1
             ) {
-                that.status = response.data.payload.Status__c;
+                this.status = response.data.payload.Status__c;
             }
         };
-
+        // subscribe to message channel
         subscribe(CHANNEL_NAME, -1, messageCallback).then((response) => {
             this.subscription = response;
+        });
+    }
+
+    registerErrorListener() {
+        // Invoke onError empApi method
+        onError((error) => {
+            // logs error in the console. Refactor to use error component later
+            console.error(
+                'Received error from server: ',
+                JSON.stringify(error)
+            );
         });
     }
 
