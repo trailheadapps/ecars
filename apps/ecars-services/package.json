@@ -23,7 +23,7 @@
         "@crcastle/fastify-piscina": "^2.0.0",
         "copyfiles": "^2.3.0",
         "dotenv": "^8.2.0",
-        "fastify": "^3.0.0",
+        "fastify": "^3.9.2",
         "fastify-autoload": "^3.0.2",
         "fastify-cli": "^2.0.2",
         "fastify-helmet": "^5.0.3",
