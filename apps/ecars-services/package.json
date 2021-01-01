@@ -24,7 +24,7 @@
         "copyfiles": "^2.3.0",
         "dotenv": "^8.2.0",
         "fastify": "^3.0.0",
-        "fastify-autoload": "^3.0.2",
+        "fastify-autoload": "^3.4.0",
         "fastify-cli": "^2.0.2",
         "fastify-helmet": "^5.0.3",
         "fastify-plugin": "^2.0.0",
