@@ -28,7 +28,7 @@
         "fastify-cli": "^2.0.2",
         "fastify-helmet": "^5.0.3",
         "fastify-plugin": "^2.0.0",
-        "jsforce": "^1.9.3",
+        "jsforce": "^1.10.1",
         "pdfmake": "^0.1.66",
         "pg": "^8.3.3",
         "web-push": "^3.4.4"
