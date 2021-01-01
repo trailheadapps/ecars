@@ -31,7 +31,7 @@
         "jsforce": "^1.9.3",
         "lightning-base-components": "^1.10.2-alpha",
         "pg": "^8.4.1",
-        "pino": "^6.3.2",
+        "pino": "^6.9.0",
         "pino-pretty": "^4.3.0",
         "web-push": "^3.2.5"
     },
