@@ -60,7 +60,7 @@ This project consists of multiple "apps" consolidated into one monorepo so that 
 The `ecarsDeploy.js` script will create and deploy code to a Salesforce scratch org and then deploy four Heroku apps along with some Postgres databases.
 
 ```console
-$ sfdx force:auth:web:login -d -a DevHub  # Authenticate using your Dev Hub org credentials
+$ sfdx auth:web:login -d -a DevHub  # Authenticate using your Dev Hub org credentials
 $ heroku login  # Login with your Heroku account (or create one)
 $ git clone git@github.com:trailheadapps/ecars.git
 $ cd ecars/scripts
@@ -84,7 +84,7 @@ The below steps do everything the [Automated Deploy](#automated-deploy) does. It
 1. Authenticate with the `sfdx` and `heroku` CLI commands and get the eCars code onto your computer.
 
     ```console
-    $ sfdx force:auth:web:login -d -a DevHub  # Authenticate using your Dev Hub org credentials
+    $ sfdx auth:web:login -d -a DevHub  # Authenticate using your Dev Hub org credentials
     $ heroku login  # Login with your Heroku account (or create one)
     $ git clone git@github.com:trailheadapps/ecars.git
     ```
