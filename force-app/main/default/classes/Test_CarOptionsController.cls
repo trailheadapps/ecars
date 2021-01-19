@@ -58,6 +58,6 @@ public class Test_CarOptionsController {
 
         System.assertEquals(options.Range__c, 'Long Range');
         System.assertEquals(options.Exterior_Color__c, 'VIP Black');
-        System.assertEquals(options.Interior_Color__c, 'Vegan Tan');
+        System.assertEquals(options.Interior_Color__c, 'Vegan Tan1');
     }
 }
