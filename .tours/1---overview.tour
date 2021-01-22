@@ -1,15 +1,25 @@
 {
+  "$schema": "https://aka.ms/codetour-schema",
   "title": "1 - Overview",
   "steps": [
     {
       "file": "README.md",
+      "line": 10,
+      "title": "Hello 👋",
+      "description": "Hello and welcome to the eCars sample app. \n\n![eCars logo](https://raw.githubusercontent.com/trailheadapps/ecars/main/ecars-logo.png)\n\nThis project is a sample car sales and service application that runs on multiple platforms thanks to an event-driven architecture.\n\n<img src=\"https://raw.githubusercontent.com/trailheadapps/ecars/main/ecars-architecture.png\" alt=\"drawing\" width=\"200\"/>\n\nThis tour will show you around the repo at a high level, and then give you suggestions of what to do next.\n\nIn this file, you'll find information about the app architecture and installation."
+    },
+    {
+      "file": "README.md",
       "line": 57,
-      "description": "The eCars application consists out a Salesforce application (located in `force-app/main/default`), as well as some Heroku applications (to be found in `./apps`). The automated deploy gives you the fast-lane to success."
+      "title": "Automated deploy",
+      "description": "The eCars application consists of a Salesforce application located in `force-app/main/default`, as well as some Heroku applications located in `./apps`. \n\nThe automated deploy gives you the fast-lane to success."
     },
     {
       "file": "apps/README.md",
       "line": 1,
-      "description": "Within this folder you will find the MQTT Broker, a Progressive Web App using Lightning Web Components, a realtime app powered by Apache Kafka, as well as a service app that provides WebPush and PDF generation functionality."
+      "title": "Heroku applications",
+      "description": "Within the `apps` folder you will find the MQTT Broker, a Progressive Web App using Lightning Web Components, a realtime app powered by Apache Kafka, as well as a service app that provides WebPush and PDF generation functionality."
     }
-  ]
+  ],
+  "isPrimary": true
 }

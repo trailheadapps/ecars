@@ -1,0 +1,30 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "3 - PDF Generation",
+  "steps": [
+    {
+      "file": "force-app/main/default/lwc/carConfigurator/carConfigurator.js",
+      "line": 4,
+      "title": "Car Configurator",
+      "description": "The Car Configurator component is used by sales rep in Salesforce. The component invokes an Apex method in order to generate a new PDF document using a Heroku service."
+    },
+    {
+      "file": "force-app/main/default/namedCredentials/Heroku_App.namedCredential-meta.xml",
+      "line": 2,
+      "title": "Invoking a Heroku service",
+      "description": "The Heroku service that generates a PDF is invoked thanks to a HTTP callout.\nThe callout is configured with a `NamedCredential` but, for demo purposes, we're ommitting authentication."
+    },
+    {
+      "file": "apps/ecars-services/routes/pdf/Salesforce.ts",
+      "line": 12,
+      "title": "Accessing Salesforce APIs from Heroku",
+      "description": "In Heroku, we leverage [jsforce](https://jsforce.github.io/) (a 3rd party library) to connect to the Salesforce APIs."
+    },
+    {
+      "file": "apps/ecars-services/routes/pdf/PdfGenerator.ts",
+      "line": 32,
+      "title": "PDF Generation",
+      "description": "The PDF is processed with a couple of steps:\n\n1. query the lead record from Salesforce\n2. generate the PDF document\n3. attach it to a Salesforce lead record."
+    }
+  ]
+}
