@@ -1,4 +1,5 @@
 {
+  "$schema": "https://aka.ms/codetour-schema",
   "title": "4 - Real-time Events",
   "steps": [
     {
