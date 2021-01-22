@@ -1,20 +1,23 @@
 {
-  "title": "4 - Realtime events",
+  "title": "4 - Real-time Events",
   "steps": [
     {
       "file": "force-app/main/default/platformEventChannelMembers/ChangeEvents_Vehicle_ChangeEvent.platformEventChannelMember-meta.xml",
       "line": 2,
-      "description": "The app uses several event-driven architecture patterns. Here for example a [Change Data Capture](https://developer.salesforce.com/docs/atlas.en-us.change_data_capture.meta/change_data_capture/cdc_intro.htm) event is fired whenever a vehicle record changes."
+      "title": "Change Data Capture",
+      "description": "The app uses several event-driven architecture patterns.\n\nHere for example a [Change Data Capture](https://developer.salesforce.com/docs/atlas.en-us.change_data_capture.meta/change_data_capture/cdc_intro.htm) event is fired whenever a vehicle record changes."
     },
     {
       "file": "apps/ecars-mqtt-broker/server.js",
       "line": 12,
-      "description": "Using a WebSocket broker we can listen to MQTT or Kafka data in realtime."
+      "title": "MQTT Broker",
+      "description": "Using a WebSocket broker we can listen to MQTT or Kafka data in real-time."
     },
     {
       "file": "force-app/main/default/lwc/liveData/liveData.js",
       "line": 38,
-      "description": "Within Salesforce we then listen to that data to give service agents realtime data access to the connected (simulated) cars."
+      "title": "Live Data",
+      "description": "Within Salesforce we then listen to that data to give service agents real-time data access to the connected (simulated) cars."
     }
   ]
 }
