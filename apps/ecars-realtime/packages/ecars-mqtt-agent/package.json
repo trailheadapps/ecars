@@ -8,7 +8,7 @@
     "license": "CC0-1.0",
     "dependencies": {
         "debug": "^4.2.0",
-        "faker": "^5.1.0",
+        "faker": "^5.2.0",
         "mqtt": "^4.2.1"
     }
 }
