@@ -1,4 +1,7 @@
 public inherited sharing class VehicleTriggerHandler extends TriggerHandler {
+    @TestVisible
+    private static String subject = 'The vehicle {0} is sold. Call your Sales Director';
+
     private List<Vehicle__c> triggerNew;
     private List<Vehicle__c> triggerOld;
     private Map<Id, Vehicle__c> triggerMapNew;
@@ -19,10 +22,10 @@ public inherited sharing class VehicleTriggerHandler extends TriggerHandler {
                     Task task = new Task();
                     task.WhatId = vehicle.Id;
                     task.OwnerId = UserInfo.getUserId();
-                    task.Subject =
-                        'The vehicle ' +
-                        vehicle.Model__c +
-                        ' is sold. Call your Sales Director';
+                    task.Subject = String.format(
+                        subject,
+                        new List<Object>{ vehicle.Model__c }
+                    );
                     newTasks.add(task);
                 }
             }
