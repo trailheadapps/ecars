@@ -22,21 +22,21 @@
         "heroku-postbuild": "npm run build && node scripts/createPostgresTable.js"
     },
     "dependencies": {
-        "@salesforce-ux/design-system": "^2.13.5",
+        "@salesforce-ux/design-system": "^2.14.2",
         "body-parser": "^1.18.2",
         "compression": "^1.7.4",
         "dotenv": "^8.2.0",
         "express": "^4.17.1",
         "express-pino-logger": "^5.0.0",
-        "jsforce": "^1.9.3",
+        "jsforce": "^1.10.1",
         "lightning-base-components": "^1.10.2-alpha",
-        "pg": "^8.4.1",
-        "pino": "^6.3.2",
-        "pino-pretty": "^4.3.0",
+        "pg": "^8.5.1",
+        "pino": "^6.11.1",
+        "pino-pretty": "^4.5.0",
         "web-push": "^3.2.5"
     },
     "devDependencies": {
-        "lwc-services": "^2.2.1",
+        "lwc-services": "^2.3.2",
         "npm-run-all": "^4.1.5"
     },
     "engines": {
