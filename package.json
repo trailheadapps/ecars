@@ -15,7 +15,7 @@
         "test:services": "cd apps/ecars-services && npm test",
         "prettier": "prettier --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,ts,xml,yaml,yml}\"",
         "prettier:verify": "prettier --list-different \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,ts,xml,yaml,yml}\"",
-        "postinstall": "node scripts/check-version.js && lerna exec -- npm install && lerna link"
+        "postinstall": "node scripts/check-version.js && lerna exec -- npm install && lerna link && husky install"
     },
     "repository": {
         "type": "git",
@@ -34,25 +34,11 @@
         "@typescript-eslint/parser": "^4.15.1",
         "eslint": "^7.20.0",
         "eslint-plugin-jest": "^24.1.5",
-        "husky": "^5.0.9",
+        "husky": "^5.1.2",
         "lerna": "^3.22.1",
-        "lint-staged": "^10.5.4",
         "prettier": "^2.2.1",
         "prettier-plugin-apex": "^1.8.0",
         "rimraf": "^3.0.2",
         "typescript": "^4.1.5"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
-    },
-    "lint-staged": {
-        "**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,ts,xml,yaml,yml}": [
-            "prettier --write"
-        ],
-        "**/*.{js,ts}": [
-            "eslint"
-        ]
     }
 }

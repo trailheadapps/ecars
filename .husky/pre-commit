@@ -1,0 +1,1 @@
+npm run prettier:verify && npm run test
