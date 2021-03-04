@@ -1,42 +1,40 @@
 <template>
-    <footer>
-        <lightning-input
-            label="First Name"
-            onchange={handleFirstNameChange}
-        ></lightning-input>
-        <lightning-input
-            label="Last Name"
-            onchange={handleLastNameChange}
-        ></lightning-input>
-        <lightning-input
-            label="Mobile Phone"
-            type="tel"
-            onchange={handleCellPhoneChange}
-        ></lightning-input>
-        <lightning-input
-            label="Email"
-            type="email"
-            onchange={handleEmailChange}
-        ></lightning-input>
-        <div class="buttons">
-            <lightning-button
-                icon-name="utility:chevronleft"
-                label="Previous"
-                onclick={handlePrevious}
-            ></lightning-button>
-            <lightning-button
-                if:false={hasSubscription}
-                label="Contact Me"
-                type="brand"
-                onclick={handleSubscribe}
-                style="padding-right: 4px"
-            ></lightning-button>
-            <lightning-button
-                if:true={hasSubscription}
-                label="Unsubscribe"
-                type="brand"
-                onclick={handleUnsubscribe}
-            ></lightning-button>
-        </div>
-    </footer>
+    <lightning-input
+        label="First Name"
+        onchange={handleFirstNameChange}
+    ></lightning-input>
+    <lightning-input
+        label="Last Name"
+        onchange={handleLastNameChange}
+    ></lightning-input>
+    <lightning-input
+        label="Mobile Phone"
+        type="tel"
+        onchange={handleCellPhoneChange}
+    ></lightning-input>
+    <lightning-input
+        label="Email"
+        type="email"
+        onchange={handleEmailChange}
+    ></lightning-input>
+    <div class="buttons">
+        <lightning-button
+            icon-name="utility:chevronleft"
+            label="Previous"
+            onclick={handlePrevious}
+        ></lightning-button>
+        <lightning-button
+            if:false={hasSubscription}
+            label="Contact Me"
+            type="brand"
+            onclick={handleSubscribe}
+            style="padding-right: 4px"
+        ></lightning-button>
+        <lightning-button
+            if:true={hasSubscription}
+            label="Unsubscribe"
+            type="brand"
+            onclick={handleUnsubscribe}
+        ></lightning-button>
+    </div>
 </template>
