@@ -1,9 +1,4 @@
-:host {
-    width: 100%;
-}
-
 .buttons {
-    margin-top: 8px;
     display: flex;
     justify-content: space-between;
 }

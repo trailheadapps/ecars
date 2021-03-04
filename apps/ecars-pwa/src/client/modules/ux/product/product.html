@@ -17,7 +17,7 @@
         type="email"
         onchange={handleEmailChange}
     ></lightning-input>
-    <div class="buttons">
+    <div class="buttons slds-m-top_large">
         <lightning-button
             icon-name="utility:chevronleft"
             label="Previous"
@@ -28,7 +28,6 @@
             label="Contact Me"
             type="brand"
             onclick={handleSubscribe}
-            style="padding-right: 4px"
         ></lightning-button>
         <lightning-button
             if:true={hasSubscription}
