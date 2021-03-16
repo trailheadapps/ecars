@@ -1,7 +1,4 @@
-.content {
-    padding: 0 40px;
-}
-
 .buttons {
-    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
 }
