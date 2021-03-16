@@ -115,4 +115,8 @@ export default class Product extends LightningElement {
                 this.hasSubscription = isSubscribed();
             });
     }
+
+    handlePrevious() {
+        this.dispatchEvent(new CustomEvent('previous'));
+    }
 }
