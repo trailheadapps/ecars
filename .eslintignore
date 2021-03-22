@@ -6,3 +6,4 @@
 **/dist/**
 force-app/main/default/staticresources/
 .sfdx
+coverage
