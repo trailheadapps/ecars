@@ -1,18 +1,18 @@
 # Unique name for this workflow
-name: Salesforce DX Prerelease PR (scratch org)
+name: Salesforce DX (scratch org)
 
 # Definition when the workflow should run
 on:
-    pull_request:
-        types: [opened, edited, synchronize, reopened]
+    push:
         branches:
-            - prerelease/spring[2-9][0-9]
-            - prerelease/summer[2-9][0-9]
-            - prerelease/winter[2-9][0-9]
+            - main
+        paths-ignore:
+            - 'sfdx-project.json'
+            - 'README.md'
 
 # Jobs to be executed
 jobs:
-    formatting-and-linting:
+    formatting-and-lwc-tests:
         runs-on: ubuntu-latest
         steps:
             # Checkout the code in the pull request
@@ -40,29 +40,29 @@ jobs:
               run: npm run prettier:verify
 
             # ESlint
-            - name: 'Lint Project'
+            - name: 'Linting Project'
               run: npm run lint
 
     scratch-org-test:
         runs-on: ubuntu-latest
-        needs: formatting-and-linting
+        needs: formatting-and-lwc-tests
         steps:
             # Install Salesforce CLI
-            - name: 'Install Salesforce CLI'
-              run: 'sudo npm install -g sfdx-cli'
-
-            # Install salesforcedx pre-release plugin
-            - name: 'Install salesforcedx pre-release plugin'
-              run: 'sfdx plugins:install salesforcedx@pre-release'
+            - name: Install Salesforce CLI
+              run: |
+                  wget https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
+                  mkdir sfdx-cli
+                  tar xJf sfdx-linux-amd64.tar.xz -C sfdx-cli --strip-components 1
+                  ./sfdx-cli/install
 
             # Checkout the code in the pull request
             - name: 'Checkout source code'
               uses: actions/checkout@v2
 
             # Store secret for dev hub
-            - name: 'Populate auth file with DEVHUB_PREREL_SFDX_URL secret'
+            - name: 'Populate auth file with DEVHUB_SFDX_URL secret'
               shell: bash
-              run: 'echo ${{ secrets.DEVHUB_PREREL_SFDX_URL}} > ./DEVHUB_SFDX_URL.txt'
+              run: 'echo ${{ secrets.DEVHUB_SFDX_URL}} > ./DEVHUB_SFDX_URL.txt'
 
             # Authenticate dev hub
             - name: 'Authenticate Dev Hub'
