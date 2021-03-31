@@ -1,6 +1,6 @@
 # eCars
 
-[![Github Workflow](<https://github.com/trailheadapps/ecars/workflows/Salesforce%20DX%20(scratch%20org)/badge.svg?branch=main>)](https://github.com/trailheadapps/ecars/actions?query=workflow%3A%22Salesforce+DX+%28scratch+org%29%22) [![codecov](https://codecov.io/gh/trailheadapps/ecars/branch/main/graph/badge.svg)](https://codecov.io/gh/trailheadapps/ecars) [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
+[![CI Workflow](https://github.com/trailheadapps/ecars/workflows/CI/badge.svg)](https://github.com/trailheadapps/ecars/actions?query=workflow%3ACI) [![codecov](https://codecov.io/gh/trailheadapps/ecars/branch/main/graph/badge.svg)](https://codecov.io/gh/trailheadapps/ecars) [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 
 ![ecars-logo](ecars-logo.png)
 
