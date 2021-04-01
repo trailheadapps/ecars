@@ -20,7 +20,7 @@ public with sharing class Test_PdfCreateService {
         input.exteriorColor = 'VIP Black';
         input.interiorColor = 'Modern Tan';
         input.range = 'Long Range';
-        input.price = 45000;
+        input.price = 45001;
         input.leadRecordId = lead.Id;
 
         Test.setMock(HttpCalloutMock.class, new PdfCreateServiceHttpMock(200));
