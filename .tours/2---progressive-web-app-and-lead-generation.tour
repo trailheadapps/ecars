@@ -16,13 +16,13 @@
     },
     {
       "file": "apps/ecars-pwa/src/server/api.js",
-      "line": 51,
+      "line": 52,
       "title": "Composite Graph API",
       "description": "Leads for new cars are submited to the Salesforce Platform thanks to the [Composite Graph API](https://developer.salesforce.com/blogs/2020/09/learn-moar-with-winter-21-composite-graph-api.html).\n\nThe Composite Graph API lets you to commit up to 500 related objects within a single transaction."
     },
     {
       "file": "apps/ecars-pwa/src/server/api.js",
-      "line": 71,
+      "line": 72,
       "title": "Persistence to Heroku Postgres",
       "description": "Once a lead is successfully submitted, the information is stored within a Heroku Postgres database."
     },
