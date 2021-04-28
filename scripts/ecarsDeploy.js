@@ -418,7 +418,7 @@ function pwa_setup(..._$args) {
 
     log('*** Setting remote configuration parameters');
     sh.exec(
-        `heroku config:set APP_BASE=apps/ecars-pwa VAPID_PUBLIC_KEY='${sh.env.VAPID_PUBLIC_KEY}' VAPID_PRIVATE_KEY='${sh.env.VAPID_PRIVATE_KEY}' VAPID_EMAIL='${sh.env.VAPID_EMAIL}' SF_USERNAME='${sh.env.SF_USERNAME}' SF_PASSWORD='${sh.env.SF_PASSWORD}' -a ${sh.env.HEROKU_PWA_APP_NAME}`,
+        `heroku config:set APP_BASE=apps/ecars-pwa VAPID_PUBLIC_KEY='${sh.env.VAPID_PUBLIC_KEY}' VAPID_PRIVATE_KEY='${sh.env.VAPID_PRIVATE_KEY}' VAPID_EMAIL='${sh.env.VAPID_EMAIL}' SF_USERNAME='${sh.env.SF_USERNAME}' SF_PASSWORD='${sh.env.SF_PASSWORD}' SF_LOGIN_URL='${sh.env.SF_LOGIN_URL}' -a ${sh.env.HEROKU_PWA_APP_NAME}`,
         { silent: true }
     );
 
@@ -428,6 +428,7 @@ function pwa_setup(..._$args) {
     sh.echo('VAPID_EMAIL=' + sh.env.VAPID_EMAIL).toEnd('.env');
     sh.echo('SF_USERNAME=' + sh.env.SF_USERNAME).toEnd('.env');
     sh.echo('SF_PASSWORD=' + sh.env.SF_PASSWORD).toEnd('.env');
+    sh.echo('SF_LOGIN_URL=' + sh.env.SF_LOGIN_URL).toEnd('.env');
     sh.echo('DATABASE_URL=' + sh.env.DATABASE_PWA_URL).toEnd('.env');
 
     log('*** Pushing app to Heroku');
@@ -565,11 +566,11 @@ function showFinalInstructions() {
             'heroku open --app ' + sh.env.HEROKU_PWA_APP_NAME
         )}`
     );
-    log(`       Proceed as a Pulsar Motors Salesperson: 
+    log(`       Proceed as a Pulsar Motors Salesperson:
         ${chalk.dim(
             `sfdx force:org:open -u ${sh.env.SFDX_SCRATCH_ORG} -p /lightning/n/Car_Configurator`
         )}`);
-    log(`       Finish the demo as a Pulsar Motors Service Manager: 
+    log(`       Finish the demo as a Pulsar Motors Service Manager:
         ${chalk.dim(
             `sfdx force:org:open -u ${sh.env.SFDX_SCRATCH_ORG} -p /lightning/o/Case/list`
         )}`);

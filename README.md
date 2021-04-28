@@ -172,7 +172,7 @@ The below steps do everything the [Automated Deploy](#automated-deploy) does. It
     1. Set config vars
 
         ```console
-        $ heroku config:set VAPID_PUBLIC_KEY=[VAPID PUBLIC KEY] VAPID_PRIVATE_KEY=[VAPID PRIVATE KEY] SF_USERNAME=[SCRATCH ORG USERNAME] SF_PASSWORD=[SCRATCH ORG USER'S PASSWORD] SF_TOKEN=[SCRATCH ORG USER'S TOKEN] --app=[PWA NAME]
+        $ heroku config:set VAPID_PUBLIC_KEY=[VAPID PUBLIC KEY] VAPID_PRIVATE_KEY=[VAPID PRIVATE KEY] SF_USERNAME=[SCRATCH ORG USERNAME] SF_PASSWORD=[SCRATCH ORG USER'S PASSWORD] SF_LOGIN_URL=[SCRATCH ORG LOGIN URL] SF_TOKEN=[SCRATCH ORG USER'S TOKEN] --app=[PWA NAME]
         ```
 
 1. Deploy and configure the **Heroku Microservices Application**
