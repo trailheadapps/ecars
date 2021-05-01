@@ -30,7 +30,7 @@
         "express-pino-logger": "^5.0.0",
         "jsforce": "^1.10.1",
         "lightning-base-components": "^1.10.2-alpha",
-        "pg": "^8.5.1",
+        "pg": "^8.6.0",
         "pino": "^6.11.1",
         "pino-pretty": "^4.5.0",
         "web-push": "^3.2.5"
