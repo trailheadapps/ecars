@@ -8,7 +8,7 @@
     "license": "CC0-1.0",
     "dependencies": {
         "debug": "^4.2.0",
-        "pino": "^6.7.0",
+        "pino": "^6.11.3",
         "sequelize-kafka-connect": "^4.0.0"
     }
 }
