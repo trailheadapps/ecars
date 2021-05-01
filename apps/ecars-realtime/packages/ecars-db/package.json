@@ -9,7 +9,7 @@
     "dependencies": {
         "debug": "^4.2.0",
         "dotenv-cli": "^4.0.0",
-        "pg": "^8.4.1",
+        "pg": "^8.6.0",
         "sequelize": "^6.3.5",
         "sequelize-cli": "^6.2.0"
     }
