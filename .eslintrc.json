@@ -1,4 +1,9 @@
 {
+    "settings": {
+        "jest": {
+            "version": 26
+        }
+    },
     "extends": ["@salesforce/eslint-config-lwc/recommended"],
     "rules": {
         "@lwc/lwc/no-async-operation": "warn",
