@@ -1,7 +1,7 @@
 {
     "settings": {
         "jest": {
-            "version": 26
+            "version": "latest"
         }
     },
     "extends": ["@salesforce/eslint-config-lwc/recommended"],
