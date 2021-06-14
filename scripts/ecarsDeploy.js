@@ -351,9 +351,8 @@ function realtime_setup(..._$args) {
     );
 
     log('*** Provisioning Database');
-    sh.exec(
-        `heroku run 'cd packages/ecars-db && npx sequelize db:migrate' -a ${sh.env.HEROKU_REALTIME_APP_NAME}`,
-        { silent: true }
+    execFileSync(
+        'heroku', ['run', '\'cd packages/ecars-db && npx sequelize db:migrate\'', '-a', sh.env.HEROKU_REALTIME_APP_NAME],
     );
 
     log(
@@ -562,7 +561,8 @@ function showFinalInstructions() {
         '5. Now run the following two CLI commands to start playing with the demo:'
     );
     log(
-        `       Start as a consumer interested in buying a Pulsar Motors car: ${chalk.dim(
+        `       Start as a consumer interested in buying a Pulsar Motors car: 
+        ${chalk.dim(
             'heroku open --app ' + sh.env.HEROKU_PWA_APP_NAME
         )}`
     );
@@ -619,7 +619,7 @@ function showCleanupInstructions() {
         );
     log('');
     if (isWin) {
-        log(`If you are using PowerShell, use '\`' as command delimiter instead of ${COMMAND_DELIMETER}`);
+        log(`Tip: If you are using PowerShell, use ${chalk.bold('\`')} as command delimiter instead of ${chalk.bold(COMMAND_DELIMETER)}`);
         log('');
     }
 }
