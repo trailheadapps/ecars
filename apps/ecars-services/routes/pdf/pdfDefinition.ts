@@ -86,7 +86,7 @@ export function createPdfDefinition(data) {
                 columns: [
                     {
                         // left side of header: logo
-                        image: `${PATH_PREFIX}/Pulsar Logo/Small Logotype.png`,
+                        image: `${PATH_PREFIX}/PulsarLogo/SmallLogotype.png`,
                         width: 0.25 * LETTER_PAGE_WIDTH
                     },
                     {

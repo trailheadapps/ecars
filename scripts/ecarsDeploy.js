@@ -17,8 +17,8 @@ const log = console.log;
 // Exit immediately on first error
 sh.set('-e');
 
-const COMMAND_DELIMETER = process.platform === 'win32' ? ' & ^' : ' ; \\';
-
+const isWin = process.platform === 'win32';
+const COMMAND_DELIMETER = isWin ? ' & ^' : ' ; \\';
 let isScratchOrgCreated = false;
 
 sh.env.VAPID_PUBLIC_KEY = '';
@@ -618,6 +618,10 @@ function showCleanupInstructions() {
             )
         );
     log('');
+    if (isWin) {
+        log(`If you are using PowerShell, use '\`' as command delimiter instead of ${COMMAND_DELIMETER}`);
+        log('');
+    }
 }
 
 process.on('uncaughtException', handleError);
