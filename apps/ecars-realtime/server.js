@@ -80,8 +80,14 @@ app.post('/agent/stop/:vin', async (req, res, next) => {
     }
 });
 app.post('/agent/start', async (req, res, next) => {
-    let { name, profile, latitude, longitude, malfunction, interval } =
-        req.body;
+    let {
+        name,
+        profile,
+        latitude,
+        longitude,
+        malfunction,
+        interval
+    } = req.body;
 
     debug('starting agent', req.body);
 

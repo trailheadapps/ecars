@@ -11,8 +11,9 @@ export default class InventoryTile extends NavigationMixin(LightningElement) {
     }
 
     get imageURL() {
-        const arrColor =
-            this.vehicle.Exterior_Color__c.toLowerCase().split('_');
+        const arrColor = this.vehicle.Exterior_Color__c.toLowerCase().split(
+            '_'
+        );
         return `${BASE_IMAGE_URL}/car_${arrColor[arrColor.length - 1]}.jpg`;
     }
 
