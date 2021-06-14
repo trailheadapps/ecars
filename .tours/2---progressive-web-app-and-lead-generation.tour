@@ -16,7 +16,7 @@
     },
     {
       "file": "apps/ecars-pwa/src/server/api.js",
-      "line": 52,
+      "line": 49,
       "title": "Composite Graph API",
       "description": "Leads for new cars are submited to the Salesforce Platform thanks to the [Composite Graph API](https://developer.salesforce.com/blogs/2020/09/learn-moar-with-winter-21-composite-graph-api.html).\n\nThe Composite Graph API lets you to commit up to 500 related objects within a single transaction."
     },
