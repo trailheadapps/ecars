@@ -24,10 +24,8 @@ export default async function (fastify: FastifyInstance, opts: any) {
         Body: RequestBodySchemaInterface;
     }>('/', opts, async function (request, reply) {
         // Handle logging from worker thread
-        const {
-            port1: workerThreadPort,
-            port2: mainThreadPort
-        } = new MessageChannel();
+        const { port1: workerThreadPort, port2: mainThreadPort } =
+            new MessageChannel();
         mainThreadPort.on('message', (logMessage) => {
             const { level, text } = logMessage;
             request.log[level](text);

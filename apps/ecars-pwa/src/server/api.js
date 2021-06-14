@@ -134,8 +134,7 @@ function constructGraph(data) {
                     },
                     {
                         method: 'POST',
-                        url:
-                            '/services/data/v52.0/sobjects/Car_Configuration__c',
+                        url: '/services/data/v52.0/sobjects/Car_Configuration__c',
                         referenceId: 'CarConfiguration1',
                         body: {
                             Lead__c: '@{Lead1.id}',
