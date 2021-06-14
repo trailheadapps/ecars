@@ -16,7 +16,7 @@
     },
     {
       "file": "force-app/main/default/lwc/liveData/liveData.js",
-      "line": 38,
+      "line": 37,
       "title": "Live Data",
       "description": "Within Salesforce we then listen to that data to give service agents real-time data access to the connected (simulated) cars."
     }
