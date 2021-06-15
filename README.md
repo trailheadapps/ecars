@@ -49,9 +49,11 @@ If you are using a custom SSH key for Heroku Deployment instead of the default o
 Host heroku.com
   HostName heroku.com
   User git
-  IdentityFile /Users/user/.ssh/heroku_id_rsa
+  IdentityFile /Users/user/.ssh/id_rsa
   IdentitiesOnly yes
 ```
+
+Before deploying, make sure to add the key to your authorized known_hosts by running: `ssh -T git@heroku.com`.
 
 ### Automated Deploy
 

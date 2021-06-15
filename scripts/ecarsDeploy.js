@@ -17,8 +17,8 @@ const log = console.log;
 // Exit immediately on first error
 sh.set('-e');
 
-const COMMAND_DELIMETER = process.platform === 'win32' ? ' & ^' : ' ; \\';
-
+const isWin = process.platform === 'win32';
+const COMMAND_DELIMITER = isWin ? ' & ^' : ' ; \\';
 let isScratchOrgCreated = false;
 
 sh.env.VAPID_PUBLIC_KEY = '';
@@ -351,10 +351,12 @@ function realtime_setup(..._$args) {
     );
 
     log('*** Provisioning Database');
-    sh.exec(
-        `heroku run 'cd packages/ecars-db && npx sequelize db:migrate' -a ${sh.env.HEROKU_REALTIME_APP_NAME}`,
-        { silent: true }
-    );
+    execFileSync('heroku', [
+        'run',
+        "'cd packages/ecars-db && npx sequelize db:migrate'",
+        '-a',
+        sh.env.HEROKU_REALTIME_APP_NAME
+    ]);
 
     log(
         chalk.green(
@@ -562,9 +564,8 @@ function showFinalInstructions() {
         '5. Now run the following two CLI commands to start playing with the demo:'
     );
     log(
-        `       Start as a consumer interested in buying a Pulsar Motors car: ${chalk.dim(
-            'heroku open --app ' + sh.env.HEROKU_PWA_APP_NAME
-        )}`
+        `       Start as a consumer interested in buying a Pulsar Motors car:
+        ${chalk.dim('heroku open --app ' + sh.env.HEROKU_PWA_APP_NAME)}`
     );
     log(`       Proceed as a Pulsar Motors Salesperson:
         ${chalk.dim(
@@ -583,7 +584,7 @@ function showCleanupInstructions() {
     );
     log(
         chalk.dim(
-            `       sfdx force:org:delete -u ${sh.env.SFDX_SCRATCH_ORG} ${COMMAND_DELIMETER}`
+            `       sfdx force:org:delete -u ${sh.env.SFDX_SCRATCH_ORG} ${COMMAND_DELIMITER}`
         )
     );
     if (sh.env.HEROKU_MQTT_APP_NAME)
@@ -591,7 +592,7 @@ function showCleanupInstructions() {
             chalk.dim(
                 '       heroku apps:destroy --app ' +
                     sh.env.HEROKU_MQTT_APP_NAME +
-                    COMMAND_DELIMETER
+                    COMMAND_DELIMITER
             )
         );
     if (sh.env.HEROKU_REALTIME_APP_NAME)
@@ -599,7 +600,7 @@ function showCleanupInstructions() {
             chalk.dim(
                 '       heroku apps:destroy --app ' +
                     sh.env.HEROKU_REALTIME_APP_NAME +
-                    COMMAND_DELIMETER
+                    COMMAND_DELIMITER
             )
         );
     if (sh.env.HEROKU_PWA_APP_NAME)
@@ -607,7 +608,7 @@ function showCleanupInstructions() {
             chalk.dim(
                 '       heroku apps:destroy --app ' +
                     sh.env.HEROKU_PWA_APP_NAME +
-                    COMMAND_DELIMETER
+                    COMMAND_DELIMITER
             )
         );
     if (sh.env.HEROKU_SERVICES_APP_NAME)
@@ -618,6 +619,14 @@ function showCleanupInstructions() {
             )
         );
     log('');
+    if (isWin) {
+        log(
+            `Tip: If you are using PowerShell, use ${chalk.bold(
+                '`'
+            )} as command delimiter instead of ${chalk.bold(COMMAND_DELIMITER)}`
+        );
+        log('');
+    }
 }
 
 process.on('uncaughtException', handleError);
