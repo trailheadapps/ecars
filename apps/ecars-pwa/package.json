@@ -33,7 +33,7 @@
         "pg": "^8.5.1",
         "pino": "^6.11.1",
         "pino-pretty": "^4.5.0",
-        "web-push": "^3.2.5"
+        "web-push": "^3.4.5"
     },
     "devDependencies": {
         "lwc-services": "^2.3.2",
