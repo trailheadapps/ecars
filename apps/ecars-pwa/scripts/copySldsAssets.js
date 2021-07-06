@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 const path = require('path');
 
-const SLDS_SUBFOLDERS = ['fonts', `icons${path.sep}utility-sprite`, 'styles'];
+const SLDS_SUBFOLDERS = [`icons${path.sep}utility-sprite`, 'styles'];
 
 SLDS_SUBFOLDERS.forEach((sub) => {
     fs.copySync(
