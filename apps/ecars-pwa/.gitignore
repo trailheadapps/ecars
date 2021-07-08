@@ -32,7 +32,6 @@ ehthumbs.db
 $RECYCLE.BIN/
 
 # Salesforce Design System files
-src/client/resources/assets/fonts
 src/client/resources/assets/icons
 src/client/resources/assets/images
 src/client/resources/assets/styles
