@@ -9,11 +9,11 @@
         "lint": "eslint '**/*.{js,ts}'"
     },
     "dependencies": {
-        "aedes": "^0.46.0",
+        "aedes": "^0.46.1",
         "mqtt": "^4.2.8",
         "websocket-stream": "^5.5.2"
     },
     "devDependencies": {
-        "eslint": "^7.30.0"
+        "eslint": "^7.31.0"
     }
 }
