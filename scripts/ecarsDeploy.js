@@ -81,6 +81,7 @@ log('');
     realtime_setup();
     pwa_setup();
     heroku_services_setup();
+    salesforce_functions_setup();
 
     showFinalInstructions();
     showCleanupInstructions();
@@ -112,7 +113,8 @@ ${chalk.bold(
 )}. Deploy a Heroku application that is a customer-facing Progressive Web App (PWA) (see apps/ecars-pwa directory)
 ${chalk.bold(
     '5'
-)}. Deploy a Heroku application to provide additional functionality not available natively in Salesforce (see apps/ears-services directory)`;
+)}. Deploy a Heroku application to provide additional functionality not available natively in Salesforce (see apps/ears-services directory)
+${chalk.bold('6')}. Deploy Salesforce Functions to a Compute Environment.`;
 
     log(wrap(intro1, 80));
     log('');
@@ -182,7 +184,7 @@ function sf_org_setup(..._$args) {
     log('');
     log(
         `${chalk.bold('*** Setting up Salesforce App')} ${chalk.dim(
-            '(step 1 of 5)'
+            '(step 1 of 6)'
         )}`
     );
     log('*** Creating scratch org');
@@ -239,7 +241,7 @@ function mqtt_broker_setup(..._$args) {
     log('');
     log(
         `${chalk.bold('*** Setting up MQTT Broker Heroku app')} ${chalk.dim(
-            '(step 2 of 5)'
+            '(step 2 of 6)'
         )}`
     );
     sh.cd('apps/ecars-mqtt-broker');
@@ -288,7 +290,7 @@ function realtime_setup(..._$args) {
     log('');
     log(
         `${chalk.bold('*** Setting up streaming data Heroku app')} ${chalk.dim(
-            '(step 3 of 5)'
+            '(step 3 of 6)'
         )}`
     );
     sh.cd('apps/ecars-realtime');
@@ -371,7 +373,7 @@ function pwa_setup(..._$args) {
     log('');
     log(
         `${chalk.bold('*** Setting up PWA Heroku app')} ${chalk.dim(
-            '(step 4 of 5)'
+            '(step 4 of 6)'
         )}`
     );
     sh.cd('apps/ecars-pwa');
@@ -452,7 +454,7 @@ function heroku_services_setup(..._$args) {
     log('');
     log(
         `${chalk.bold('*** Setting up PDF and WebPush Heroku app')} ${chalk.dim(
-            '(step 5 of 5)'
+            '(step 5 of 6)'
         )}`
     );
     sh.cd('apps/ecars-services');
@@ -504,6 +506,50 @@ function heroku_services_setup(..._$args) {
             )}`
         )
     );
+}
+
+function salesforce_functions_setup(..._$args) {
+    log('');
+    log(
+        `${chalk.bold('*** Setting up WebPush Function')} ${chalk.dim(
+            '(step 6 of 6)'
+        )}`
+    );
+
+    log(
+        `*** Creating Computing Environment ${chalk.bold(
+            sh.env.SFDX_SCRATCH_ORG
+        )}`
+    );
+
+    sh.exec(
+        `sfdx env:create:compute -o ${sh.env.SFDX_SCRATCH_ORG} -a ${sh.env.SFDX_SCRATCH_ORG}env`,
+        { silent: true }
+    );
+
+    log('*** Setting remote configuration parameters');
+    const configVars = [
+        `VAPID_PUBLIC_KEY='${sh.env.VAPID_PUBLIC_KEY}'`,
+        `VAPID_PRIVATE_KEY='${sh.env.VAPID_PRIVATE_KEY}'`,
+        `VAPID_EMAIL='${sh.env.VAPID_EMAIL}'`,
+        `APPLICATION_URL='${sh.env.HEROKU_PWA_URL}'`,
+        `DATABASE_URL='${sh.env.DATABASE_PWA_URL}'`
+    ];
+    for (const config of configVars) {
+        sh.exec(`sfdx env:var:set ${config} -e ${sh.env.SFDX_SCRATCH_ORG}env`, {
+            silent: true
+        });
+    }
+
+    log('*** Stash Git Changes');
+    sh.exec(`git stash`, { silent: true });
+
+    log('*** Deploying Functions to Compute Environment');
+    sh.exec(
+        `sfdx project:deploy:functions --connected-org=${sh.env.SFDX_SCRATCH_ORG}`
+    );
+
+    log(chalk.green(`*** ✔ Done deploying Salesforce Functions`));
 }
 
 function showFinalInstructions() {

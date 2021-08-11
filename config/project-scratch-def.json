@@ -2,7 +2,7 @@
     "orgName": "ecars",
     "edition": "Developer",
     "hasSampleData": false,
-    "features": ["Walkthroughs", "EnableSetPasswordInApi"],
+    "features": ["Walkthroughs", "EnableSetPasswordInApi", "Functions"],
     "settings": {
         "lightningExperienceSettings": {
             "enableS1DesktopEnabled": true

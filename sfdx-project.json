@@ -5,6 +5,7 @@
             "default": true
         }
     ],
+    "name": "ecars",
     "namespace": "",
     "sfdcLoginUrl": "https://login.salesforce.com",
     "sourceApiVersion": "52.0"
