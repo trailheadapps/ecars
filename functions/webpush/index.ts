@@ -1,6 +1,6 @@
 import { InvocationEvent, Context, Logger } from 'sf-fx-sdk-nodejs';
 import { Pool } from 'pg';
-import webpush from 'web-push';
+import * as webpush from 'web-push';
 
 type FunctionOutput = {
     success: boolean;
