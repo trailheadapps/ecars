@@ -57,6 +57,9 @@
         <connector>
             <targetReference>Fetch_Lead_records</targetReference>
         </connector>
+        <object>Vehicle__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
     <variables>
