@@ -32,7 +32,7 @@
         "lightning-base-components": "^1.13.1-alpha",
         "pg": "^8.7.1",
         "pino": "^6.13.0",
-        "pino-pretty": "^5.1.2",
+        "pino-pretty": "^7.0.1",
         "web-push": "^3.4.5"
     },
     "devDependencies": {
