@@ -3,6 +3,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>highlightsPanelId</identifier>
                 <componentInstanceProperties>
                     <name>collapsed</name>
                     <value>false</value>
@@ -29,6 +30,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>relatedListContainerId</identifier>
                 <componentInstanceProperties>
                     <name>relatedListComponentOverride</name>
                     <value>NONE</value>
@@ -51,6 +53,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>carSummaryId</identifier>
                 <componentName>carSummary</componentName>
             </componentInstance>
         </itemInstances>
@@ -61,6 +64,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>tabRelatedListsId</identifier>
                 <componentInstanceProperties>
                     <name>body</name>
                     <value>relatedTabContent</value>
@@ -74,6 +78,7 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <identifier>tabDetailId</identifier>
                 <componentInstanceProperties>
                     <name>active</name>
                     <value>true</value>
@@ -96,6 +101,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>tabsetId</identifier>
                 <componentInstanceProperties>
                     <name>tabs</name>
                     <value>maintabs</value>
@@ -110,11 +116,13 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>carOptionsId</identifier>
                 <componentName>carOptions</componentName>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <identifier>leadSummaryId</identifier>
                 <componentName>leadSummary</componentName>
             </componentInstance>
         </itemInstances>

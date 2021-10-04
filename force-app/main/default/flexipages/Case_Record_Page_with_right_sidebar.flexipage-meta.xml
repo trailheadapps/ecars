@@ -7,6 +7,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>detailPanelId</identifier>
                 <componentName>force:detailPanel</componentName>
             </componentInstance>
         </itemInstances>
@@ -16,6 +17,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>serviceDataAnalyzerId</identifier>
                 <componentName>serviceDataAnalyzer</componentName>
             </componentInstance>
         </itemInstances>
@@ -25,6 +27,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>liveDataId</identifier>
                 <componentName>liveData</componentName>
             </componentInstance>
         </itemInstances>
@@ -34,6 +37,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>tabDetailId</identifier>
                 <componentInstanceProperties>
                     <name>body</name>
                     <value>Facet-95a6bf02-c634-4364-9b41-2452e7fd1a07</value>
@@ -47,6 +51,7 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <identifier>batteryDiagnosticId</identifier>
                 <componentInstanceProperties>
                     <name>body</name>
                     <value>Facet-715243a4-0770-44dd-b3be-fe2842f81435</value>
@@ -60,6 +65,7 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <identifier>realTimeDataId</identifier>
                 <componentInstanceProperties>
                     <name>body</name>
                     <value>Facet-c727db8e-413a-4345-880d-f057274fc2c0</value>
@@ -77,6 +83,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>tabsetId</identifier>
                 <componentInstanceProperties>
                     <name>tabs</name>
                     <value>Facet-38cedcaa-ed10-4a02-a8e4-464fe70153e9</value>
@@ -90,6 +97,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>recordFeedId</identifier>
                 <componentName>forceChatter:recordFeedContainer</componentName>
             </componentInstance>
         </itemInstances>

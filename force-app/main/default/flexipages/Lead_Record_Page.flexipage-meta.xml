@@ -3,6 +3,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>highlightsPanelId</identifier>
                 <componentInstanceProperties>
                     <name>collapsed</name>
                     <value>false</value>
@@ -24,6 +25,7 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <identifier>pathAssistantId</identifier>
                 <componentInstanceProperties>
                     <name>hideUpdateButton</name>
                     <value>false</value>
@@ -41,6 +43,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>detailPanelId</identifier>
                 <componentName>force:detailPanel</componentName>
             </componentInstance>
         </itemInstances>
@@ -50,6 +53,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>activityPanelId</identifier>
                 <componentName
                 >runtime_sales_activities:activityPanel</componentName>
             </componentInstance>
@@ -60,6 +64,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>recordFeedContainerId</identifier>
                 <componentName>forceChatter:recordFeedContainer</componentName>
             </componentInstance>
         </itemInstances>
@@ -69,6 +74,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>relatedListContainerId</identifier>
                 <componentInstanceProperties>
                     <name>relatedListComponentOverride</name>
                     <value>CARD</value>
@@ -82,6 +88,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>tabDetailId</identifier>
                 <componentInstanceProperties>
                     <name>active</name>
                     <value>true</value>
@@ -99,6 +106,7 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <identifier>tabActivityId</identifier>
                 <componentInstanceProperties>
                     <name>active</name>
                     <value>false</value>
@@ -116,6 +124,7 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <identifier>tabCollaborateId</identifier>
                 <componentInstanceProperties>
                     <name>body</name>
                     <value>feedTabContent</value>
@@ -129,6 +138,7 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <identifier>tabRelatedListsId</identifier>
                 <componentInstanceProperties>
                     <name>body</name>
                     <value>Facet-698f0905-7dde-4e8e-93f0-a3d2029bf4df</value>
@@ -146,6 +156,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>tabsetId</identifier>
                 <componentInstanceProperties>
                     <name>tabs</name>
                     <value>tabs</value>
@@ -159,6 +170,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>relatedListSingleContainerId</identifier>
                 <componentInstanceProperties>
                     <name>parentFieldApiName</name>
                     <value>Lead.Id</value>
@@ -184,11 +196,13 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <identifier>webPushNotificationId</identifier>
                 <componentName>webPushNotification</componentName>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <identifier>activityPanelId</identifier>
                 <componentName
                 >runtime_sales_activities:activityPanel</componentName>
             </componentInstance>
