@@ -202,7 +202,7 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
-                <identifier>activityPanelId</identifier>
+                <identifier>activityPanelTwoId</identifier>
                 <componentName
                 >runtime_sales_activities:activityPanel</componentName>
             </componentInstance>
