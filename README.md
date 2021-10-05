@@ -39,22 +39,6 @@ You will need the following to deploy this sample app.
 -   `heroku` CLI (download [here](https://devcenter.heroku.com/articles/heroku-cli))
 -   SSH key configured for Heroku deploys
 
-#### SSH Key For Heroku Deploys
-
-For pushing the Heroku apps via ssh git, you've to make sure to add your SSH key to Heroku by running `heroku keys:add`. If this command prompts you to create a key, that means you don't have one yet. One will be created, and then you'll need to run `heroku keys:add` again after the key is generated.
-
-If you are using a custom SSH key for Heroku Deployment instead of the default one in your OS, you should add the following entry to your `$HOME/.ssh/config` file. Replace the `IdentityFile` value with the absolute path of your Heroku SSH key.
-
-```
-Host heroku.com
-  HostName heroku.com
-  User git
-  IdentityFile /Users/user/.ssh/id_rsa
-  IdentitiesOnly yes
-```
-
-Before deploying, make sure to add the key to your authorized known_hosts by running: `ssh -T git@heroku.com`.
-
 ### Automated Deploy
 
 This project consists of multiple "apps" consolidated into one monorepo so that they are easier to deploy. The simplest way to configure and deploy all the apps is to run the following commands. The [`scripts/ecarsDeploy.js`](./scripts/ecarsDeploy.js) file is what automates all the deploys and integrates them with various configuration values.
@@ -64,7 +48,7 @@ The `ecarsDeploy.js` script will create and deploy code to a Salesforce scratch 
 ```console
 $ sfdx auth:web:login -d -a DevHub  # Authenticate using your Dev Hub org credentials
 $ heroku login  # Login with your Heroku account (or create one)
-$ git clone git@github.com:trailheadapps/ecars.git
+$ git clone https://github.com/trailheadapps/ecars.git
 $ cd ecars/scripts
 $ npm install
 $ cd ..
@@ -88,7 +72,7 @@ The below steps do everything the [Automated Deploy](#automated-deploy) does. It
     ```console
     $ sfdx auth:web:login -d -a DevHub  # Authenticate using your Dev Hub org credentials
     $ heroku login  # Login with your Heroku account (or create one)
-    $ git clone git@github.com:trailheadapps/ecars.git
+    $ git clone https://github.com/trailheadapps/ecars.git
     ```
 
 1. Create a scratch org
