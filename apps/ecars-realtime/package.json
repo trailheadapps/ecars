@@ -30,15 +30,15 @@
         "dotenv": "^10.0.0",
         "express": "^4.17.1",
         "faker": "^5.5.3",
-        "node-rdkafka": "^2.10.1",
+        "node-rdkafka": "^2.11.0",
         "sinek": "^9.0.0",
-        "ws": "^8.0.0"
+        "ws": "^8.2.3"
     },
     "engines": {
         "node": "12.x"
     },
     "devDependencies": {
-        "jest": "^27.0.6",
+        "jest": "^27.2.4",
         "lerna": "^4.0.0",
         "rimraf": "^3.0.2"
     }

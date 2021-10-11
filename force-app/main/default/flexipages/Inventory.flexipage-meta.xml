@@ -3,6 +3,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>inventoryId</identifier>
                 <componentName>inventory</componentName>
             </componentInstance>
         </itemInstances>

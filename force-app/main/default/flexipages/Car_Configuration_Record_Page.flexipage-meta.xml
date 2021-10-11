@@ -3,6 +3,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>highlightsPanelId</identifier>
                 <componentInstanceProperties>
                     <name>collapsed</name>
                     <value>false</value>
@@ -29,6 +30,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>relatedListContainerId</identifier>
                 <componentInstanceProperties>
                     <name>relatedListComponentOverride</name>
                     <value>NONE</value>
@@ -51,11 +53,13 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>carSummaryId</identifier>
                 <componentName>carSummary</componentName>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <identifier>detailPanelId</identifier>
                 <componentName>force:detailPanel</componentName>
             </componentInstance>
         </itemInstances>
@@ -66,6 +70,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>relatedTabId</identifier>
                 <componentInstanceProperties>
                     <name>body</name>
                     <value>relatedTabContent</value>
@@ -79,6 +84,7 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <identifier>detailTabId</identifier>
                 <componentInstanceProperties>
                     <name>active</name>
                     <value>true</value>
@@ -101,6 +107,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>maintabsId</identifier>
                 <componentInstanceProperties>
                     <name>tabs</name>
                     <value>maintabs</value>
@@ -115,6 +122,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>relatedListSingleId</identifier>
                 <componentInstanceProperties>
                     <name>parentFieldApiName</name>
                     <value>Car_Configuration__c.Id</value>

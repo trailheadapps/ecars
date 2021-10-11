@@ -3,6 +3,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>highlightsPanelId</identifier>
                 <componentInstanceProperties>
                     <name>collapsed</name>
                     <value>false</value>
@@ -25,11 +26,13 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>vehicleImageId</identifier>
                 <componentName>vehicleImage</componentName>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <identifier>detailPanelId</identifier>
                 <componentName>force:detailPanel</componentName>
             </componentInstance>
         </itemInstances>
@@ -39,6 +42,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>tabDetailId</identifier>
                 <componentInstanceProperties>
                     <name>body</name>
                     <value>Facet-b29be3b9-b788-43bf-b25e-182f4b58c9b5</value>
@@ -56,6 +60,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>tabsetId</identifier>
                 <componentInstanceProperties>
                     <name>tabs</name>
                     <value>Facet-ab2a85c4-c7b0-4f4f-a579-1b383f692f20</value>
@@ -70,6 +75,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>activityPanelId</identifier>
                 <componentName
                 >runtime_sales_activities:activityPanel</componentName>
             </componentInstance>
