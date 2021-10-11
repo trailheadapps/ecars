@@ -3,6 +3,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>highlightsPanelId</identifier>
                 <componentInstanceProperties>
                     <name>collapsed</name>
                     <value>false</value>
@@ -29,6 +30,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>relatedListContainerId</identifier>
                 <componentInstanceProperties>
                     <name>relatedListComponentOverride</name>
                     <value>NONE</value>
@@ -51,6 +53,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>detailPanelId</identifier>
                 <componentName>force:detailPanel</componentName>
             </componentInstance>
         </itemInstances>
@@ -61,6 +64,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>relatedListsId</identifier>
                 <componentInstanceProperties>
                     <name>body</name>
                     <value>relatedTabContent</value>
@@ -74,6 +78,7 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <identifier>tabDetailId</identifier>
                 <componentInstanceProperties>
                     <name>active</name>
                     <value>true</value>
@@ -96,6 +101,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>pathAssistantId</identifier>
                 <componentInstanceProperties>
                     <name>hideUpdateButton</name>
                     <value>false</value>
@@ -110,6 +116,7 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <identifier>tabsetId</identifier>
                 <componentInstanceProperties>
                     <name>tabs</name>
                     <value>maintabs</value>
@@ -124,6 +131,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>carSummaryMiniId</identifier>
                 <componentName>carSummaryMini</componentName>
             </componentInstance>
         </itemInstances>

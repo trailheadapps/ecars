@@ -3,6 +3,7 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <identifier>carConfiguratorId</identifier>
                 <componentName>carConfigurator</componentName>
             </componentInstance>
         </itemInstances>
