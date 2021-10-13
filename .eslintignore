@@ -1,9 +1,0 @@
-**/lwc/**/*.css
-**/lwc/**/*.html
-**/lwc/**/*.json
-**/lwc/**/*.svg
-**/lwc/**/*.xml
-**/dist/**
-force-app/main/default/staticresources/
-.sfdx
-coverage
