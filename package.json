@@ -7,7 +7,7 @@
     "license": "CC0-1.0",
     "scripts": {
         "clean": "lerna clean && rimraf node_modules **/node_modules",
-        "lint": "eslint **/{lwc,aura}/**/*.js",
+        "lint": "eslint **/{src}/**/*.js",
         "test": "npm run lint && npm run test:unit && npm run test:services",
         "test:unit": "lwc-jest --skipApiVersionCheck",
         "test:unit:watch": "lwc-jest --watch --skipApiVersionCheck",
