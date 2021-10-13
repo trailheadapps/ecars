@@ -23,10 +23,10 @@
         "**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}": [
             "prettier --write"
         ],
-        "**/lwc/**/*.js": [
+        "**/{lwc,apps}/**/*.js": [
             "eslint"
         ],
-        "**/src/**": [
+        "**/lwc/**": [
             "sfdx-lwc-jest --skipApiVersionCheck -- --bail --findRelatedTests"
         ]
     },
