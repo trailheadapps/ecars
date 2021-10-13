@@ -7,7 +7,7 @@
     "license": "CC0-1.0",
     "scripts": {
         "clean": "lerna clean && rimraf node_modules **/node_modules",
-        "lint": "eslint .",
+        "lint": "eslint **/{lwc,apps}/**/*.js",
         "test": "npm run lint && npm run test:unit && npm run test:services",
         "test:unit": "lwc-jest --skipApiVersionCheck",
         "test:unit:watch": "lwc-jest --watch --skipApiVersionCheck",
@@ -23,7 +23,7 @@
         "**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}": [
             "prettier --write"
         ],
-        "**/{aura,lwc}/**": [
+        "**/{lwc,apps}/**/*.js": [
             "eslint"
         ],
         "**/lwc/**": [
