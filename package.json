@@ -15,7 +15,7 @@
         "test:unit:coverage": "sfdx-lwc-jest --coverage --skipApiVersionCheck",
         "test:services": "cd apps/ecars-services && npm test",
         "prettier": "prettier --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,ts,xml,yaml,yml}\"",
-        "prettier:verify": "prettier --list-different \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,ts,xml,yaml,yml}\"",
+        "prettier:verify": "prettier --check \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,ts,xml,yaml,yml}\"",
         "postinstall": "lerna exec -- npm install && lerna link && husky install",
         "precommit": "lint-staged"
     },
