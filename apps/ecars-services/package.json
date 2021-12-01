@@ -25,7 +25,7 @@
         "dotenv": "^10.0.0",
         "fastify": "^3.22.0",
         "fastify-autoload": "^3.9.0",
-        "fastify-cli": "^2.13.0",
+        "fastify-cli": "^2.14.0",
         "fastify-helmet": "^5.3.2",
         "fastify-plugin": "^3.0.0",
         "jsforce": "^1.10.1",
