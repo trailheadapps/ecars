@@ -10,7 +10,7 @@
         "debug": "^4.3.2",
         "dotenv-cli": "^4.0.0",
         "pg": "^8.7.1",
-        "sequelize": "^6.6.5",
+        "sequelize": "^6.11.0",
         "sequelize-cli": "^6.2.0"
     }
 }
