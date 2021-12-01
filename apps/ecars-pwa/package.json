@@ -27,7 +27,7 @@
         "compression": "^1.7.4",
         "dotenv": "^10.0.0",
         "express": "^4.17.1",
-        "express-pino-logger": "^6.0.0",
+        "express-pino-logger": "^7.0.0",
         "jsforce": "^1.10.1",
         "lightning-base-components": "^1.13.6-alpha",
         "pg": "^8.7.1",
