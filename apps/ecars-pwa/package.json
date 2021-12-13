@@ -23,20 +23,20 @@
     },
     "dependencies": {
         "@salesforce-ux/design-system": "^2.16.2",
-        "body-parser": "^1.18.2",
+        "body-parser": "^1.19.1",
         "compression": "^1.7.4",
         "dotenv": "^10.0.0",
         "express": "^4.17.1",
-        "express-pino-logger": "^6.0.0",
-        "jsforce": "^1.10.1",
-        "lightning-base-components": "^1.13.6-alpha",
+        "express-pino-logger": "^7.0.0",
+        "jsforce": "^1.11.0",
+        "lightning-base-components": "^1.14.2-alpha",
         "pg": "^8.7.1",
-        "pino": "^6.13.3",
-        "pino-pretty": "^7.0.1",
+        "pino": "^7.5.1",
+        "pino-pretty": "^7.3.0",
         "web-push": "^3.4.5"
     },
     "devDependencies": {
-        "lwc-services": "^3.1.2",
+        "lwc-services": "^3.2.2",
         "npm-run-all": "^4.1.5"
     },
     "engines": {

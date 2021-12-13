@@ -14,7 +14,6 @@ Sample car sales and service application. Pulsar is a fictitious electric car ma
     -   [Table of Contents](#table-of-contents)
     -   [Installation](#installation)
         -   [Prerequisites](#prerequisites)
-            -   [SSH Key For Heroku Deploys](#ssh-key-for-heroku-deploys)
         -   [Automated Deploy](#automated-deploy)
         -   [Manual Deploy](#manual-deploy)
         -   [Teardown](#teardown)
@@ -37,7 +36,6 @@ You will need the following to deploy this sample app.
 -   `sfdx` CLI >= 48.12.0 (download [here](https://developer.salesforce.com/tools/sfdxcli))
 -   Heroku account ([signup](https://signup.heroku.com))
 -   `heroku` CLI (download [here](https://devcenter.heroku.com/articles/heroku-cli))
--   SSH key configured for Heroku deploys
 
 ### Automated Deploy
 
