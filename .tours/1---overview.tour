@@ -10,7 +10,7 @@
     },
     {
       "file": "README.md",
-      "line": 58,
+      "line": 40,
       "title": "Automated deploy",
       "description": "The eCars application consists of a Salesforce application located in `force-app/main/default`, as well as some Heroku applications located in `./apps`. \n\nThe automated deploy gives you the fast-lane to success."
     },
