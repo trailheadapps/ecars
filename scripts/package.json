@@ -13,7 +13,7 @@
         "enquirer": "^2.3.6",
         "haikunator": "^2.1.2",
         "lookpath": "^1.2.2",
-        "shelljs": "^0.8.4",
+        "shelljs": "^0.8.5",
         "wrap-ansi": "^7.0.0"
     }
 }
