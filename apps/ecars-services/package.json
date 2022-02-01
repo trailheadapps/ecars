@@ -27,7 +27,7 @@
         "fastify-autoload": "^3.9.0",
         "fastify-cli": "^2.14.0",
         "fastify-helmet": "^5.3.2",
-        "fastify-plugin": "^3.0.0",
+        "fastify-plugin": "^3.0.1",
         "jsforce": "^1.11.0",
         "pdfmake": "^0.2.4",
         "pg": "^8.7.1",
