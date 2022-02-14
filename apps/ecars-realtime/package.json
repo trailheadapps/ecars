@@ -27,18 +27,18 @@
         "aedes": "^0.46.2",
         "body-parser": "^1.19.1",
         "debug": "^4.3.3",
-        "dotenv": "^10.0.0",
-        "express": "^4.17.1",
+        "dotenv": "^16.0.0",
+        "express": "^4.17.2",
         "faker": "^5.5.3",
         "node-rdkafka": "^2.12.0",
         "sinek": "^9.0.0",
-        "ws": "^8.3.0"
+        "ws": "^8.5.0"
     },
     "engines": {
         "node": "12.x"
     },
     "devDependencies": {
-        "jest": "^27.4.5",
+        "jest": "^27.5.1",
         "lerna": "^4.0.0",
         "rimraf": "^3.0.2"
     }
