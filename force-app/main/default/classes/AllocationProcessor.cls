@@ -12,7 +12,7 @@ public with sharing class AllocationProcessor {
 
             // Instantiate the function
             functions.Function leaseCalculator = functions.Function.get(
-                'vehicleallocationprocessor'
+                'ecars.vehicleallocationprocessor'
             );
 
             // Invoke the function
