@@ -2,6 +2,10 @@
 public class Test_InventoryController {
     @testSetup
     static void setup() {
+        Car__c carModel = new Car__c();
+        carModel.Name = 'Model One';
+        insert carModel;
+
         List<Vehicle__c> vehicles = new List<Vehicle__c>();
 
         for (Integer i = 0; i < 25; i++) {
@@ -9,7 +13,7 @@ public class Test_InventoryController {
                 new Vehicle__c(
                     Exterior_Color__c = 'Pulsar_Red',
                     Interior_Color__c = 'Vegan_Tan',
-                    Model__c = 'Model One',
+                    Car_Model__c = carModel.Id,
                     Status__c = 'Available',
                     Year__c = '2020',
                     Package__c = 'Standard',
@@ -35,7 +39,7 @@ public class Test_InventoryController {
 
         System.assertEquals(vehicle.Exterior_Color__c, 'Pulsar_Red');
         System.assertEquals(vehicle.Interior_Color__c, 'Vegan_Tan');
-        System.assertEquals(vehicle.Model__c, 'Model One');
+        System.assertEquals(vehicle.Car_Model__r.Name, 'Model One');
         System.assertEquals(vehicle.Status__c, 'Available');
         System.assertEquals(vehicle.Year__c, '2020');
         System.assertEquals(vehicle.Package__c, 'Standard');

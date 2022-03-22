@@ -3,8 +3,9 @@
     <fullName>Car__c</fullName>
     <deleteConstraint>Restrict</deleteConstraint>
     <externalId>false</externalId>
-    <label>Car</label>
+    <label>Car Model</label>
     <referenceTo>Car__c</referenceTo>
+    <relationshipLabel>Car Configurations</relationshipLabel>
     <relationshipName>Car_Configurations</relationshipName>
     <required>true</required>
     <trackTrending>false</trackTrending>

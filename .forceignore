@@ -7,7 +7,7 @@ package.xml
 **appMenu
 **appSwitcher
 **objectTranslations
-**profiles
+**/profiles/**
 **settings
 
 # LWC configuration files
@@ -16,3 +16,5 @@ package.xml
 
 # LWC Jest
 **/__tests__/**
+
+**/permissionsets/sfdcInternalInt__sfdc_evergreen_event_source.permissionset-meta.xml

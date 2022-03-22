@@ -1,16 +1,30 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <identifier>highlightsPanelId</identifier>
+                <componentInstanceProperties>
+                    <name>actionNames</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>Edit</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Car_Configuration__c.Allocate_Vehicle</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>collapsed</name>
                     <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>enableActionsConfiguration</name>
-                    <value>false</value>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>enableActionsInNative</name>
+                    <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>hideChatterActions</name>
@@ -21,6 +35,7 @@
                     <value>3</value>
                 </componentInstanceProperties>
                 <componentName>force:highlightsPanel</componentName>
+                <identifier>highlightsPanelId</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -30,7 +45,6 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <identifier>relatedListContainerId</identifier>
                 <componentInstanceProperties>
                     <name>relatedListComponentOverride</name>
                     <value>NONE</value>
@@ -44,6 +58,7 @@
                     <value>true</value>
                 </componentInstanceProperties>
                 <componentName>force:relatedListContainer</componentName>
+                <identifier>relatedListContainerId</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -53,18 +68,16 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <identifier>carSummaryId</identifier>
                 <componentName>carSummary</componentName>
+                <identifier>carSummaryId</identifier>
             </componentInstance>
         </itemInstances>
-        <mode>Replace</mode>
-        <name>detailTabContent</name>
+        <name>Facet-9dfd0023-507f-40cd-b02c-7cdf2409f769</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <identifier>tabRelatedListsId</identifier>
                 <componentInstanceProperties>
                     <name>body</name>
                     <value>relatedTabContent</value>
@@ -74,24 +87,25 @@
                     <value>Standard.Tab.relatedLists</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
+                <identifier>tabRelatedListsId</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
-                <identifier>tabDetailId</identifier>
                 <componentInstanceProperties>
                     <name>active</name>
                     <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>detailTabContent</value>
+                    <value>Facet-9dfd0023-507f-40cd-b02c-7cdf2409f769</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>Standard.Tab.detail</value>
+                    <value>Preview</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab1</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -101,12 +115,12 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <identifier>tabsetId</identifier>
                 <componentInstanceProperties>
                     <name>tabs</name>
                     <value>maintabs</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tabset</componentName>
+                <identifier>tabsetId</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -116,14 +130,38 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <identifier>carOptionsId</identifier>
                 <componentName>carOptions</componentName>
+                <identifier>c_carOptions1</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
-                <identifier>leadSummaryId</identifier>
+                <componentInstanceProperties>
+                    <name>lookupFieldName</name>
+                    <value>Car_Configuration__c.Allotted_Vehicle__c</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>titleFieldName</name>
+                    <value>Allotted Vehicle</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>updateQuickActionName</name>
+                    <value>Vehicle__c.Change_Status</value>
+                </componentInstanceProperties>
+                <componentName>console:relatedRecord</componentName>
+                <identifier>console_relatedRecord1</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Allotted_Vehicle__r.Name}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentName>leadSummary</componentName>
+                <identifier>leadSummaryId</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>

@@ -1,12 +1,12 @@
 public with sharing class InventoryController {
     @AuraEnabled(cacheable=true)
-    public static Object getVehicles() {
+    public static List<Vehicle__c> getVehicles() {
         return [
             SELECT
                 Id,
                 Exterior_Color__c,
                 Interior_Color__c,
-                Model__c,
+                Car_Model__r.Name,
                 Status__c,
                 Year__c,
                 Package__c,

@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <identifier>highlightsPanelId</identifier>
                 <componentInstanceProperties>
                     <name>collapsed</name>
                     <value>false</value>
@@ -21,6 +20,7 @@
                     <value>3</value>
                 </componentInstanceProperties>
                 <componentName>force:highlightsPanel</componentName>
+                <identifier>highlightsPanelId</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -30,7 +30,6 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <identifier>relatedListContainerId</identifier>
                 <componentInstanceProperties>
                     <name>relatedListComponentOverride</name>
                     <value>NONE</value>
@@ -44,6 +43,7 @@
                     <value>true</value>
                 </componentInstanceProperties>
                 <componentName>force:relatedListContainer</componentName>
+                <identifier>relatedListContainerId</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -53,8 +53,8 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <identifier>detailPanelId</identifier>
                 <componentName>force:detailPanel</componentName>
+                <identifier>detailPanelId</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -64,7 +64,6 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <identifier>relatedListsId</identifier>
                 <componentInstanceProperties>
                     <name>body</name>
                     <value>relatedTabContent</value>
@@ -74,11 +73,11 @@
                     <value>Standard.Tab.relatedLists</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
+                <identifier>relatedListsId</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
-                <identifier>tabDetailId</identifier>
                 <componentInstanceProperties>
                     <name>active</name>
                     <value>true</value>
@@ -92,6 +91,7 @@
                     <value>Standard.Tab.detail</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
+                <identifier>tabDetailId</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -101,7 +101,6 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <identifier>pathAssistantId</identifier>
                 <componentInstanceProperties>
                     <name>hideUpdateButton</name>
                     <value>false</value>
@@ -110,18 +109,18 @@
                     <name>variant</name>
                     <value>linear</value>
                 </componentInstanceProperties>
-                <componentName
-                >runtime_sales_pathassistant:pathAssistant</componentName>
+                <componentName>runtime_sales_pathassistant:pathAssistant</componentName>
+                <identifier>pathAssistantId</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
-                <identifier>tabsetId</identifier>
                 <componentInstanceProperties>
                     <name>tabs</name>
                     <value>maintabs</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tabset</componentName>
+                <identifier>tabsetId</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -131,8 +130,8 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <identifier>carSummaryMiniId</identifier>
                 <componentName>carSummaryMini</componentName>
+                <identifier>c_carSummaryMini1</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>

@@ -5,7 +5,7 @@
         <comment
         >Action override updated by Lightning App Builder during activation.</comment>
         <content>Case_Record_Page_with_right_sidebar</content>
-        <formFactor>Small</formFactor>
+        <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
         <pageOrSobjectType>Case</pageOrSobjectType>
@@ -15,7 +15,7 @@
         <comment
         >Action override updated by Lightning App Builder during activation.</comment>
         <content>Case_Record_Page_with_right_sidebar</content>
-        <formFactor>Large</formFactor>
+        <formFactor>Small</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
         <pageOrSobjectType>Case</pageOrSobjectType>
@@ -24,26 +24,6 @@
         <actionName>View</actionName>
         <comment
         >Action override created by Lightning App Builder during activation.</comment>
-        <content>Lead_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
-        <pageOrSobjectType>Lead</pageOrSobjectType>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <comment
-        >Action override created by Lightning App Builder during activation.</comment>
-        <content>Lead_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
-        <pageOrSobjectType>Lead</pageOrSobjectType>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <comment
-        >Action override created by Lightning App Builder during activation.</comment>
         <content>Configuration_Record_Page</content>
         <formFactor>Small</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
@@ -59,6 +39,26 @@
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
         <pageOrSobjectType>Car_Configuration__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment
+        >Action override created by Lightning App Builder during activation.</comment>
+        <content>Lead_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Lead</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment
+        >Action override created by Lightning App Builder during activation.</comment>
+        <content>Lead_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Lead</pageOrSobjectType>
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
@@ -90,13 +90,16 @@
     <formFactors>Large</formFactors>
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
     <label>Showroom</label>
     <navType>Standard</navType>
     <tabs>standard-home</tabs>
     <tabs>standard-Lead</tabs>
+    <tabs>Car__c</tabs>
     <tabs>Vehicle__c</tabs>
     <tabs>Inventory</tabs>
     <tabs>Car_Configurator</tabs>
+    <tabs>Vehicle_Order__c</tabs>
     <tabs>standard-Case</tabs>
     <tabs>standard-Feed</tabs>
     <tabs>standard-report</tabs>

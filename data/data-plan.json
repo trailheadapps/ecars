@@ -5,6 +5,11 @@
         "files": ["Contacts.json"]
     },
     {
+        "sobject": "Car__c",
+        "saveRefs": true,
+        "files": ["Models.json"]
+    },
+    {
         "sobject": "Vehicle__c",
         "saveRefs": true,
         "files": ["Vehicles.json"]

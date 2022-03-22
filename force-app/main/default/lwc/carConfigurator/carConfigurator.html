@@ -20,7 +20,7 @@
                             <lightning-formatted-number
                                 format-style="currency"
                                 currency-code={currency}
-                                value={range.price}
+                                value={range.addOnprice}
                                 class="price"
                                 maximum-fraction-digits="0"
                             ></lightning-formatted-number>
@@ -60,7 +60,7 @@
                         ><lightning-formatted-number
                             format-style="currency"
                             currency-code="USD"
-                            value={selectedExteriorColor.price}
+                            value={selectedExteriorColor.addOnprice}
                             class="price"
                             maximum-fraction-digits="0"
                         ></lightning-formatted-number
@@ -105,7 +105,7 @@
                         ><lightning-formatted-number
                             format-style="currency"
                             currency-code="USD"
-                            value={selectedInteriorColor.price}
+                            value={selectedInteriorColor.addOnprice}
                             class="price"
                             maximum-fraction-digits="0"
                         ></lightning-formatted-number
@@ -172,12 +172,12 @@
                         disabled={pdfProcessing}
                     ></lightning-button>
                     <lightning-button
-                        icon-name="utility:share"
+                        icon-name="utility:save"
                         icon-position="right"
                         class="button-next"
-                        label="PDF"
+                        label="Save Configuration"
                         variant="brand"
-                        onclick={handleSendConfiguration}
+                        onclick={handleCreateRecord}
                         disabled={pdfProcessing}
                     ></lightning-button>
                 </div>

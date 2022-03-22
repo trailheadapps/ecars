@@ -1,8 +1,17 @@
-import { LightningElement } from 'lwc';
+import { LightningElement, wire, track } from 'lwc';
+
+import { createRecord } from 'lightning/uiRecordApi';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import CURRENCY from '@salesforce/i18n/currency';
-import invokePdfCreateService from '@salesforce/apex/PdfCreateService.invokePdfCreateService';
+
+import CAR_CONFIG_OBJECT from '@salesforce/schema/Car_Configuration__c';
+import CAR_MODEL_FIELD from '@salesforce/schema/Car_Configuration__c.Car__c';
+import SEL_EXTERIOR_FIELD from '@salesforce/schema/Car_Configuration__c.Selected_Exterior_Color__c';
+import SEL_INTERIOR_FIELD from '@salesforce/schema/Car_Configuration__c.Selected_Interior_Color__c';
+import SEL_RANGE_FIELD from '@salesforce/schema/Car_Configuration__c.Selected_Range__c';
 import LEAD_FIELD from '@salesforce/schema/Car_Configuration__c.Lead__c';
+
+import getAvailableCarOptions from '@salesforce/apex/CarConfigurationController.getAvailableCarOptions';
 
 const BASE_IMAGE_URL = 'https://sfdc-demo.s3-us-west-1.amazonaws.com/ecars';
 
@@ -10,76 +19,52 @@ export default class CarConfigurator extends LightningElement {
     currentSection = 1;
     currency = CURRENCY;
     leadField = LEAD_FIELD;
-    pdfProcessing = false;
-
-    ranges = [
-        {
-            label: 'Short Range',
-            price: 25000,
-            className: 'range-option selected'
-        },
-        { label: 'Medium Range', price: 35000, className: 'range-option' },
-        { label: 'Long Range', price: 45000, className: 'range-option' }
-    ];
-
-    exteriorColors = [
-        {
-            label: 'Pearl White',
-            code: 'white',
-            price: 0,
-            className: 'color-option white selected'
-        },
-        {
-            label: 'VIP Black',
-            code: 'black',
-            price: 1000,
-            className: 'color-option black'
-        },
-        {
-            label: 'Pulsar Red',
-            code: 'red',
-            price: 2000,
-            className: 'color-option red'
-        },
-        {
-            label: 'Deep Blue',
-            code: 'blue',
-            price: 2000,
-            className: 'color-option blue'
-        },
-        {
-            label: 'Modern Green',
-            code: 'green',
-            price: 2000,
-            className: 'color-option green'
-        }
-    ];
-
-    interiorColors = [
-        {
-            label: 'Vegan White',
-            code: 'white',
-            price: 0,
-            className: 'color-option white selected'
-        },
-        {
-            label: 'Vegan Black',
-            code: 'black',
-            price: 1000,
-            className: 'color-option black'
-        },
-        {
-            label: 'Vegan Tan',
-            code: 'tan',
-            price: 2000,
-            className: 'color-option tan'
-        }
-    ];
-
-    selectedRange = this.ranges[0];
-    selectedExteriorColor = this.exteriorColors[0];
-    selectedInteriorColor = this.interiorColors[0];
+    processing = false;
     leadRecordId = '';
+    modelId;
+
+    @track ranges = [];
+    @track exteriorColors = [];
+    @track interiorColors = [];
+
+    @wire(getAvailableCarOptions, { modelName: 'Neutron LGM-1 Sedan' })
+    processCarOptions({ data, error }) {
+        if (data) {
+            this.modelId = data.recordId;
+            this.ranges = data.allOptions.RangeOptions.map((obj, index) => {
+                return {
+                    ...obj,
+                    className: `range-option ${index === 0 ? 'selected' : ''}`
+                };
+            });
+            this.exteriorColors = data.allOptions.ExteriorColors.map(
+                (obj, index) => {
+                    return {
+                        ...obj,
+                        className: `color-option ${obj.code} ${
+                            index === 0 ? 'selected' : ''
+                        }`
+                    };
+                }
+            );
+            this.interiorColors = data.allOptions.InteriorColors.map(
+                (obj, index) => {
+                    return {
+                        ...obj,
+                        className: `color-option ${obj.code} ${
+                            index === 0 ? 'selected' : ''
+                        }`
+                    };
+                }
+            );
+
+            this.selectedRange = this.ranges[0];
+            this.selectedExteriorColor = this.exteriorColors[0];
+            this.selectedInteriorColor = this.interiorColors[0];
+        } else if (error) {
+            this.error = error;
+        }
+    }
 
     get imgUrl() {
         if (this.currentSection === 3) {
@@ -99,58 +84,41 @@ export default class CarConfigurator extends LightningElement {
 
     handleRangeChange(event) {
         const rangeLabel = event.currentTarget.dataset.range;
-        let ranges = [];
         this.ranges.forEach((range) => {
-            let className = 'range-option';
+            let className = range.className.replace('selected', '');
             if (range.label === rangeLabel) {
                 this.selectedRange = range;
-                className = className + ' selected';
+                range.className = className + ' selected';
+            } else {
+                range.className = className;
             }
-            ranges.push({
-                label: range.label,
-                price: range.price,
-                className
-            });
         });
-        this.ranges = ranges;
     }
 
     handleExteriorColorChange(event) {
         const colorCode = event.currentTarget.dataset.color;
-        let colors = [];
         this.exteriorColors.forEach((color) => {
-            let className = 'color-option';
+            let className = color.className.replace('selected', '');
             if (color.code === colorCode) {
                 this.selectedExteriorColor = color;
-                className = className + ' selected';
+                color.className = className + ' selected';
+            } else {
+                color.className = className;
             }
-            colors.push({
-                label: color.label,
-                code: color.code,
-                price: color.price,
-                className: className + ' ' + color.code
-            });
         });
-        this.exteriorColors = colors;
     }
 
     handleInteriorColorChange(event) {
         const colorCode = event.currentTarget.dataset.color;
-        let colors = [];
         this.interiorColors.forEach((color) => {
-            let className = 'color-option';
+            let className = color.className.replace('selected', '');
             if (color.code === colorCode) {
                 this.selectedInteriorColor = color;
-                className = className + ' selected';
+                color.className = className + ' selected';
+            } else {
+                color.className = className;
             }
-            colors.push({
-                label: color.label,
-                code: color.code,
-                price: color.price,
-                className: className + ' ' + color.code
-            });
         });
-        this.interiorColors = colors;
     }
 
     handleLeadChange(event) {
@@ -165,32 +133,31 @@ export default class CarConfigurator extends LightningElement {
         this.currentSection = this.currentSection - 1;
     }
 
-    handleSendConfiguration() {
-        this.pdfProcessing = true;
-        this.callApex();
-    }
+    handleCreateRecord() {
+        this.processing = true;
+        const fields = {};
+        fields[CAR_MODEL_FIELD.fieldApiName] = this.modelId;
+        fields[LEAD_FIELD.fieldApiName] = this.leadRecordId;
+        fields[SEL_EXTERIOR_FIELD.fieldApiName] =
+            this.selectedExteriorColor.label.replace(' ', '_');
+        fields[SEL_INTERIOR_FIELD.fieldApiName] =
+            this.selectedInteriorColor.label.replace(' ', '_');
+        fields[SEL_RANGE_FIELD.fieldApiName] = this.selectedRange.label.replace(
+            ' ',
+            '_'
+        );
 
-    callApex() {
-        invokePdfCreateService({
-            input: {
-                price: this.selectedRange.price,
-                range: this.selectedRange.label,
-                exteriorColor: this.selectedExteriorColor.label,
-                interiorColor: this.selectedInteriorColor.label,
-                leadRecordId: this.leadRecordId
-            }
-        })
-            .then((result) => {
-                this.pdfProcessing = false;
-
-                let message = result
-                    ? 'The via Heroku created PDF got attached to the {0}.'
-                    : 'Something happened while executing the function.';
-
+        const recordInput = {
+            apiName: CAR_CONFIG_OBJECT.objectApiName,
+            fields
+        };
+        createRecord(recordInput)
+            .then(() => {
                 this.dispatchEvent(
                     new ShowToastEvent({
-                        title: 'PDF created',
-                        message,
+                        title: 'Configuration added successfully',
+                        message:
+                            'A new car configuration has been added to the {0}',
                         messageData: [
                             {
                                 url: `/lightning/r/Lead/${this.leadRecordId}/view`,
@@ -203,20 +170,17 @@ export default class CarConfigurator extends LightningElement {
                 );
             })
             .catch((error) => {
-                this.pdfProcessing = false;
-
                 this.dispatchEvent(
                     new ShowToastEvent({
-                        title: 'Function error',
+                        title: 'Error creating record',
                         message: error.body.message,
                         variant: 'error'
                     })
                 );
+            })
+            .finally(() => {
+                this.processing = false;
             });
-    }
-
-    get hasNextSection() {
-        return this.currentSection < this.numberOfSections;
     }
 
     get hasPreviousSection() {
