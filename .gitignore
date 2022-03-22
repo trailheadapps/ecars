@@ -40,7 +40,5 @@ $RECYCLE.BIN/
 .vscode/*
 !.vscode/extensions.json
 
-
-
 # Deploy Options
 deploy-options.json

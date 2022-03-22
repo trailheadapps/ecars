@@ -1,0 +1,15 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Car__c",
+                "referenceId": "CarModelRef1"
+            },
+            "Name": "Neutron LGM-1 Sedan",
+            "Available_Exterior_Colors__c": "Pearl_White;VIP_Black;Pulsar_Red;Deep_Blue;Modern_Green",
+            "Available_Interior_Colors__c": "Vegan_White;Vegan_Black;Vegan_Tan",
+            "Available_Ranges__c": "Short_Range;Medium_Range;Long_Range",
+            "Base_Price__c": 40000
+        }
+    ]
+}

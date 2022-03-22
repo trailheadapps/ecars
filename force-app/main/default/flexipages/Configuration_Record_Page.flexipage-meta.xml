@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
     <flexiPageRegions>
         <itemInstances>
@@ -152,7 +152,8 @@
                 <identifier>console_relatedRecord1</identifier>
                 <visibilityRule>
                     <criteria>
-                        <leftValue>{!Record.Allotted_Vehicle__r.Name}</leftValue>
+                        <leftValue
+                        >{!Record.Allotted_Vehicle__r.Name}</leftValue>
                         <operator>NE</operator>
                     </criteria>
                 </visibilityRule>

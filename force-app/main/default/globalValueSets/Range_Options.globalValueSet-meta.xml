@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Short_Range</fullName>
+        <default>false</default>
+        <label>Short Range</label>
+    </customValue>
+    <customValue>
+        <fullName>Medium_Range</fullName>
+        <default>false</default>
+        <label>Medium Range</label>
+    </customValue>
+    <customValue>
+        <fullName>Long_Range</fullName>
+        <default>false</default>
+        <label>Long Range</label>
+    </customValue>
+    <masterLabel>Range Options</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

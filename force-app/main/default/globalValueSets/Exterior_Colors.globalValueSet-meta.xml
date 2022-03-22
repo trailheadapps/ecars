@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Pearl_White</fullName>
+        <default>false</default>
+        <label>Pearl White</label>
+    </customValue>
+    <customValue>
+        <fullName>VIP_Black</fullName>
+        <default>false</default>
+        <label>VIP Black</label>
+    </customValue>
+    <customValue>
+        <fullName>Pulsar_Red</fullName>
+        <default>false</default>
+        <label>Pulsar Red</label>
+    </customValue>
+    <customValue>
+        <fullName>Deep_Blue</fullName>
+        <default>false</default>
+        <label>Deep Blue</label>
+    </customValue>
+    <customValue>
+        <fullName>Modern_Green</fullName>
+        <default>false</default>
+        <label>Modern Green</label>
+    </customValue>
+    <masterLabel>Exterior Colors</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

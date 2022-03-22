@@ -3,7 +3,6 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <identifier>highlightsPanelId</identifier>
                 <componentInstanceProperties>
                     <name>collapsed</name>
                     <value>false</value>
@@ -21,6 +20,7 @@
                     <value>3</value>
                 </componentInstanceProperties>
                 <componentName>force:highlightsPanel</componentName>
+                <identifier>highlightsPanelId</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -30,7 +30,6 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <identifier>relatedListContainerId</identifier>
                 <componentInstanceProperties>
                     <name>relatedListComponentOverride</name>
                     <value>NONE</value>
@@ -44,6 +43,7 @@
                     <value>true</value>
                 </componentInstanceProperties>
                 <componentName>force:relatedListContainer</componentName>
+                <identifier>relatedListContainerId</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -53,14 +53,14 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <identifier>carSummaryId</identifier>
                 <componentName>carSummary</componentName>
+                <identifier>carSummaryId</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
-                <identifier>detailPanelId</identifier>
                 <componentName>force:detailPanel</componentName>
+                <identifier>detailPanelId</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -70,7 +70,6 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <identifier>relatedTabId</identifier>
                 <componentInstanceProperties>
                     <name>body</name>
                     <value>relatedTabContent</value>
@@ -80,11 +79,11 @@
                     <value>Standard.Tab.relatedLists</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
+                <identifier>relatedTabId</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
-                <identifier>detailTabId</identifier>
                 <componentInstanceProperties>
                     <name>active</name>
                     <value>true</value>
@@ -98,6 +97,7 @@
                     <value>Standard.Tab.detail</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
+                <identifier>detailTabId</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -107,12 +107,12 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <identifier>maintabsId</identifier>
                 <componentInstanceProperties>
                     <name>tabs</name>
                     <value>maintabs</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tabset</componentName>
+                <identifier>maintabsId</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -120,32 +120,6 @@
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <identifier>relatedListSingleId</identifier>
-                <componentInstanceProperties>
-                    <name>parentFieldApiName</name>
-                    <value>Car_Configuration__c.Id</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListApiName</name>
-                    <value>Car_Options__r</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListComponentOverride</name>
-                    <value>NONE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>rowsToDisplay</name>
-                    <value>10</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showActionBar</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentName>force:relatedListSingleContainer</componentName>
-            </componentInstance>
-        </itemInstances>
         <mode>Replace</mode>
         <name>sidebar</name>
         <type>Region</type>
