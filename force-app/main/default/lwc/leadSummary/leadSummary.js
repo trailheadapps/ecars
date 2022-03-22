@@ -21,13 +21,13 @@ export default class LeadSummary extends NavigationMixin(LightningElement) {
         return getFieldValue(this.configuration.data, LEAD_FIELD);
     }
 
-    gotoDetail(){
+    gotoDetail() {
         this[NavigationMixin.Navigate]({
             type: 'standard__recordPage',
             attributes: {
-                actionName: "view",
+                actionName: 'view',
                 recordId: this.lead,
-                objectApiName: "Lead"
+                objectApiName: 'Lead'
             }
         });
     }
