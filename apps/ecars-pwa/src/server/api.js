@@ -1,7 +1,12 @@
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+
 const logger = require('pino')({ prettyPrint: { colorize: true } });
 const webpush = require('web-push');
 const jsforce = require('jsforce');
 const { Pool } = require('pg');
+
+require('dotenv').config();
 
 const email = process.env.VAPID_EMAIL;
 const vapidPublicKey = process.env.VAPID_PUBLIC_KEY;
@@ -36,11 +41,18 @@ conn.login(SF_USERNAME, SF_PASSWORD + SF_TOKEN, (err, res) => {
     }
 });
 
-webpush.setVapidDetails(`mailto:${email}`, vapidPublicKey, vapidPrivateKey);
+if(vapidPublicKey && vapidPrivateKey){
+    webpush.setVapidDetails(`mailto:${email}`, vapidPublicKey, vapidPrivateKey);
+}
 
 function getPublicKey(req, res) {
-    req.log.info('getting public key');
+    // req.log.info('getting public key');
     res.send({ key: vapidPublicKey });
+}
+
+async function getCarConfig(req, res){
+    const result = await conn.apex.get("/CarConfig/"+req.query.modelName);
+    res.send(JSON.parse(result));
 }
 
 async function createSubscription(req, res, next) {
@@ -126,30 +138,14 @@ function constructGraph(data) {
                     },
                     {
                         method: 'POST',
-                        url: '/services/data/v54.0/sobjects/Car__c/',
-                        referenceId: 'Car1',
-                        body: {
-                            Name: car.name
-                        }
-                    },
-                    {
-                        method: 'POST',
                         url: '/services/data/v54.0/sobjects/Car_Configuration__c',
                         referenceId: 'CarConfiguration1',
                         body: {
                             Lead__c: '@{Lead1.id}',
-                            Car__c: '@{Car1.id}'
-                        }
-                    },
-                    {
-                        method: 'POST',
-                        url: '/services/data/v54.0/sobjects/Car_Options__c',
-                        referenceId: 'CarOptions1',
-                        body: {
-                            Car_Configuration__c: '@{CarConfiguration1.id}',
-                            Exterior_Color__c: car.exteriorColor,
-                            Interior_Color__c: car.interiorColor,
-                            Range__c: car.range
+                            Car__c: car.modelId,
+                            Selected_Exterior_Color__c: car.exteriorColor,
+                            Selected_Interior_Color__c: car.interiorColor,
+                            Selected_Range__c: car.range
                         }
                     }
                 ]
@@ -158,9 +154,10 @@ function constructGraph(data) {
     };
 }
 
-module.exports = {
+export {
     getPublicKey,
     createSubscription,
     deleteSubscription,
-    push
+    push,
+    getCarConfig
 };

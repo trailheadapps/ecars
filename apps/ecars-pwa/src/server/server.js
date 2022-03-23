@@ -1,46 +1,37 @@
-// Simple Express server setup to serve the build output
-require('dotenv').config();
-
-const path = require('path');
-const express = require('express');
-const bodyParser = require('body-parser');
-const compression = require('compression');
-const logger = require('pino')({ prettyPrint: { colorize: true } });
-const pino = require('express-pino-logger');
-const {
+import { createServer } from 'lwr';
+import { createRequire } from 'module';
+import {
     getPublicKey,
     createSubscription,
     deleteSubscription,
-    push
-} = require('./api');
+    push,
+    getCarConfig
+} from './api.js';
 
-const HOST = process.env.HOST || 'localhost';
-const PORT = process.env.PORT || 3001;
-const DIST_DIR = './dist';
+const require = createRequire(import.meta.url);
 
-const app = express();
+const lwrServer = createServer({ serverType: 'express'});
+const expressApp = lwrServer.getInternalServer();
 
-app.use(pino({ logger }));
+const bodyParser = require('body-parser');
+const logger = require('pino')({ prettyPrint: { colorize: true } });
+const pino = require('express-pino-logger');
 
-app.use(compression());
-app.use(bodyParser.json());
-app.use(express.static(DIST_DIR));
-app.get('/api/publickey', getPublicKey);
-app.post('/api/subscription', createSubscription);
-app.delete('/api/subscription', deleteSubscription);
-app.post('/api/push', push);
+expressApp.use(pino({ logger }));
+expressApp.use(bodyParser.json());
 
-app.use('/', (_req, res) => {
-    res.sendFile(path.resolve(DIST_DIR, 'index.html'));
-});
+expressApp.get('/api/publickey', getPublicKey);
+expressApp.get('/api/getAvailableCarOptions', getCarConfig);
+expressApp.post('/api/subscription', createSubscription);
+expressApp.delete('/api/subscription', deleteSubscription);
+expressApp.post('/api/push', push);
 
-app.use((err, req, res, next) => {
-    if (res.headersSent) {
-        return next(err);
-    }
-    return res.status(500).send(err.message);
-});
-
-app.listen(PORT, () =>
-    logger.info(`✅  Server started: http://${HOST}:${PORT}`)
-);
+// Start the server
+lwrServer
+    .listen(({ port, serverMode }) => {
+        console.log(`App listening on port ${port} in ${serverMode} mode\n`);
+    })
+    .catch((err) => {
+        console.error(err);
+        process.exit(1);
+    });

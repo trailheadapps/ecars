@@ -1,0 +1,35 @@
+{
+    "lwc": {
+        "modules": [
+            { 
+                "dir": "$rootDir/src/modules" 
+            },
+            {
+                "npm": "lightning-base-components"
+            }
+        ]
+    },
+    "bundleConfig": { "exclude": ["lwc"] },
+    "assets": [
+        {
+            "alias": "assetsDir",
+            "dir": "$rootDir/src/assets",
+            "urlPath": "/assets"
+        },
+        {
+            "dir": "$rootDir/src/assets/fonts",
+            "urlPath": "/fonts"
+        }
+    ],
+    "routes": [
+        {
+            "id": "home",
+            "path": "/",
+            "rootComponent": "ux/app",
+            "layoutTemplate": "$layoutsDir/index.html",
+            "bootstrap": {
+                "syntheticShadow": true
+            }
+        }
+    ]
+}

@@ -4,56 +4,77 @@
     "version": "1.0.0",
     "main": "./src/server/server.js",
     "author": "Salesforce Developer Relations",
-    "license": "CC0-1.0",
-    "scripts": {
-        "build": "lwc-services build -m production -w scripts/webpack.config.js",
-        "build:development": "lwc-services build -w scripts/webpack.config.js",
-        "keys": "web-push generate-vapid-keys --json",
-        "postinstall": "npm run prepare:slds",
-        "prepare:slds": "node scripts/copySldsAssets.js",
-        "serve": "node src/server/server.js",
-        "test:unit": "lwc-services test:unit",
-        "test:unit:coverage": "lwc-services test:unit --coverage",
-        "test:unit:debug": "lwc-services test:unit --debug",
-        "test:unit:watch": "lwc-services test:unit --watch",
-        "watch": "run-p watch:client watch:server",
-        "watch:client": "lwc-services watch",
-        "watch:server": "nodemon",
-        "heroku-postbuild": "npm run build && node scripts/createPostgresTable.js"
-    },
+    "type": "module",
     "dependencies": {
-        "@salesforce-ux/design-system": "^2.17.4",
-        "body-parser": "^1.19.1",
+        "body-parser": "^1.19.2",
         "compression": "^1.7.4",
         "dotenv": "^16.0.0",
-        "express": "^4.17.2",
         "express-pino-logger": "^7.0.0",
         "jsforce": "^1.11.0",
-        "lightning-base-components": "^1.14.3-alpha",
+        "lightning-base-components": "^1.14.6-alpha",
+        "lwc": "^2.11.3",
+        "lwr": "^0.6.2",
         "pg": "^8.7.3",
-        "pino": "^7.6.5",
-        "pino-pretty": "^7.5.1",
+        "pino": "^7.9.1",
+        "pino-pretty": "^7.5.4",
         "web-push": "^3.4.5"
     },
     "devDependencies": {
-        "lwc-services": "^3.2.2",
-        "npm-run-all": "^4.1.5",
+        "@lwc/eslint-plugin-lwc": "^1.1.1",
+        "@lwc/jest-preset": "^11.3.0",
+        "@sa11y/jest": "3.1.0",
+        "@salesforce-ux/design-system": "^2.17.5",
+        "@salesforce/eslint-config-lwc": "^3.2.1",
+        "@salesforce/eslint-plugin-lightning": "^1.0.0",
+        "@salesforce/wire-service-jest-util": "^4.0.0",
+        "cpx": "^1.5.0",
+        "eslint": "^8.10.0",
+        "eslint-plugin-import": "^2.25.4",
+        "eslint-plugin-jest": "^26.1.1",
+        "husky": "^7.0.4",
+        "jest": "^27.5.1",
+        "jest-canvas-mock": "^2.3.1",
+        "lint-staged": "^12.3.2",
+        "prettier": "^2.5.1",
         "workbox-webpack-plugin": "^6.4.2"
     },
-    "engines": {
-        "node": ">=10.13.0 <13.0.0",
-        "npm": ">=6.4.1",
-        "yarn": ">=1.9.4"
+    "keywords": [
+        "lwc"
+    ],
+    "license": "CC0-1.0",
+    "repository": "trailheadapps/ecars",
+    "scripts": {
+        "slds:build": "node ./scripts/copy-resources.mjs",
+        "clean": "rm -rf __lwr_cache__",
+        "dev": "node src/server/server.js",
+        "lint": "eslint **/src/**/*.js",
+        "prettier": "prettier --write \"**/*.{css,html,js,json,md,yaml,yml}\"",
+        "prettier:verify": "prettier --check \"**/*.{css,html,js,json,md,yaml,yml}\"",
+        "postinstall": "husky install",
+        "precommit": "lint-staged",
+        "start": "MODE=prod node scripts/start-server.mjs",
+        "start:amd": "MODE=compat node scripts/start-server.mjs",
+        "test:unit": "jest",
+        "test:unit:watch": "jest --watch",
+        "test:unit:coverage": "jest --coverage",
+        "test:unit:debug": "jest --debug"
     },
-    "nodemonConfig": {
-        "watch": [
-            "src/server/**/*.js"
+    "engines": {
+        "node": ">=14.15.4 <17"
+    },
+    "lint-staged": {
+        "**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}": [
+            "prettier --write"
         ],
-        "ext": "js",
-        "ignore": [
-            "src/**/*.spec.js",
-            "src/**/*.test.js"
+        "**/src/**/*.js": [
+            "eslint"
         ],
-        "exec": "node ./src/server/server.js"
+        "**/src/**": [
+            "jest --bail --findRelatedTests"
+        ]
+    },
+    "volta": {
+        "node": "14.17.0",
+        "yarn": "1.22.10"
     }
 }

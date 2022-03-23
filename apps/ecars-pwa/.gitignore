@@ -1,23 +1,20 @@
-# Local environment file
-.env
-
 # Log files
 logs
 *.log
 *-debug.log
 *-error.log
 
-# Standard lib folder
-/lib
-
 # Standard dist folder
 /dist
+/build
 
 # Tooling files
 node_modules
+jsconfig.json
 
 # Temp directory
 /tmp
+/__lwr_cache__
 
 # Jest coverage folder
 /coverage
@@ -31,10 +28,4 @@ ehthumbs.db
 [Dd]esktop.ini
 $RECYCLE.BIN/
 
-# Salesforce Design System files
-src/client/resources/assets/icons
-src/client/resources/assets/images
-src/client/resources/assets/styles
-
-# Build files
-dist/
+.env

@@ -58,11 +58,11 @@ const isSubscribed = () => {
 
 const registerServiceWorker = () => {
     navigator.serviceWorker
-        .register('/sw.js')
+        .register('/assets/sw.js')
         .then((swReg) => {
             console.log('Service Worker is registered', swReg);
             swRegistration = swReg;
-            console.log(swRegistration);
+            // console.log(swRegistration);
             return swRegistration.pushManager.getSubscription();
         })
         .then((subscription) => {
@@ -76,7 +76,7 @@ const registerServiceWorker = () => {
 
 const subscribe = (lead, car) => {
     return new Promise((resolve, reject) => {
-        console.log(swRegistration);
+        // console.log(swRegistration);
         const applicationServerKey = urlB64ToUint8Array(
             applicationServerPublicKey
         );

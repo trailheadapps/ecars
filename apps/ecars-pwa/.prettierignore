@@ -1,11 +1,5 @@
-# Jest coverage
+.vscode
 coverage/
-
-# Default lib folder
-lib/
-
-# Default dist folder
 dist/
-
-# Default resources folder
-src/client/resources
+src/resources
+__lwr_cache__

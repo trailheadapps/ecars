@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Pulsar Configurator</title>
+        <!-- Block zoom -->
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1"
+        />
+        <link rel="shortcut icon" href="$assetsDir/favicon.ico" />
+
+        <!-- Add manifest for add to home screen -->
+        <link rel="manifest" href="$assetsDir/manifest.json" />
+
+        <!-- Branding -->
+        <meta name="theme-color" content="#2196f3" />
+
+        <!-- Icons -->
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="$assetsDir/icons/icon-16x16.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="$assetsDir/icons/icon-32x32.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="$assetsDir/icons/icon-180x180.png"
+        />
+
+        <!-- Add to home screen for Safari on iOS -->
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="black-translucent"
+        />
+        <meta name="apple-mobile-web-app-title" content="rcast" />
+        <link rel="apple-touch-icon" href="$assetsDir/icons/icon-152x152.png" />
+
+        <link rel="stylesheet" href="$assetsDir/styles/salesforce-lightning-design-system.min.css" />
+
+        <style>
+            html,
+            body {
+                background-color: #ffffff;
+                overflow: hidden;
+            }
+            .unsupported {
+                margin: 10px;
+            }
+            .unsupported_title {
+                font-weight: bold;
+                margin-bottom: 6px;
+            }
+        </style>
+    </head>
+    <body>
+        <noscript>
+            <div class="unsupported">
+                <div class="unsupported_title">LWC app can't be loaded!</div>
+                <div class="unsupported_message">
+                    This application requires javascript to work properly.
+                </div>
+            </div>
+        </noscript>
+
+        <div id="outdated" style="display: none">
+            <div class="unsupported">
+                <div class="unsupported_title">App can't be loaded!</div>
+                <div class="unsupported_message"></div>
+            </div>
+        </div>
+
+        <script nomodule>
+            const { outdated } = window;
+            outdated.style.display = 'unset';
+            outdated.querySelector('.unsupported_message').textContent =
+                'This application requires a more recent version of your browser';
+        </script>
+
+        {{{body}}}
+        {{{lwr_resources}}}
+    </body>
+    <script>
+        const availableFeature = detectFeatures();
+        const isNotCompatibleBrowser = Object.keys(availableFeature).some(
+            (feature) => !availableFeature[feature]
+        );
+
+        if (isNotCompatibleBrowser) {
+            unsupportedErrorMessage(availableFeature);
+        } else {
+            if ('serviceWorker' in navigator) {
+                // Register service worker after page load event to avoid delaying critical requests for the
+                // initial page load.
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker
+                        .register('/assets/sw.js')
+                        .then((reg) => {
+                            if (reg.installing) {
+                                console.log('Service worker installing');
+                            } else if (reg.waiting) {
+                                console.log('Service worker installed');
+                            } else if (reg.active) {
+                                console.log('Service worker active');
+                            }
+                            if (Notification.permission === 'denied') {
+                                console.log('The user has blocked notifications.');
+                            }
+                        })
+                        .catch((regError) => {
+                            console.log(
+                                'Error on service worker registration: ' + regError
+                            );
+                        });
+                });
+            }
+        }
+
+        function detectFeatures() {
+            return {
+                'Service Worker': 'serviceWorker' in navigator,
+                'Push Manager': 'PushManager' in window
+            };
+        }
+
+        function unsupportedErrorMessage() {
+            const { outdated } = window;
+            outdated.style.display = 'unset';
+
+            let message = `This browser doesn't support all the required features`;
+
+            message += `<ul>`;
+            for (const [name, available] of Object.entries(availableFeature)) {
+                message += `<li><b>${name}:<b> ${available ? '✅' : '❌'}</li>`;
+            }
+            message += `</ul>`;
+
+            // eslint-disable-next-line @lwc/lwc/no-inner-html
+            outdated.querySelector('.unsupported_message').innerHTML = message;
+        }
+
+    </script>
+</html>

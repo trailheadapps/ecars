@@ -18,7 +18,7 @@
                         <div class="label">{range.label}</div>
                         <div>
                             <lightning-formatted-number
-                                value={range.price}
+                                value={range.addOnprice}
                                 format-style="currency"
                                 currency-code="USD"
                             ></lightning-formatted-number>
@@ -56,7 +56,7 @@
                     <span>{selectedExteriorColor.label}</span>
                     <span>
                         <lightning-formatted-number
-                            value={selectedExteriorColor.price}
+                            value={selectedExteriorColor.addOnprice}
                             format-style="currency"
                             currency-code="USD"
                         ></lightning-formatted-number
@@ -99,7 +99,7 @@
                     <span>{selectedInteriorColor.label}</span>
                     <span
                         ><lightning-formatted-number
-                            value={selectedInteriorColor.price}
+                            value={selectedInteriorColor.addOnprice}
                             format-style="currency"
                             currency-code="USD"
                         ></lightning-formatted-number
@@ -153,6 +153,7 @@
                         selected-exterior-color={selectedExteriorColor.label}
                         selected-interior-color={selectedInteriorColor.label}
                         onprevious={handlePrevious}
+                        model-id={modelId}
                     ></ux-product>
                 </div>
             </template>

@@ -5,6 +5,7 @@ export default class Product extends LightningElement {
     @api selectedRange;
     @api selectedExteriorColor;
     @api selectedInteriorColor;
+    @api modelId;
 
     hasSubscription = isSubscribed();
     showToast = false;
@@ -37,7 +38,7 @@ export default class Product extends LightningElement {
                     leadSource: 'Web'
                 },
                 {
-                    name: 'Model One',
+                    modelId: this.modelId,
                     range: this.selectedRange.replace(/ /, '_'),
                     exteriorColor: this.selectedExteriorColor.replace(/ /, '_'),
                     interiorColor: this.selectedInteriorColor.replace(/ /, '_')
