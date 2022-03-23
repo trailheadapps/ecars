@@ -58,8 +58,12 @@ public with sharing class CarConfigurationController {
             coWrapper.allOptions = allOptions;
             return coWrapper;
         } catch (Exception e) {
-            throw new AuraHandledException(e.getMessage());
+            throw new ConfigException(e.getMessage());
         }
+    }
+
+    public class ConfigException extends Exception{
+
     }
 
     public class CarOptionWrapper {
