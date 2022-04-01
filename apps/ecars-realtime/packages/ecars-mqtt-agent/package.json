@@ -7,7 +7,7 @@
     "author": "Salesforce Developer Relations",
     "license": "CC0-1.0",
     "dependencies": {
-        "debug": "^4.3.2",
+        "debug": "^4.3.4",
         "faker": "^5.5.3",
         "mqtt": "^4.3.5"
     }
