@@ -7,7 +7,7 @@
     "author": "Salesforce Developer Relations",
     "license": "CC0-1.0",
     "dependencies": {
-        "debug": "^4.3.2",
+        "debug": "^4.3.4",
         "pino": "^7.6.5",
         "sequelize-kafka-connect": "^4.0.0"
     }
