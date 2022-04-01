@@ -9,6 +9,6 @@
     "dependencies": {
         "debug": "^4.3.2",
         "faker": "^5.5.3",
-        "mqtt": "^4.3.5"
+        "mqtt": "^4.3.7"
     }
 }
