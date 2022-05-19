@@ -35,7 +35,7 @@
     },
     "devDependencies": {
         "@types/node": "^17.0.16",
-        "concurrently": "^7.0.0",
+        "concurrently": "^7.2.0",
         "json-schema-to-typescript": "^10.1.5",
         "tap": "^15.1.6",
         "ts-node": "^10.5.0",
