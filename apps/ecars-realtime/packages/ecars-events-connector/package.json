@@ -7,7 +7,7 @@
     "author": "Salesforce Developer Relations",
     "license": "CC0-1.0",
     "dependencies": {
-        "dotenv": "^16.0.0",
+        "dotenv": "^16.0.1",
         "sinek": "^9.1.0"
     }
 }
