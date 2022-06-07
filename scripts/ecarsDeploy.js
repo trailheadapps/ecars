@@ -417,7 +417,7 @@ function pwa_setup(..._$args) {
         )
         .toString()
         .replace(/\n+$/, '');
-    log('*** Initializign Heroku Postgres database');
+    log('*** Initializing Heroku Postgres database');
     sh.exec(
         `heroku run node scripts/createPostgresTable.js -a ${sh.env.HEROKU_PWA_APP_NAME}`,
         { silent: true }
