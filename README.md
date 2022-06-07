@@ -148,7 +148,7 @@ The below steps do everything the [Automated Deploy](#automated-deploy) does. It
         ```
 
     1. Initialize database tables
-    
+
         ```console
         $ heroku run node scripts/createPostgresTable.js --app=[PWA APP NAME]
         ```
