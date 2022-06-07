@@ -141,10 +141,16 @@ The below steps do everything the [Automated Deploy](#automated-deploy) does. It
 
         [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/trailheadapps/ecars/tree/main&env[APP_BASE]=apps/ecars-pwa)
 
-    1. Attach [STREAMING APP NAME]'s Heroku Postgres database to the PWA.
+    1. Create a Heroku Postgres database and attach it to the application
 
         ```console
-        $ heroku addons:attach [STREAMING APP NAME]::DATABASE --as=DATABASE --app=[PWA NAME]
+        $ heroku addons:create heroku-postgresql:hobby-dev --app=[PWA APP NAME] --wait
+        ```
+
+    1. Initialize database tables
+    
+        ```console
+        $ heroku run node scripts/createPostgresTable.js --app=[PWA APP NAME]
         ```
 
     1. Generate VAPID public and private keys for web push notifications. Save them for the next command and also the next Heroku application deploy.
@@ -156,7 +162,7 @@ The below steps do everything the [Automated Deploy](#automated-deploy) does. It
     1. Set config vars
 
         ```console
-        $ heroku config:set VAPID_PUBLIC_KEY=[VAPID PUBLIC KEY] VAPID_PRIVATE_KEY=[VAPID PRIVATE KEY] SF_USERNAME=[SCRATCH ORG USERNAME] SF_PASSWORD=[SCRATCH ORG USER'S PASSWORD] SF_LOGIN_URL=[SCRATCH ORG LOGIN URL] SF_TOKEN=[SCRATCH ORG USER'S TOKEN] --app=[PWA NAME]
+        $ heroku config:set VAPID_PUBLIC_KEY=[VAPID PUBLIC KEY] VAPID_PRIVATE_KEY=[VAPID PRIVATE KEY] SF_USERNAME=[ORG USERNAME] SF_PASSWORD=[ORG USER'S PASSWORD] SF_LOGIN_URL=[ORG LOGIN URL] SF_TOKEN=[ORG USER'S TOKEN] --app=[PWA NAME]
         ```
 
 1. Deploy and configure the **Heroku Microservices Application**
@@ -174,7 +180,7 @@ The below steps do everything the [Automated Deploy](#automated-deploy) does. It
     1. Set config vars
 
         ```console
-        $ heroku config:set VAPID_PUBLIC_KEY=[VAPID PUBLIC KEY] VAPID_PRIVATE_KEY=[VAPID PRIVATE KEY] SF_USERNAME=[SCRATCH ORG USERNAME] SF_PASSWORD=[SCRATCH ORG USER'S PASSWORD] SF_TOKEN=[SCRATCH ORG USER'S TOKEN] SF_LOGIN_URL=[SCRATCH ORG LOGIN URL] --app=[MICROSERVICES APP NAME]
+        $ heroku config:set VAPID_PUBLIC_KEY=[VAPID PUBLIC KEY] VAPID_PRIVATE_KEY=[VAPID PRIVATE KEY] SF_USERNAME=[ORG USERNAME] SF_PASSWORD=[ORG USER'S PASSWORD] SF_TOKEN=[ORG USER'S TOKEN] SF_LOGIN_URL=[ORG LOGIN URL] --app=[MICROSERVICES APP NAME]
         ```
 
 1. Deploy source to the **Saleforce scratch org**

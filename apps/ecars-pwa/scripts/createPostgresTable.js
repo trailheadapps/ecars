@@ -24,7 +24,9 @@ client
     .then(() => {
         console.log('Database table created');
     })
-    .catch(() => {})
+    .catch((error) => {
+        console.error(`Error creating table: ${error}`);
+    })
     .finally(() => {
         process.exit(0);
     });
