@@ -417,7 +417,11 @@ function pwa_setup(..._$args) {
         )
         .toString()
         .replace(/\n+$/, '');
-
+    log('*** Initializing Heroku Postgres database');
+    sh.exec(
+        `heroku run node scripts/createPostgresTable.js -a ${sh.env.HEROKU_PWA_APP_NAME}`,
+        { silent: true }
+    );
     log('*** Setting remote configuration parameters');
     sh.exec(
         `heroku config:set APP_BASE=apps/ecars-pwa VAPID_PUBLIC_KEY='${sh.env.VAPID_PUBLIC_KEY}' VAPID_PRIVATE_KEY='${sh.env.VAPID_PRIVATE_KEY}' VAPID_EMAIL='${sh.env.VAPID_EMAIL}' SF_USERNAME='${sh.env.SF_USERNAME}' SF_PASSWORD='${sh.env.SF_PASSWORD}' SF_LOGIN_URL='${sh.env.SF_LOGIN_URL}' -a ${sh.env.HEROKU_PWA_APP_NAME}`,
