@@ -272,7 +272,7 @@ function mqtt_broker_setup(..._$args) {
     log('*** Pushing app to Heroku');
     sh.cd('../../');
     sh.exec(
-        `git push https://git.heroku.com/${sh.env.HEROKU_MQTT_APP_NAME}.git ${sh.env.CURRENT_BRANCH}:master`
+        `git push https://git.heroku.com/${sh.env.HEROKU_MQTT_APP_NAME}.git ${sh.env.CURRENT_BRANCH}:main`
     );
 
     log(
@@ -339,7 +339,7 @@ function realtime_setup(..._$args) {
     log('*** Pushing app to Heroku');
     sh.cd('../../');
     sh.exec(
-        `git push https://git.heroku.com/${sh.env.HEROKU_REALTIME_APP_NAME}.git ${sh.env.CURRENT_BRANCH}:master`
+        `git push https://git.heroku.com/${sh.env.HEROKU_REALTIME_APP_NAME}.git ${sh.env.CURRENT_BRANCH}:main`
     );
 
     log('*** Starting Simulator Worker');
@@ -440,7 +440,7 @@ function pwa_setup(..._$args) {
     log('*** Pushing app to Heroku');
     sh.cd('../../');
     sh.exec(
-        `git push https://git.heroku.com/${sh.env.HEROKU_PWA_APP_NAME}.git ${sh.env.CURRENT_BRANCH}:master`
+        `git push https://git.heroku.com/${sh.env.HEROKU_PWA_APP_NAME}.git ${sh.env.CURRENT_BRANCH}:main`
     );
 
     log(
@@ -498,7 +498,7 @@ function heroku_services_setup(..._$args) {
     log('*** Pushing app to Heroku');
     sh.cd('../../');
     sh.exec(
-        `git push https://git.heroku.com/${sh.env.HEROKU_SERVICES_APP_NAME}.git ${sh.env.CURRENT_BRANCH}:master`
+        `git push https://git.heroku.com/${sh.env.HEROKU_SERVICES_APP_NAME}.git ${sh.env.CURRENT_BRANCH}:main`
     );
 
     log(
