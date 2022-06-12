@@ -41,3 +41,9 @@ $RECYCLE.BIN/
 .vscode/*
 !.vscode/extensions.json
 
+# Mave Java Directory
+/target/
+*/target/**
+**/META-INF/
+!.mvn/wrapper/maven-wrapper.jar
+
