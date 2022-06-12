@@ -1,0 +1,13 @@
+{
+    "records": [
+      {
+        "attributes": {
+          "type": "DeliveryVehicle__c",
+          "referenceId": "Vehicle__cRef1"
+        },
+        "Name": "Car carrier trailer",
+        "LocationX__c": 10,
+        "LocationY__c": 10
+      }
+    ]
+  }

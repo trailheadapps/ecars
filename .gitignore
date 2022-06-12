@@ -6,6 +6,7 @@
 .sfdx/
 .localdevserver/
 coverage
+.sf
 
 # LWC VSCode autocomplete
 jsconfig.json

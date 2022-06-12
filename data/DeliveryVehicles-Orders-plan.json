@@ -1,0 +1,14 @@
+[
+    {
+      "sobject": "VehicleOrder__c",
+      "saveRefs": false,
+      "resolveRefs": true,
+      "files": ["VehicleOrders.json"]
+    },
+    {
+      "sobject": "DeliveryVehicle__c",
+      "saveRefs": false,
+      "resolveRefs": true,
+      "files": ["DeliveryVehicles.json"]
+    }
+  ]
