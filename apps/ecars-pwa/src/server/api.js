@@ -47,7 +47,7 @@ async function createSubscription(req, res, next) {
     const graph = constructGraph(req.body);
     try {
         const resp = await conn.requestPost(
-            '/services/data/v54.0/composite/graph',
+            '/services/data/v55.0/composite/graph',
             graph
         );
         // Note, we only expect one graph in the response for the purpose of this
@@ -120,13 +120,13 @@ function constructGraph(data) {
                 compositeRequest: [
                     {
                         method: 'POST',
-                        url: '/services/data/v54.0/sobjects/Lead/',
+                        url: '/services/data/v55.0/sobjects/Lead/',
                         referenceId: 'Lead1',
                         body: lead
                     },
                     {
                         method: 'POST',
-                        url: '/services/data/v54.0/sobjects/Car__c/',
+                        url: '/services/data/v55.0/sobjects/Car__c/',
                         referenceId: 'Car1',
                         body: {
                             Name: car.name
@@ -134,7 +134,7 @@ function constructGraph(data) {
                     },
                     {
                         method: 'POST',
-                        url: '/services/data/v54.0/sobjects/Car_Configuration__c',
+                        url: '/services/data/v55.0/sobjects/Car_Configuration__c',
                         referenceId: 'CarConfiguration1',
                         body: {
                             Lead__c: '@{Lead1.id}',
@@ -143,7 +143,7 @@ function constructGraph(data) {
                     },
                     {
                         method: 'POST',
-                        url: '/services/data/v54.0/sobjects/Car_Options__c',
+                        url: '/services/data/v55.0/sobjects/Car_Options__c',
                         referenceId: 'CarOptions1',
                         body: {
                             Car_Configuration__c: '@{CarConfiguration1.id}',
