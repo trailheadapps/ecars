@@ -1,7 +1,7 @@
 public with sharing class PdfCreateService {
     @AuraEnabled
     public static Boolean invokePdfCreateService(ServiceInput input) {
-        HttpRequest req = new HttpRequest();
+        /*HttpRequest req = new HttpRequest();
         req.setEndpoint('callout:Heroku_App/pdf');
         req.setMethod('POST');
         req.setHeader('Content-Type', 'application/json;charset=UTF-8');
@@ -20,7 +20,7 @@ public with sharing class PdfCreateService {
             AuraHandledException e = new AuraHandledException(error);
             e.setMessage(error);
             throw e;
-        }
+        }*/
 
         return true;
     }

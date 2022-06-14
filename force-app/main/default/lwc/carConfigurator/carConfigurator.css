@@ -2,11 +2,6 @@
     /* --sds-c-button-brand-color-background-hover: #939393; */
     --sds-c-button-brand-color-background: #939393;
     --sds-c-button-brand-color-border: #939393;
-    position: absolute;
-    top: 80px;
-    bottom: 0;
-    left: 0;
-    right: 0;
 }
 
 .container {
@@ -39,7 +34,7 @@
 }
 
 .container-options {
-    width: 410px;
+    width: 100%;
 }
 
 .options {

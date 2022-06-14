@@ -1,0 +1,53 @@
+<template>
+  <div class="slds-grid slds-wrap nav-container">
+    <div class="slds-size_1-of-1 content-container">
+      <div class="slds-grid slds-wrap slds-grid_align-spread">
+          <div class="header-card">
+            <div class="slds-p-around_small">
+              <div class="slds-grid slds-wrap">
+                <div class="slds-size_1-of-4 slds-align_absolute-center">
+                 <img src="https://res.cloudinary.com/btahub/image/upload/v1655139592/cu2rfhpomdu7flwfgkrq.jpg" style="max-height:70px"/>
+                </div>
+                <div class="slds-size_3-of-4">
+                  <p class="slds-text-body_regular" style="font-weight:bold">Pulsar Manhattan</p>
+                  <p class="slds-text-body_regular">800 11th Avenue New York, NY 10019</p>
+                </div>
+              </div>
+            </div>          
+          </div>
+          <div class="slds-grid slds-grid_align-end slds-wrap header-navigation">
+            <template for:each={items} for:item="item" for:index="i">
+              <div
+                key={item.i}
+                class="slds-align-middle slds-p-right_small slds-p-left_small slds-text-body_regular slds-col slds-p-top_x-small nav-item"
+                data-id={item}
+              >
+                {item}
+              </div>
+            </template>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="mobile">
+    <div class="hamburger">
+      <div class="slds-p-around_small">
+        <img
+          src="https://res.cloudinary.com/btahub/image/upload/v1629915446/l8esuoerfg6bibzv6iqi.png"
+          style="max-width: 30px"
+        />
+      </div>
+    </div>
+    <div class="slds-p-around_small">
+      <div class="slds-grid slds-wrap">
+        <div class="slds-size_1-of-4 slds-align_absolute-center">
+         <img src="https://res.cloudinary.com/btahub/image/upload/v1655139592/cu2rfhpomdu7flwfgkrq.jpg" style="max-height:70px"/>
+        </div>
+        <div class="slds-size_3-of-4">
+          <p class="slds-text-body_regular" style="font-weight:bold">Pulsar Manhattan</p>
+          <p class="slds-text-body_regular">800 11th Avenue New York, NY 10019</p>
+        </div>
+      </div>
+    </div>  
+  </div>
+</template>

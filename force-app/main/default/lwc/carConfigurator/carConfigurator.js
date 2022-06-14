@@ -184,12 +184,12 @@ export default class CarConfigurator extends LightningElement {
                 this.pdfProcessing = false;
 
                 let message = result
-                    ? 'The via Heroku created PDF got attached to the {0}.'
+                    ? 'The configuration is attached to the Lead record.'
                     : 'Something happened while executing the function.';
 
                 this.dispatchEvent(
                     new ShowToastEvent({
-                        title: 'PDF created',
+                        title: 'Configuration saved',
                         message,
                         messageData: [
                             {

@@ -1,187 +1,197 @@
 <template>
-    <div class="slds-card container">
-        <div class={imgClass}>
-            <img src={imgUrl} />
-        </div>
-        <div class="container-options">
-            <template if:true={isSection1}>
-                <div class="slds-text-heading_large slds-m-bottom_large">
-                    Select Range
-                </div>
-                <template for:each={ranges} for:item="range">
-                    <a
-                        key={range.label}
-                        data-range={range.label}
-                        class={range.className}
-                        onclick={handleRangeChange}
-                    >
-                        <div class="label">{range.label}</div>
-                        <div>
-                            <lightning-formatted-number
-                                format-style="currency"
-                                currency-code={currency}
-                                value={range.price}
-                                class="price"
-                                maximum-fraction-digits="0"
-                            ></lightning-formatted-number>
-                        </div>
-                    </a>
-                </template>
-                <div class="buttons slds-m-top_x-large">
-                    <lightning-button
-                        icon-name="utility:chevronright"
-                        icon-position="right"
-                        class="button-next"
-                        label="Next"
-                        variant="brand"
-                        onclick={handleNext}
-                    ></lightning-button>
-                </div>
-            </template>
-            <template if:true={isSection2}>
-                <div class="slds-text-heading_large slds-m-bottom_large">
-                    Select Exterior Color
-                </div>
-                <div class="color-palette slds-m-bottom_large">
-                    <template for:each={exteriorColors} for:item="color">
-                        <a
-                            key={color.code}
-                            data-color={color.code}
-                            class={color.className}
-                            onclick={handleExteriorColorChange}
-                        >
-                            <div class="color-swatch"></div>
-                        </a>
-                    </template>
-                </div>
-                <div class="row">
-                    <span>{selectedExteriorColor.label}</span>
-                    <span
-                        ><lightning-formatted-number
-                            format-style="currency"
-                            currency-code="USD"
-                            value={selectedExteriorColor.price}
-                            class="price"
-                            maximum-fraction-digits="0"
-                        ></lightning-formatted-number
-                    ></span>
-                </div>
-                <div class="buttons slds-m-top_x-large">
-                    <lightning-button
-                        icon-name="utility:chevronleft"
-                        label="Previous"
-                        variant="brand"
-                        onclick={handlePrevious}
-                    ></lightning-button>
-                    <lightning-button
-                        icon-name="utility:chevronright"
-                        icon-position="right"
-                        class="button-next"
-                        label="Next"
-                        variant="brand"
-                        onclick={handleNext}
-                    ></lightning-button>
-                </div>
-            </template>
-            <template if:true={isSection3}>
-                <div class="slds-text-heading_large slds-m-bottom_large">
-                    Select Interior Color
-                </div>
-                <div class="color-palette slds-m-bottom_large">
-                    <template for:each={interiorColors} for:item="color">
-                        <a
-                            key={color.code}
-                            data-color={color.code}
-                            class={color.className}
-                            onclick={handleInteriorColorChange}
-                        >
-                            <div class="color-swatch"></div>
-                        </a>
-                    </template>
-                </div>
-                <div class="row">
-                    <span>{selectedInteriorColor.label}</span>
-                    <span
-                        ><lightning-formatted-number
-                            format-style="currency"
-                            currency-code="USD"
-                            value={selectedInteriorColor.price}
-                            class="price"
-                            maximum-fraction-digits="0"
-                        ></lightning-formatted-number
-                    ></span>
-                </div>
-                <div class="buttons slds-m-top_x-large">
-                    <lightning-button
-                        icon-name="utility:chevronleft"
-                        label="Previous"
-                        variant="brand"
-                        onclick={handlePrevious}
-                    ></lightning-button>
-                    <lightning-button
-                        icon-name="utility:chevronright"
-                        icon-position="right"
-                        class="button-next"
-                        label="Next"
-                        variant="brand"
-                        onclick={handleNext}
-                    ></lightning-button>
-                </div>
-            </template>
-            <template if:true={isSection4}>
-                <div class="slds-text-heading_large slds-m-bottom_large">
-                    Summary
-                </div>
-                <div class="row">
-                    <span>Range:</span>
-                    <div class="summary-value">
-                        <span>{selectedRange.label}</span>
+    <div class="slds-card">
+        <div class="slds-grid slds-wrap">
+            <div class="slds-size_1-of-1 slds-p-around_medium">
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-size_1-of-1 slds-small-size_1-of-1 slds-medium-size_3-of-4 slds-large-size_3-of-4">
+                        <div class={imgClass}>
+                            <img src={imgUrl} />
+                        </div>                
+                    </div>
+                    <div class="slds-size_1-of-1 slds-small-size_1-of-1 slds-medium-size_1-of-4 slds-large-size_1-of-4">
+                        <div class="container-options">
+                            <template if:true={isSection1}>
+                                <div class="slds-text-heading_large slds-m-bottom_large">
+                                    Select Range
+                                </div>
+                                <template for:each={ranges} for:item="range">
+                                    <a
+                                        key={range.label}
+                                        data-range={range.label}
+                                        class={range.className}
+                                        onclick={handleRangeChange}
+                                    >
+                                        <div class="label">{range.label}</div>
+                                        <div>
+                                            <lightning-formatted-number
+                                                format-style="currency"
+                                                currency-code={currency}
+                                                value={range.price}
+                                                class="price"
+                                                maximum-fraction-digits="0"
+                                            ></lightning-formatted-number>
+                                        </div>
+                                    </a>
+                                </template>
+                                <div class="buttons slds-m-top_x-large">
+                                    <lightning-button
+                                        icon-name="utility:chevronright"
+                                        icon-position="right"
+                                        class="button-next"
+                                        label="Next"
+                                        variant="brand"
+                                        onclick={handleNext}
+                                    ></lightning-button>
+                                </div>
+                            </template>
+                            <template if:true={isSection2}>
+                                <div class="slds-text-heading_large slds-m-bottom_large">
+                                    Select Exterior Color
+                                </div>
+                                <div class="color-palette slds-m-bottom_large">
+                                    <template for:each={exteriorColors} for:item="color">
+                                        <a
+                                            key={color.code}
+                                            data-color={color.code}
+                                            class={color.className}
+                                            onclick={handleExteriorColorChange}
+                                        >
+                                            <div class="color-swatch"></div>
+                                        </a>
+                                    </template>
+                                </div>
+                                <div class="row">
+                                    <span>{selectedExteriorColor.label}</span>
+                                    <span
+                                        ><lightning-formatted-number
+                                            format-style="currency"
+                                            currency-code="USD"
+                                            value={selectedExteriorColor.price}
+                                            class="price"
+                                            maximum-fraction-digits="0"
+                                        ></lightning-formatted-number
+                                    ></span>
+                                </div>
+                                <div class="buttons slds-m-top_x-large">
+                                    <lightning-button
+                                        icon-name="utility:chevronleft"
+                                        label="Previous"
+                                        variant="brand"
+                                        onclick={handlePrevious}
+                                    ></lightning-button>
+                                    <lightning-button
+                                        icon-name="utility:chevronright"
+                                        icon-position="right"
+                                        class="button-next"
+                                        label="Next"
+                                        variant="brand"
+                                        onclick={handleNext}
+                                    ></lightning-button>
+                                </div>
+                            </template>
+                            <template if:true={isSection3}>
+                                <div class="slds-text-heading_large slds-m-bottom_large">
+                                    Select Interior Color
+                                </div>
+                                <div class="color-palette slds-m-bottom_large">
+                                    <template for:each={interiorColors} for:item="color">
+                                        <a
+                                            key={color.code}
+                                            data-color={color.code}
+                                            class={color.className}
+                                            onclick={handleInteriorColorChange}
+                                        >
+                                            <div class="color-swatch"></div>
+                                        </a>
+                                    </template>
+                                </div>
+                                <div class="row">
+                                    <span>{selectedInteriorColor.label}</span>
+                                    <span
+                                        ><lightning-formatted-number
+                                            format-style="currency"
+                                            currency-code="USD"
+                                            value={selectedInteriorColor.price}
+                                            class="price"
+                                            maximum-fraction-digits="0"
+                                        ></lightning-formatted-number
+                                    ></span>
+                                </div>
+                                <div class="buttons slds-m-top_x-large">
+                                    <lightning-button
+                                        icon-name="utility:chevronleft"
+                                        label="Previous"
+                                        variant="brand"
+                                        onclick={handlePrevious}
+                                    ></lightning-button>
+                                    <lightning-button
+                                        icon-name="utility:chevronright"
+                                        icon-position="right"
+                                        class="button-next"
+                                        label="Next"
+                                        variant="brand"
+                                        onclick={handleNext}
+                                    ></lightning-button>
+                                </div>
+                            </template>
+                            <template if:true={isSection4}>
+                                <div class="slds-text-heading_large slds-m-bottom_large">
+                                    Summary
+                                </div>
+                                <div class="row">
+                                    <span>Range:</span>
+                                    <div class="summary-value">
+                                        <span>{selectedRange.label}</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <span>Exterior Color:</span>
+                                    <div class="summary-value">
+                                        <div class={selectedExteriorColor.code}></div>
+                                        <span>{selectedExteriorColor.label}</span>
+                                    </div>
+                                </div>
+                                <div class="row slds-m-bottom_large">
+                                    <span>Interior Color:</span>
+                                    <div class="summary-value">
+                                        <div class={selectedInteriorColor.code}></div>
+                                        <span>{selectedInteriorColor.label}</span>
+                                    </div>
+                                </div>
+                
+                                <lightning-record-edit-form
+                                    object-api-name="Car_Configuration__c"
+                                >
+                                    <lightning-input-field
+                                        field-name={leadField}
+                                        onchange={handleLeadChange}
+                                        disabled={pdfProcessing}
+                                    ></lightning-input-field>
+                                </lightning-record-edit-form>
+                
+                                <div class="buttons slds-m-top_x-large">
+                                    <lightning-button
+                                        icon-name="utility:chevronleft"
+                                        label="Previous"
+                                        variant="brand"
+                                        onclick={handlePrevious}
+                                        disabled={pdfProcessing}
+                                    ></lightning-button>
+                                    <lightning-button
+                                        icon-name="utility:share"
+                                        icon-position="right"
+                                        class="button-next"
+                                        label="Save Config"
+                                        variant="brand"
+                                        onclick={handleSendConfiguration}
+                                        disabled={pdfProcessing}
+                                    ></lightning-button>
+                                </div>
+                            </template>
+                        </div>                
                     </div>
                 </div>
-                <div class="row">
-                    <span>Exterior Color:</span>
-                    <div class="summary-value">
-                        <div class={selectedExteriorColor.code}></div>
-                        <span>{selectedExteriorColor.label}</span>
-                    </div>
-                </div>
-                <div class="row slds-m-bottom_large">
-                    <span>Interior Color:</span>
-                    <div class="summary-value">
-                        <div class={selectedInteriorColor.code}></div>
-                        <span>{selectedInteriorColor.label}</span>
-                    </div>
-                </div>
-
-                <lightning-record-edit-form
-                    object-api-name="Car_Configuration__c"
-                >
-                    <lightning-input-field
-                        field-name={leadField}
-                        onchange={handleLeadChange}
-                        disabled={pdfProcessing}
-                    ></lightning-input-field>
-                </lightning-record-edit-form>
-
-                <div class="buttons slds-m-top_x-large">
-                    <lightning-button
-                        icon-name="utility:chevronleft"
-                        label="Previous"
-                        variant="brand"
-                        onclick={handlePrevious}
-                        disabled={pdfProcessing}
-                    ></lightning-button>
-                    <lightning-button
-                        icon-name="utility:share"
-                        icon-position="right"
-                        class="button-next"
-                        label="PDF"
-                        variant="brand"
-                        onclick={handleSendConfiguration}
-                        disabled={pdfProcessing}
-                    ></lightning-button>
-                </div>
-            </template>
+            </div>
         </div>
     </div>
 </template>

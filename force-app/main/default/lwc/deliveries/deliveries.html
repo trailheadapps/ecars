@@ -1,0 +1,33 @@
+<template>
+    <lightning-card title="Current Deliveries" icon-name="standard:work_order">
+        <div class="slds-clearfix">
+            <lightning-button
+                variant="brand"
+                label="Optimize Route"
+                title="Optimize Delivery Route"
+                onclick={handleClick}
+                class="slds-align_absolute-center"
+                disabled={btnDisabled}
+            ></lightning-button>
+        </div>
+        <div class="slds-var-m-around_medium">
+            <template if:true={mapMarkers.length}>
+                <lightning-tabset>
+                    <lightning-tab label="Map"
+                        ><lightning-map map-markers={mapMarkers}></lightning-map
+                    ></lightning-tab>
+                    <lightning-tab label="Route Order">
+                        <!-- sldsValidatorIgnoreNextLine -->
+                        <lightning-datatable
+                            key-field="number"
+                            data={datatableData}
+                            columns={datatableColumns}
+                            sorted-by="number"
+                        >
+                        </lightning-datatable>
+                    </lightning-tab>
+                </lightning-tabset>
+            </template>
+        </div>
+    </lightning-card>
+</template>

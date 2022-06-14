@@ -1,0 +1,80 @@
+<template>
+  <div class="slds-grid slds-wrap">
+    <div class="slds-size_1-of-3 slds-var-p-right_medium">
+      <lightning-card title={functionTitle} icon-name="standard:location">
+        <div class="slds-var-m-around_medium">
+          <div class="description">
+            Process large data volumes in a function. Take the users current
+            location and sort through a large data set to calculate the distance
+            and return the results.
+          </div>
+          <div
+            class="
+              slds-text-heading_small
+              slds-var-p-top_small
+              slds-var-p-bottom_x-small
+            "
+          >
+            Parameters
+          </div>
+          <div class="slds-grid slds-wrap">
+            <div class="slds-size_1-of-1">
+              <lightning-combobox
+                class="slds-var-p-bottom_small"
+                name="results"
+                label="Number of Results"
+                value={length}
+                placeholder="Select Number of results"
+                options={lengthOptions}
+                onchange={handleChangeLength}
+              >
+              </lightning-combobox>
+              <div class="slds-align_absolute-center">
+                <lightning-button
+                  name="Invoke Function"
+                  label="Invoke Function"
+                  onclick={invokeFunction}
+                  variant="brand"
+                >
+                </lightning-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </lightning-card>
+    </div>
+    <div class="slds-size_2-of-3">
+      <lightning-card title="LWC Example Results">
+        <div class="results-body">
+          <template if:true={functionRunning}>
+            <div class="spinner-container">
+              <lightning-spinner
+                alternative-text="Loading"
+                size="medium"
+              ></lightning-spinner>
+            </div>
+          </template>
+          <template if:false={functionRunning}>
+            <template if:false={mapLoaded}>
+              <div class="slds-align_absolute-center">
+                <c-error-panel
+                  friendly-message="Invoke Function to view results"
+                ></c-error-panel>
+              </div>
+            </template>
+            <template if:true={mapLoaded}>
+              <div class="slds-var-p-around_medium">
+                <lightning-map
+                  center={userLocation}
+                  map-markers={mapMarkers}
+                  list-view="visible"
+                >
+                </lightning-map>
+              </div>
+            </template>
+          </template>
+        </div>
+      </lightning-card>
+    </div>
+  </div>
+</template>

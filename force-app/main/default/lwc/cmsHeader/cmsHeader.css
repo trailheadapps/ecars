@@ -1,0 +1,56 @@
+.nav-container {
+  width: 100%;
+  z-index: 20;
+}
+
+.header-card{
+  width: 20%;
+  background-color: white;
+}
+
+.header-navigation{
+  width: 80%;
+  background-color:black;
+  height:100px;
+}
+
+.content-container {
+  margin: 0 auto;
+}
+
+.nav-height {
+  height: 100px;
+}
+
+[data-id="Test"] {
+  background-color: white;
+  color: #1c1b1a !important;
+}
+
+.hero-content {
+  max-width: 50%;
+}
+
+.hamburger {
+  background-color: #000000;
+}
+
+.mobile {
+  display: none;
+}
+
+.nav-item {
+  color: white;
+  font-size: 16px;
+  line-height: 1.6;
+  height: 40px;
+}
+
+@media only screen and (max-width: 600px) {
+  .mobile{
+    display: block;
+  }
+  .nav-container {
+    display: none;
+  }
+}
