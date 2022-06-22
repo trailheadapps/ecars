@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Total__c</fullName>
-    <defaultValue>36000</defaultValue>
+    <fullName>Service_Address__c</fullName>
     <externalId>false</externalId>
-    <label>Total</label>
-    <precision>8</precision>
+    <label>Service Address</label>
+    <length>100</length>
     <required>false</required>
-    <scale>0</scale>
     <trackTrending>false</trackTrending>
-    <type>Currency</type>
+    <type>Text</type>
+    <unique>false</unique>
 </CustomField>

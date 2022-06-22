@@ -30,6 +30,8 @@ public with sharing class DeliveryRouteController {
                     Vehicle_Order__r.Name,
                     Vehicle_Order__r.Service_Location__Latitude__s,
                     Vehicle_Order__r.Service_Location__Longitude__s,
+                    Vehicle_Order__r.Customer__r.Name,
+                    Vehicle_Order__r.Service_Address__c,
                     Number__c
                 FROM DeliveryWaypoint__c
                 ORDER BY CreatedDate DESC

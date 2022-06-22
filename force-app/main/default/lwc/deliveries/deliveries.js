@@ -6,9 +6,12 @@ const DATATABLE_COLUMNS = [
         label: 'Delivery Order',
         fieldName: 'order',
         type: 'number',
-        cellAttributes: { alignment: 'left' }
+        cellAttributes: { alignment: 'left' },
+        fixedWidth: 100
     },
-    { label: 'Name', fieldName: 'name' }
+    { label: 'Order Number', fieldName: 'orderNumber', fixedWidth: 100 },
+    { label: 'Customer Name', fieldName: 'customerNumber', fixedWidth: 300 },
+    { label: 'Delivery Address', fieldName: 'deliveryAddress', fixedWidth: 400 }
 ];
 
 export default class Deliveries extends LightningElement {
@@ -28,13 +31,23 @@ export default class Deliveries extends LightningElement {
                 result.forEach((entry) => {
                     tempDatatable.push({
                         order: entry.Number__c ? entry.Number__c + 1 : 1,
-                        name: entry.Vehicle_Order__r.Name
+                        orderNumber: entry.Vehicle_Order__r.Name,
+                        customerNumber: entry.Vehicle_Order__r.Customer__r.Name,
+                        deliveryAddress:
+                            entry.Vehicle_Order__r.Service_Address__c
                     });
                     tempMarkers.push({
-                        title: entry.Vehicle_Order__r.Name,
+                        title:
+                            entry.Vehicle_Order__r.Name +
+                            '-' +
+                            entry.Vehicle_Order__r.Customer__r.Name,
                         location: {
-                            Latitude: entry.Vehicle_Order__r.Service_Location__Latitude__s,
-                            Longitude: entry.Vehicle_Order__r.Service_Location__Longitude__s
+                            Latitude:
+                                entry.Vehicle_Order__r
+                                    .Service_Location__Latitude__s,
+                            Longitude:
+                                entry.Vehicle_Order__r
+                                    .Service_Location__Longitude__s
                         }
                     });
                 });
