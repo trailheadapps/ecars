@@ -24,6 +24,7 @@ public with sharing class DeliveryRouteController {
             }
 
             String response = invocation.getResponse();
+            Slack_SendDeliveryNotification.sendDeliveryNotification(recordId);
             return [
                 SELECT
                     Name,
