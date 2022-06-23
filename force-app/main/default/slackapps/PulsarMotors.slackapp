@@ -1,0 +1,7 @@
+description: Pulsar Motors App for Slack
+commands:
+    /get-org-info:
+        action:
+            definition: apex__action__ActionDispatcher_OrgInfo
+        title: Get Org Info
+        description: Use a slash command to interact with Salesforce from a channel

@@ -1,0 +1,27 @@
+description: "Show org info from the org info slash command"
+schema:
+  properties:
+    organizationId:
+      type: string
+dataproviders:
+  orgRecord:
+    definition: apex__DataProvider_Org.getOrgInfo
+    properties:
+      recordId: '{!view.properties.organizationId}'
+components:
+  - definition: modal
+    properties:
+      title: "Salesforce Org Info"
+    components:
+      - definition: section
+        properties:
+          text: "Learn more about your Salesforce Org"
+      - definition: section
+        properties:
+          text:
+            text: |
+              *Name:* {!orgRecord.Name}
+              *Org Type:* {!orgRecord.OrganizationType}
+              *Primary Contact:* {!orgRecord.PrimaryContact}
+            type: mrkdwn
+            disableEncoding: true

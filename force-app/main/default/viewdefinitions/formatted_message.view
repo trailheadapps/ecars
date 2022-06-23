@@ -1,0 +1,26 @@
+description: "Formatted Message Action"
+schema:
+  properties:
+    heading:
+      type: string
+    body:
+      type: string
+      defaultValue: "Welcome Home"
+components:
+    - definition: message
+      components:
+          - definition: header
+            properties:
+                text: '{!view.properties.heading}'
+          - definition: section
+            properties:
+                text:
+                    type: 'mrkdwn'
+                    text: '{!view.properties.body}'
+                    disableEncoding: true
+          - definition: actions
+            components:
+                - definition: button
+                  properties:
+                      name: 'view_vehicle'
+                      label: 'View Delivery Route'
