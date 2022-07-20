@@ -34,7 +34,7 @@
         "web-push": "^3.4.5"
     },
     "devDependencies": {
-        "@types/node": "^17.0.38",
+        "@types/node": "^18.0.6",
         "concurrently": "^7.2.1",
         "json-schema-to-typescript": "^10.1.5",
         "tap": "^15.1.6",
