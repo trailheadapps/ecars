@@ -24,7 +24,7 @@
         "@ecars/events-persistence": "file:packages/ecars-events-persistence",
         "@ecars/mqtt-agent": "file:packages/ecars-mqtt-agent",
         "@ecars/utils": "file:packages/ecars-utils",
-        "aedes": "^0.46.2",
+        "aedes": "^0.47.0",
         "body-parser": "^1.19.1",
         "debug": "^4.3.3",
         "dotenv": "^16.0.0",
