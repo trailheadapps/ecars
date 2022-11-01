@@ -38,7 +38,7 @@
         "node": "12.x"
     },
     "devDependencies": {
-        "jest": "^27.5.1",
+        "jest": "^29.2.2",
         "lerna": "^5.5.4",
         "rimraf": "^3.0.2"
     }
