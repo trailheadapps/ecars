@@ -34,7 +34,7 @@
         "pino": "^7.6.5",
         "pino-pretty": "^7.5.1",
         "web-push": "^3.4.5",
-        "webpack": "^5.73.0"
+        "webpack": "^5.74.0"
     },
     "devDependencies": {
         "lwc-services": "^3.2.2",
