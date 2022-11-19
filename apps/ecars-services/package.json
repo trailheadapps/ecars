@@ -30,7 +30,7 @@
         "fastify-plugin": "^3.0.1",
         "jsforce": "^1.11.0",
         "pdfmake": "^0.2.5",
-        "pg": "^8.7.3",
+        "pg": "^8.8.0",
         "web-push": "^3.4.5"
     },
     "devDependencies": {
