@@ -8,7 +8,7 @@ export const chartConfig = {
                 backgroundColor: 'rgb(201, 203, 207)',
                 borderWidth: 3,
                 hidden: false,
-                data: [3, 5, 6, 7, 2],
+                data: [],
                 fill: false
             },
             {
@@ -16,7 +16,7 @@ export const chartConfig = {
                 backgroundColor: 'rgb(75, 192, 192)',
                 borderWidth: 2,
                 hidden: false,
-                data: [3, 5, 6, 7, 2],
+                data: [],
                 fill: false
             },
             {
@@ -24,7 +24,7 @@ export const chartConfig = {
                 backgroundColor: 'rgb(54, 162, 235)',
                 borderWidth: 2,
                 hidden: false,
-                data: [3, 5, 6, 7, 2],
+                data: [],
                 fill: false
             }
         ]
@@ -61,7 +61,7 @@ export const chartConfig = {
                 {
                     display: true,
                     ticks: {
-                        suggestedMax: 140,
+                        suggestedMax: 350,
                         beginAtZero: true
                     }
                 }
