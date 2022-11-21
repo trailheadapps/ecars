@@ -1,8 +1,8 @@
 import * as jsforce from 'jsforce';
-import { FastifyLoggerInstance } from 'fastify';
+import { FastifyBaseLogger } from 'fastify';
 
 export default class Salesforce {
-    log: FastifyLoggerInstance;
+    log: FastifyBaseLogger;
     conn;
 
     constructor(log) {

@@ -2,7 +2,7 @@
     "name": "ecars-realtime",
     "version": "1.0.0",
     "private": true,
-    "description": "eCars - Realtime Services and Utilities (Kafka, MQTT, WS)",
+    "description": "eCars - Realtime Services and Utilities (MQTT, WS)",
     "author": "Salesforce Developer Relations",
     "license": "CC0-1.0",
     "scripts": {
@@ -21,27 +21,23 @@
     "dependencies": {
         "@ecars/db": "file:packages/ecars-db",
         "@ecars/events-connector": "file:packages/ecars-events-connector",
-        "@ecars/events-persistence": "file:packages/ecars-events-persistence",
         "@ecars/mqtt-agent": "file:packages/ecars-mqtt-agent",
-        "@ecars/utils": "file:packages/ecars-utils",
-        "aedes": "^0.46.2",
+        "@faker-js/faker": "^7.6.0",
+        "aedes": "^0.48.0",
         "body-parser": "^1.19.1",
         "debug": "^4.3.3",
         "dotenv": "^16.0.0",
         "express": "^4.17.2",
-        "faker": "^5.5.3",
-        "node-rdkafka": "^2.12.0",
-        "sinek": "^9.0.0",
         "ws": "^8.5.0"
     },
-    "engines": {
-        "node": ">=10.13.0 <13.0.0",
-        "npm": ">=6.4.1 <7.0.0",
-        "yarn": ">=1.9.4 <2.0.0"
-    },
     "devDependencies": {
-        "jest": "^27.5.1",
-        "lerna": "^5.5.4",
+        "jest": "^29.3.1",
+        "lerna": "^6.0.3",
         "rimraf": "^3.0.2"
+    },
+    "engines": {
+        "node": ">=10.13.0 <19.0.0",
+        "npm": ">=6.4.1 <9.0.0",
+        "yarn": ">=1.9.4 <3.0.0"
     }
 }

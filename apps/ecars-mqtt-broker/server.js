@@ -1,6 +1,6 @@
 'use strict';
 
-const http = require('http');
+const http = require('node:http');
 const aedes = require('aedes')();
 const ws = require('websocket-stream');
 const port = process.env.PORT || 1883;

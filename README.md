@@ -19,7 +19,6 @@ Sample car sales and service application. Pulsar is a fictitious electric car ma
         -   [Teardown](#teardown)
     -   [Demo Highlights](#demo-highlights)
     -   [Additional Resources](#additional-resources)
-        -   [Scale IoT Car Diagnostic Data with Apache Kafka](#scale-iot-car-diagnostic-data-with-apache-kafka)
         -   [Archive IoT Car Diagnostic Data with Postgres](#archive-iot-car-diagnostic-data-with-postgres)
     -   [Development](#development)
 
@@ -30,10 +29,10 @@ Sample car sales and service application. Pulsar is a fictitious electric car ma
 You will need the following to deploy this sample app.
 
 -   `git` (download [here](https://git-scm.com/downloads))
--   `node` >= v12 and < v13 (download [here](https://nodejs.org/en/download/))
+-   `node` >= v12 and < v19 (download [here](https://nodejs.org/en/download/))
 -   Salesforce Dev Hub
     -   If you don't have one, [sign up](https://developer.salesforce.com/signup) for a Developer Edition org and then follow the [instructions](https://help.salesforce.com/articleView?id=sfdx_setup_enable_devhub.htm&type=5) to enable Dev Hub.
--   `sfdx` CLI >= 48.12.0 (download [here](https://developer.salesforce.com/tools/sfdxcli))
+-   `sfdx` CLI >= 7.11.0 (download [here](https://developer.salesforce.com/tools/sfdxcli))
 -   Heroku account ([signup](https://signup.heroku.com))
 -   `heroku` CLI (download [here](https://devcenter.heroku.com/articles/heroku-cli))
 
@@ -55,7 +54,7 @@ $ node scripts/ecarsDeploy.js
 
 If instead you want to perform all the deploy and configuration steps manually, see the [Manual Deploy](#manual-deploy) section below.
 
-Everything uses free services, so you can check out how it all works without worrying about costs.
+You'll need to have an [Heroku Account](https://signup.heroku.com/) and be subscribed to the Heroky Eco and Postgres Mini plans, for more information visit the [Heroku Pricing](https://www.heroku.com/pricing) page.
 
 When the deploy is finished follow the last few instructions provided by the script, and then go to [Demo Highlights](#demo-highlights) below.
 
@@ -112,7 +111,7 @@ The below steps do everything the [Automated Deploy](#automated-deploy) does. It
     1. Create a Heroku Postgres database and attach it to the application
 
         ```console
-        $ heroku addons:create heroku-postgresql:hobby-dev --app=[STREAMING APP NAME] --wait
+        $ heroku addons:create heroku-postgresql:mini --app=[STREAMING APP NAME] --wait
         ```
 
     1. Provision the Heroku Postgres database
@@ -124,7 +123,7 @@ The below steps do everything the [Automated Deploy](#automated-deploy) does. It
     1. Scale the application's dynos
 
         ```console
-        $ heroku ps:scale web=1:free sensor-simulator=1:free sensor-persistence=0:free sensor-connector=0:free --app=[STREAMING APP NAME]
+        $ heroku ps:scale web=1:eco sensor-simulator=1:eco sensor-persistence=0:eco --app=[STREAMING APP NAME]
         ```
 
     1. Link with the **Heroku MQTT app**
@@ -144,7 +143,7 @@ The below steps do everything the [Automated Deploy](#automated-deploy) does. It
     1. Create a Heroku Postgres database and attach it to the application
 
         ```console
-        $ heroku addons:create heroku-postgresql:hobby-dev --app=[PWA APP NAME] --wait
+        $ heroku addons:create heroku-postgresql:mini --app=[PWA APP NAME] --wait
         ```
 
     1. Initialize database tables
@@ -225,24 +224,18 @@ $ heroku apps:destroy --app=[MICROSERVICES APP NAME]
 ## Demo Highlights
 
 -   The Car Configurator component, built using **Lightning Web Components** and **Lightning Data Service**, enables a Pulsar salesperson to configure a car for onsite customers and to generate a PDF using a custom built **Heroku Service** showing the customer’s selected car configuration options.
--   Within Service Cloud, a Pulsar service technician can view live diagnostic car data such as current MPGe, % battery remaining, and range remaining to diagnose an issue with a customer's car. Data is sent from the car using **MQTT** and streamed to Salesforce from **Kafka** over **WebSockets**.
+-   Within Service Cloud, a Pulsar service technician can view live diagnostic car data such as current MPGe, % battery remaining, and range remaining to diagnose an issue with a customer's car. Data is sent from the car using **MQTT** and streamed to Salesforce over **WebSockets**.
 -   The **Progressive Web App** can run in the browser, or as a native app on desktop client (as above). By leveraging **Lightning Web Components** and **Lightning Base Components on npm**, Pulsar quickly reused components from the employee app to create this customer-facing app. To upload data from the customer-facing app into Salesforce, the new **Composite Graph API** is used to map out complex data models, and commit changes within a single transaction.
 -   An event-driven architecture using **Change Data Capture** allows Pulsar to synchronize data with other systems in real time. The **empApi** Lightning web component is used to receive change events for Vehicle\_\_c record changes. Pulsar can also leverage the same technology to support their sales reps with real-time data updates across devices.
 -   Pulsar maintains a single source of truth, from customer lead to car configuration options, by securely storing data for all aspects of its business in Salesforce.
 
 ## Additional Resources
 
-### Scale IoT Car Diagnostic Data with Apache Kafka
-
-Supporting MQTT car diagnostic events coming from hundreds or thousands of cars would be a good use case for Apache Kafka. We have included a feature flag in the Heroku Streaming application to easily allow you to include Kafka in the sample application's architecturre. In the Streaming application, add the Apache Kafka on Heroku add-on (`basic-0` is fine) and then change the config var `USE_KAFKA` to `true`.
-
-Note that we have not enabled this by default because there currently isn't a free plan for Apache Kafka on Heroku. **Enabling this will incur cost.**
-
 ### Archive IoT Car Diagnostic Data with Postgres
 
 Looking at real-time car diagnostic data is useful, but often it's useful to be able to look at historical data. You can persist this data to a Postgres database by enabling the [`sensor-persistence` process type](https://github.com/trailheadapps/ecars/blob/main/apps/ecars-realtime/Procfile).
 
-Note that we have not enabled this by default because it will quickly consume the maximum 10,000 rows allowed in the `hobby-dev` (free) Heroku Postgres plan. If you enable the `sensor-persistence` process type for more than a few hours, you should use a larger Heroku Postgres plan.
+Note that we have not enabled this by default because it will quickly consume the maximum 10,000 rows allowed in the `mini` Heroku Postgres plan. If you enable the `sensor-persistence` process type for more than a few hours, you should use a larger Heroku Postgres plan.
 
 ## Development
 
