@@ -2,7 +2,7 @@
 
 const { EventEmitter } = require('events');
 const mqtt = require('mqtt');
-const faker = require('faker');
+const { faker } = require('@faker-js/faker');
 const debug = require('debug')('agent');
 
 const Profile = require('./profiles/profile');
