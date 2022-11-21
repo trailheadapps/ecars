@@ -54,7 +54,7 @@ $ node scripts/ecarsDeploy.js
 
 If instead you want to perform all the deploy and configuration steps manually, see the [Manual Deploy](#manual-deploy) section below.
 
-You'll need to have an [Heroku Account](https://signup.heroku.com/) and be subscribed to the Heroky Eco and Postgres Mini plans, for more information visit the [Heroku Pricing](https://www.heroku.com/pricing) page.
+You'll need to have an [Heroku Account](https://signup.heroku.com/) and be subscribed to the Heroku Eco and Postgres Mini plans, for more information visit the [Heroku Pricing](https://www.heroku.com/pricing) page.
 
 When the deploy is finished follow the last few instructions provided by the script, and then go to [Demo Highlights](#demo-highlights) below.
 
