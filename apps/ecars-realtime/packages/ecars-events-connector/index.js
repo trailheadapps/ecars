@@ -22,7 +22,7 @@ class WebSocketProvider extends EventEmitter {
         agent.on('data', (data) => {
             const jsonData = JSON.stringify(data);
             debug('data received', jsonData);
-            this.emit('send', JSON.stringify(jsonData));
+            this.emit('send', data);
         });
     }
 }
