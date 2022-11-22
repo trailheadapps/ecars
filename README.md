@@ -36,7 +36,7 @@ You will need the following to deploy this sample app.
 -   Heroku account ([signup](https://signup.heroku.com))
 -   `heroku` CLI (download [here](https://devcenter.heroku.com/articles/heroku-cli))
 
-**Disclaimer** You'll need to have a paid [Heroku Account](https://signup.heroku.com/) and be subscribed to the Heroku Eco and Heroku Postgres Mini plans, for more information visit the [Heroku Pricing](https://www.heroku.com/pricing) page.
+**Disclaimer:** You'll need to have a paid [Heroku Account](https://signup.heroku.com/) and be subscribed to the Heroku Eco and Heroku Postgres Mini plans, for more information visit the [Heroku Pricing](https://www.heroku.com/pricing) page.
 
 ### Automated Deploy
 
