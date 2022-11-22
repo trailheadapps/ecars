@@ -13,7 +13,7 @@ Please deploy the `ecars-mqtt-broker` application located under `ecars/apps/ecar
 Please install the following free add-on on your application before the first deploy.
 
 ```
-heroku addons:create heroku-postgresql:hobby-dev
+heroku addons:create heroku-postgresql:mini
 ```
 
 ## MQTT Event Simulator
@@ -46,7 +46,7 @@ For local dev, create a file called `.env` at the top level directory with the a
 npm install
 node sensor-connector.js
 # or use this instead to see lots of debug info
-# DEBUG='mqtt:*,connectort' node sensor-connector.js
+# DEBUG='mqtt:*,connector' node sensor-connector.js
 ```
 
 ## Troubleshooting

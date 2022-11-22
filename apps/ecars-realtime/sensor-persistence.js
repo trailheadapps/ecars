@@ -11,6 +11,7 @@ const agent = new Agent();
 async function startConnector() {
     await agent.connect();
     await agent.listen();
+    debug('sensor-persistence connector is running');
 
     agent.on('data', async (data) => {
         await savePostgres(data);

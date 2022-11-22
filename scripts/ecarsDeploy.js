@@ -94,9 +94,13 @@ function showExplanation() {
         'with each other to show an example of how you might solve a specific ' +
         'business problem using the full spectrum of the Salesforce Platform.';
     const intro2 =
-        'Here is what will be deployed. Note that this is all using ' +
-        'free services of the Salesforce Platform so that you can ' +
-        'explore and learn without worrying about cost.';
+        'Here is what will be deployed. Note that in order to deploy this ' +
+        `you\'ll need to have a ${chalk.bold(
+            'paid Heroku account'
+        )} and be subscribed to ` +
+        `the ${chalk.bold('Heroku Eco')} and ${chalk.bold(
+            'Heroku Postgres Mini'
+        )} plans.`;
     const steps = `
 ${chalk.bold(
     '1'

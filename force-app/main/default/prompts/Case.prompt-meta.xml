@@ -21,7 +21,7 @@
         <targetPageKey2>view</targetPageKey2>
         <targetPageType>standard__recordPage</targetPageType>
         <timesToDisplay>2</timesToDisplay>
-        <title>Kafka</title>
+        <title>MQTT</title>
         <userAccess>Everyone</userAccess>
         <userProfileAccess>Everyone</userProfileAccess>
         <versionNumber>1</versionNumber>

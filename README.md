@@ -36,6 +36,8 @@ You will need the following to deploy this sample app.
 -   Heroku account ([signup](https://signup.heroku.com))
 -   `heroku` CLI (download [here](https://devcenter.heroku.com/articles/heroku-cli))
 
+**Disclaimer** You'll need to have a paid [Heroku Account](https://signup.heroku.com/) and be subscribed to the Heroku Eco and Heroku Postgres Mini plans, for more information visit the [Heroku Pricing](https://www.heroku.com/pricing) page.
+
 ### Automated Deploy
 
 This project consists of multiple "apps" consolidated into one monorepo so that they are easier to deploy. The simplest way to configure and deploy all the apps is to run the following commands. The [`scripts/ecarsDeploy.js`](./scripts/ecarsDeploy.js) file is what automates all the deploys and integrates them with various configuration values.
@@ -53,8 +55,6 @@ $ node scripts/ecarsDeploy.js
 ```
 
 If instead you want to perform all the deploy and configuration steps manually, see the [Manual Deploy](#manual-deploy) section below.
-
-You'll need to have an [Heroku Account](https://signup.heroku.com/) and be subscribed to the Heroku Eco and Postgres Mini plans, for more information visit the [Heroku Pricing](https://www.heroku.com/pricing) page.
 
 When the deploy is finished follow the last few instructions provided by the script, and then go to [Demo Highlights](#demo-highlights) below.
 
