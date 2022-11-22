@@ -10,7 +10,7 @@ Please deploy the `ecars-mqtt-broker` application located under `ecars/apps/ecar
 
 ## Required Add-on
 
-Please install the following free add-on on your application before the first deploy.
+Please install the following add-on on your application before the first deploy.
 
 ```
 heroku addons:create heroku-postgresql:mini
