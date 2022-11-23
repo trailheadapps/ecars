@@ -1,9 +1,9 @@
 require('dotenv').config();
 
-import AutoLoad from 'fastify-autoload';
+import AutoLoad from '@fastify/autoload';
 import * as path from 'path';
 import { FastifyInstance } from 'fastify';
-import helmet from 'fastify-helmet';
+import helmet from '@fastify/helmet';
 
 export default async function (fastify: FastifyInstance, opts: any) {
     // Use generally accepted good defaults for HTTP headers

@@ -1,6 +1,6 @@
 'use strict';
 
-const faker = require('faker');
+const { faker } = require('@faker-js/faker');
 
 /**
  * @typedef {Object} Sensor
@@ -61,15 +61,15 @@ class Profile {
     generateData() {
         this.range =
             this._baseRange +
-            faker.random.number(this._changeRange) *
+            faker.datatype.number(faker.datatype.number(this._changeRange)) *
                 (Math.random() > 0.5 ? 1 : -1);
         this.mpge =
             this._baseMpge +
-            faker.random.number(this._changeMpge) *
+            faker.datatype.number(faker.datatype.number(this._changeMpge)) *
                 (Math.random() > 0.5 ? 1 : -1);
         this.speed =
             this._baseSpeed +
-            faker.random.number(this._changeSpeed) *
+            faker.datatype.number(this._changeSpeed) *
                 (Math.random() > 0.5 ? 1 : -1);
 
         this.battery = this.battery - this._changeBattery;

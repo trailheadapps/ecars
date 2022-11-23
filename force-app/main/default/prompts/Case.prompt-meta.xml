@@ -3,7 +3,7 @@
     <masterLabel>Case</masterLabel>
     <promptVersions>
         <body
-        >Live car data is streamed from Kafka into Salesforce, providing real-time insights on the health of a car.</body>
+        >Live car data is streamed from MQTT into Salesforce, providing real-time insights on the health of a car.</body>
         <customApplication>ECars</customApplication>
         <delayDays>1</delayDays>
         <dismissButtonLabel>Close</dismissButtonLabel>
@@ -21,7 +21,7 @@
         <targetPageKey2>view</targetPageKey2>
         <targetPageType>standard__recordPage</targetPageType>
         <timesToDisplay>2</timesToDisplay>
-        <title>Kafka</title>
+        <title>MQTT</title>
         <userAccess>Everyone</userAccess>
         <userProfileAccess>Everyone</userProfileAccess>
         <versionNumber>1</versionNumber>

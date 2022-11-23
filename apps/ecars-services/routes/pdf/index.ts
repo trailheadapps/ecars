@@ -1,4 +1,4 @@
-import Piscina from '@crcastle/fastify-piscina';
+import Piscina from 'piscina';
 import { MessageChannel } from 'worker_threads';
 import { FastifyInstance } from 'fastify';
 import { resolve } from 'path';
@@ -11,14 +11,12 @@ import { RequestBodySchema as RequestBodySchemaInterface } from '../../types/pdf
  * Then save that PDF to Salesforce and link it to the Lead record.
  */
 export default async function (fastify: FastifyInstance, opts: any) {
-    opts.schema = { body: RequestBodySchema };
-
-    fastify.register(Piscina, {
-        // Piscina Options object. See Piscina docs for details
-        filename: resolve(__dirname, 'worker'),
+    const pool = new Piscina({
+        filename: resolve(__dirname, 'worker.js'),
         maxThreads: 1,
         maxQueue: 0
     });
+    opts.schema = { body: RequestBodySchema };
 
     fastify.post<{
         Body: RequestBodySchemaInterface;
@@ -37,9 +35,10 @@ export default async function (fastify: FastifyInstance, opts: any) {
         // If PDF currently being generated, return error saying please try again later
         let response;
         try {
-            response = await fastify.runTask({ data, workerThreadPort }, [
-                workerThreadPort
-            ]);
+            response = await pool.run(
+                { data, workerThreadPort },
+                { transferList: [workerThreadPort] }
+            );
         } catch (err) {
             // TODO: The catch is overly broad. We only want to catch errors with message
             //  "No task queue available and all Workers are busy" but I'm hesitant to hard-code

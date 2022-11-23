@@ -94,9 +94,13 @@ function showExplanation() {
         'with each other to show an example of how you might solve a specific ' +
         'business problem using the full spectrum of the Salesforce Platform.';
     const intro2 =
-        'Here is what will be deployed. Note that this is all using ' +
-        'free services of the Salesforce Platform so that you can ' +
-        'explore and learn without worrying about cost.';
+        'Here is what will be deployed. Note that in order to deploy this ' +
+        `you\'ll need to have a ${chalk.bold(
+            'paid Heroku account'
+        )} and be subscribed to ` +
+        `the ${chalk.bold('Heroku Eco')} and ${chalk.bold(
+            'Heroku Postgres Mini'
+        )} plans.`;
     const steps = `
 ${chalk.bold(
     '1'
@@ -216,8 +220,7 @@ function sf_org_setup(..._$args) {
     execFileSync('sfdx', ['force:source:push'], { stdio: 'inherit' });
 
     log('*** Assigning permission sets');
-    sh.exec('sfdx force:user:permset:assign -n ecars');
-    sh.exec('sfdx force:user:permset:assign -n Walkthroughs');
+    sh.exec('sfdx force:user:permset:assign -n ecars,Walkthroughs');
 
     log('*** Loading sample data');
     sh.exec('sfdx force:data:tree:import --plan ./data/data-plan.json');
@@ -310,9 +313,9 @@ function realtime_setup(..._$args) {
         { silent: true }
     );
 
-    log('*** Creating Heroku Postgres database');
+    log('*** Creating Heroku Postgres database (Mini)');
     sh.exec(
-        `heroku addons:create heroku-postgresql:hobby-dev -a ${sh.env.HEROKU_REALTIME_APP_NAME} --wait`,
+        `heroku addons:create heroku-postgresql:mini -a ${sh.env.HEROKU_REALTIME_APP_NAME} --wait`,
         { silent: true }
     );
     sh.env.DATABASE_REALTIME_URL = sh
@@ -327,12 +330,11 @@ function realtime_setup(..._$args) {
 
     log('*** Setting remote configuration parameters');
     sh.exec(
-        `heroku config:set APP_BASE=apps/ecars-realtime USE_KAFKA=false SIMULATOR_INTERVAL=500 MQTT_BROKER_URL=${sh.env.HEROKU_MQTT_URL} -a ${sh.env.HEROKU_REALTIME_APP_NAME}`,
+        `heroku config:set APP_BASE=apps/ecars-realtime SIMULATOR_INTERVAL=500 MQTT_BROKER_URL=${sh.env.HEROKU_MQTT_URL} -a ${sh.env.HEROKU_REALTIME_APP_NAME}`,
         { silent: true }
     );
 
     log('*** Writing .env file for local development');
-    sh.echo('USE_KAFKA=false').to('.env');
     sh.echo('DATABASE_URL=' + sh.env.DATABASE_REALTIME_URL).toEnd('.env');
     sh.echo('MQTT_BROKER_URL=' + sh.env.HEROKU_MQTT_URL).toEnd('.env');
 
@@ -403,9 +405,9 @@ function pwa_setup(..._$args) {
         }
     );
 
-    log('*** Creating Heroku Postgres database');
+    log('*** Creating Heroku Postgres database (Mini)');
     sh.exec(
-        `heroku addons:create heroku-postgresql:hobby-dev -a ${sh.env.HEROKU_PWA_APP_NAME}`,
+        `heroku addons:create heroku-postgresql:mini -a ${sh.env.HEROKU_PWA_APP_NAME}`,
         { silent: true }
     );
     sh.env.DATABASE_PWA_URL = sh

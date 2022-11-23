@@ -12,7 +12,7 @@
       "file": "apps/ecars-mqtt-broker/server.js",
       "line": 12,
       "title": "MQTT Broker",
-      "description": "Using a WebSocket broker we can listen to MQTT or Kafka data in real-time."
+      "description": "Using a WebSocket broker we can listen to MQTT data in real-time."
     },
     {
       "file": "force-app/main/default/lwc/liveData/liveData.js",

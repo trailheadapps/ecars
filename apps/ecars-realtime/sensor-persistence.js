@@ -2,18 +2,28 @@
 
 require('dotenv').config();
 
-const useKafka = +process.env.USE_KAFKA == true;
+const debug = require('debug')('connector');
+const Agent = require('@ecars/mqtt-agent');
+const db = require('@ecars/db');
 
-if (!useKafka) {
-    console.log('KAFKA is Disabled, please enable it with USE_KAFKA=1');
-    process.exit(0);
+const agent = new Agent();
+
+async function startConnector() {
+    await agent.connect();
+    await agent.listen();
+    debug('sensor-persistence connector is running');
+
+    agent.on('data', async (data) => {
+        await savePostgres(data);
+    });
 }
 
-const Writer = require('@ecars/events-persistence');
-const writer = new Writer();
-
-async function main() {
-    await writer.start();
+async function savePostgres(data) {
+    debug('Saving to postgres', data);
+    await db.sensor.build(data).save();
 }
 
-main().catch((err) => console.error(err));
+startConnector().catch((err) => {
+    console.error(err);
+    process.exit(1);
+});

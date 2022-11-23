@@ -18,7 +18,7 @@
       "file": "apps/README.md",
       "line": 1,
       "title": "Heroku applications",
-      "description": "Within the `apps` folder you will find the MQTT Broker, a Progressive Web App using Lightning Web Components, a realtime app powered by Apache Kafka, as well as a service app that provides WebPush and PDF generation functionality."
+      "description": "Within the `apps` folder you will find the MQTT Broker, a Progressive Web App using Lightning Web Components, a realtime app powered by WebSockets, as well as a service app that provides WebPush and PDF generation functionality."
     }
   ],
   "isPrimary": true

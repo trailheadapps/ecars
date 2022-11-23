@@ -1,17 +1,7 @@
 version: 2
 updates:
     - package-ecosystem: npm
-      directory: '/apps/ecars-realtime/packages/ecars-utils'
-      schedule:
-          interval: monthly
-      open-pull-requests-limit: 10
-    - package-ecosystem: npm
       directory: '/apps/ecars-realtime/packages/ecars-mqtt-agent'
-      schedule:
-          interval: monthly
-      open-pull-requests-limit: 10
-    - package-ecosystem: npm
-      directory: '/apps/ecars-realtime/packages/ecars-events-persistence'
       schedule:
           interval: monthly
       open-pull-requests-limit: 10

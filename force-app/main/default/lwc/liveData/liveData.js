@@ -34,8 +34,7 @@ export default class LiveData extends LightningElement {
                 // specifying a car from Postgres
                 ws.onmessage = (event) => {
                     if (!this._updateChart) return;
-                    // A double JSON.parse is needed due to how the WebSocket message is sent
-                    const wsElement = JSON.parse(JSON.parse(event.data));
+                    const wsElement = JSON.parse(event.data);
                     if (!this.firstCar) {
                         this.firstCar = wsElement.name;
                     }
