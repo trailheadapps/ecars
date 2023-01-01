@@ -20,7 +20,7 @@
         "dev": "tsc && npm run copy-files && concurrently -k -p \"[{name}]\" -n \"TypeScript,App\" -c \"yellow.bold,cyan.bold\"  \"tsc -w\" \"fastify start -w -l info -P dist/app.js\""
     },
     "dependencies": {
-        "@fastify/autoload": "^5.5.0",
+        "@fastify/autoload": "^5.6.0",
         "@fastify/helmet": "^10.0.2",
         "ajv": "^8.11.2",
         "copyfiles": "^2.4.1",
