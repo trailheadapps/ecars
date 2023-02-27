@@ -40,25 +40,22 @@ private class Test_VehicleTriggerHandler {
             lstVehicle[0].Id,
             lstTasks[0].WhatId,
             'Expected ' +
-            lstVehicle[0].Id +
-            ' but received ' +
-            lstTasks[0].WhatId
+                lstVehicle[0].Id +
+                ' but received ' +
+                lstTasks[0].WhatId
         );
         System.assertEquals(
             UserInfo.getUserId(),
             lstTasks[0].OwnerId,
             'Expected ' +
-            UserInfo.getUserId() +
-            ' but received ' +
-            lstTasks[0].OwnerId
+                UserInfo.getUserId() +
+                ' but received ' +
+                lstTasks[0].OwnerId
         );
         System.assertEquals(
             taskSubject,
             lstTasks[0].Subject,
-            'Expected ' +
-            taskSubject +
-            ' but received ' +
-            lstTasks[0].Subject
+            'Expected ' + taskSubject + ' but received ' + lstTasks[0].Subject
         );
     }
     @isTest
@@ -92,9 +89,9 @@ private class Test_VehicleTriggerHandler {
             lstVehicle.size(),
             lstTasks.size(),
             'Expected task record count as ' +
-            lstVehicle.size() +
-            'but received ' +
-            lstTasks.size()
+                lstVehicle.size() +
+                'but received ' +
+                lstTasks.size()
         );
         for (Task task : lstTasks) {
             String taskSubject = String.format(
@@ -105,25 +102,22 @@ private class Test_VehicleTriggerHandler {
                 vehicleMap.get(task.WhatId).Id,
                 task.WhatId,
                 'Expected ' +
-                vehicleMap.get(task.WhatId).Id +
-                ' but received ' +
-                task.WhatId
+                    vehicleMap.get(task.WhatId).Id +
+                    ' but received ' +
+                    task.WhatId
             );
             System.assertEquals(
                 UserInfo.getUserId(),
                 task.OwnerId,
                 'Expected ' +
-                UserInfo.getUserId() +
-                ' but received ' +
-                task.OwnerId
+                    UserInfo.getUserId() +
+                    ' but received ' +
+                    task.OwnerId
             );
             System.assertEquals(
                 taskSubject,
                 task.Subject,
-                'Expected ' +
-                taskSubject +
-                ' but received ' +
-                task.Subject
+                'Expected ' + taskSubject + ' but received ' + task.Subject
             );
         }
     }

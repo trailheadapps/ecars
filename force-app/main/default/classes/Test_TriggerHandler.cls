@@ -113,9 +113,9 @@ private class Test_TriggerHandler {
             System.assert(
                 false,
                 'The exception thrown was not expected: ' +
-                e.getTypeName() +
-                ': ' +
-                e.getMessage()
+                    e.getTypeName() +
+                    ': ' +
+                    e.getMessage()
             );
         }
     }
@@ -221,9 +221,9 @@ private class Test_TriggerHandler {
             System.assert(
                 false,
                 'The exception thrown was not expected: ' +
-                e.getTypeName() +
-                ': ' +
-                e.getMessage()
+                    e.getTypeName() +
+                    ': ' +
+                    e.getMessage()
             );
         }
 
@@ -250,9 +250,9 @@ private class Test_TriggerHandler {
             System.assert(
                 false,
                 'The exception thrown was not expected: ' +
-                e.getTypeName() +
-                ': ' +
-                e.getMessage()
+                    e.getTypeName() +
+                    ': ' +
+                    e.getMessage()
             );
         }
     }
