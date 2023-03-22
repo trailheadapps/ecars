@@ -4,7 +4,8 @@ import { subscribe, unsubscribe, onError } from 'lightning/empApi';
 import FIELD_EXTERIOR_COLOR from '@salesforce/schema/Vehicle__c.Exterior_Color__c';
 import FIELD_STATUS from '@salesforce/schema/Vehicle__c.Status__c';
 
-const BASE_IMAGE_URL = 'https://sfdc-demo.s3-us-west-1.amazonaws.com/ecars';
+const BASE_IMAGE_URL =
+    'https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/ecars';
 const CHANNEL_NAME = '/data/Vehicle__ChangeEvent';
 
 export default class VehicleImage extends LightningElement {

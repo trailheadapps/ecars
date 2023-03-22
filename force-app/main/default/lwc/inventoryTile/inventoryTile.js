@@ -1,7 +1,8 @@
 import { LightningElement, api } from 'lwc';
 import { NavigationMixin } from 'lightning/navigation';
 
-const BASE_IMAGE_URL = 'https://sfdc-demo.s3-us-west-1.amazonaws.com/ecars';
+const BASE_IMAGE_URL =
+    'https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/ecars';
 
 export default class InventoryTile extends NavigationMixin(LightningElement) {
     @api vehicle;

@@ -4,7 +4,8 @@ import CURRENCY from '@salesforce/i18n/currency';
 import invokePdfCreateService from '@salesforce/apex/PdfCreateService.invokePdfCreateService';
 import LEAD_FIELD from '@salesforce/schema/Car_Configuration__c.Lead__c';
 
-const BASE_IMAGE_URL = 'https://sfdc-demo.s3-us-west-1.amazonaws.com/ecars';
+const BASE_IMAGE_URL =
+    'https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/ecars';
 
 export default class CarConfigurator extends LightningElement {
     currentSection = 1;
