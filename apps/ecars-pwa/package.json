@@ -28,7 +28,7 @@
         "dotenv": "^16.0.3",
         "express": "^4.17.2",
         "express-pino-logger": "^7.0.0",
-        "jsforce": "^1.11.0",
+        "jsforce": "^1.11.1",
         "lightning-base-components": "^1.14.3-alpha",
         "pg": "^8.7.3",
         "pino": "^7.6.5",
