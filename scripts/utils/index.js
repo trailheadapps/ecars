@@ -26,7 +26,7 @@ const generateUniqueAppName = (input) => {
 
 const getDefaultDevHub = () => {
     const orgs = JSON.parse(
-        sh.exec('sfdx force:org:list --skipconnectionstatus --json', {
+        sh.exec('sf org list --skip-connection-status --json', {
             silent: true
         })
     );

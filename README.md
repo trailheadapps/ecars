@@ -45,7 +45,7 @@ This project consists of multiple "apps" consolidated into one monorepo so that 
 The `ecarsDeploy.js` script will create and deploy code to a Salesforce scratch org and then deploy four Heroku apps along with some Postgres databases.
 
 ```console
-$ sfdx auth:web:login -d -a DevHub  # Authenticate using your Dev Hub org credentials
+$ sf org login web -d -a DevHub  # Authenticate using your Dev Hub org credentials
 $ heroku login  # Login with your Heroku account (or create one)
 $ git clone https://github.com/trailheadapps/ecars.git
 $ cd ecars/scripts
@@ -67,7 +67,7 @@ The below steps do everything the [Automated Deploy](#automated-deploy) does. It
 1. Authenticate with the `sfdx` and `heroku` CLI commands and get the eCars code onto your computer.
 
     ```console
-    $ sfdx auth:web:login -d -a DevHub  # Authenticate using your Dev Hub org credentials
+    $ sf org login web -d -a DevHub  # Authenticate using your Dev Hub org credentials
     $ heroku login  # Login with your Heroku account (or create one)
     $ git clone https://github.com/trailheadapps/ecars.git
     ```
@@ -75,25 +75,25 @@ The below steps do everything the [Automated Deploy](#automated-deploy) does. It
 1. Create a scratch org
 
     ```console
-    $ sfdx force:org:create --setdefaultusername --definitionfile=config/project-scratch-def.json --setalias=ecars --targetdevhubusername=DevHub
+    $ sf org create scratch -d -f config/project-scratch-def.json -a ecars -v DevHub
     ```
 
 1. Generate a password for the scratch org user. Save both the username and password for later.
 
     ```console
-    $ sfdx force:user:password:generate -u ecars
+    $ sf org generate password -o ecars
     ```
 
 1. Generate a Security Token for the scratch org user. Run the following command and then click Reset Security Token. You will receive the security token in an email. This will be used later for the `SF_TOKEN` config var in the Heroku apps.
 
     ```console
-    $ sfdx force:org:open -u ecars -p /lightning/settings/personal/ResetApiToken/home
+    $ sf org open -o ecars -p /lightning/settings/personal/ResetApiToken/home
     ```
 
 1. (Optional) Activate the `Pulsar_Bold` theme on the `Themes and Branding` page by running the following command:
 
     ```console
-    $ sfdx force:org:open -u ecars -p /lightning/setup/ThemingAndBranding/home
+    $ sf org open -o ecars -p /lightning/setup/ThemingAndBranding/home
     ```
 
 1. Deploy and configure the **Heroku MQTT application**
@@ -191,20 +191,20 @@ The below steps do everything the [Automated Deploy](#automated-deploy) does. It
     1. From the ecars root directory, push the source to the scratch org
 
         ```console
-        $ sfdx force:source:push -u ecars
+        $ sf project deploy start
         ```
 
     1. Assign permissionsets to the scratch org user
 
         ```console
-        $ sfdx force:user:permset:assign -n ecars
-        $ sfdx force:user:permset:assign -n Walkthroughs
+        $ sf org assign permset -n ecars
+        $ sf org assign permset -n Walkthroughs
         ```
 
     1. Load sample data into the scratch org
 
         ```console
-        $ sfdx force:data:tree:import --plan ./data/data-plan.json
+        $ sf data tree import -p ./data/data-plan.json
         ```
 
 1. Now go to [Demo Highlights](#demo-highlights) to learn about what you just deployed and why it's interesting!
@@ -214,7 +214,7 @@ The below steps do everything the [Automated Deploy](#automated-deploy) does. It
 To delete everything created by the automated script or manual deploy instructions, run the following commands.
 
 ```console
-$ sfdx force:org:delete -u ecars
+$ sf org delete scratch -p -o ecars
 $ heroku apps:destroy --app=[MQTT APP NAME]
 $ heroku apps:destroy --app=[STREAMING APP NAME]
 $ heroku apps:destroy --app=[PWA NAME]

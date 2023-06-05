@@ -132,13 +132,13 @@ async function get_user_input() {
         {
             type: 'input',
             name: 'devhub',
-            message: 'Existing SFDX DevHub Alias',
+            message: 'DevHub Org CLI Alias',
             initial: getDefaultDevHub
         },
         {
             type: 'input',
             name: 'scratchorg',
-            message: 'SFDX Scratch Org Alias',
+            message: 'Scratch Org CLI Alias',
             initial: 'ecars'
         },
         {
@@ -191,7 +191,7 @@ function sf_org_setup(..._$args) {
     );
     log('*** Creating scratch org');
     sh.exec(
-        `sfdx force:org:create -s -f config/project-scratch-def.json -a ${sh.env.SFDX_SCRATCH_ORG} -d 30 -v ${sh.env.SFDX_DEV_HUB}`
+        `sf org create scratch -d -f config/project-scratch-def.json -a ${sh.env.SFDX_SCRATCH_ORG} -y 30 -v ${sh.env.SFDX_DEV_HUB}`
     );
     isScratchOrgCreated = true;
     log(`*** Updating source with Heroku app URLs`);
@@ -220,17 +220,17 @@ function sf_org_setup(..._$args) {
     execFileSync('sfdx', ['force:source:push'], { stdio: 'inherit' });
 
     log('*** Assigning permission sets');
-    sh.exec('sfdx force:user:permset:assign -n ecars,Walkthroughs');
+    sh.exec('sf org assign permset -n ecars,Walkthroughs');
 
     log('*** Loading sample data');
-    sh.exec('sfdx force:data:tree:import --plan ./data/data-plan.json');
+    sh.exec('sf data tree import -p ./data/data-plan.json');
 
     log('*** Generating user password');
-    sh.exec('sfdx force:user:password:generate');
+    sh.exec('sf org generate password');
 
     log('*** Fetching user data');
     const userData = JSON.parse(
-        sh.exec('sfdx force:user:display --json', { silent: true })
+        sh.exec('sf org display user --json', { silent: true })
     );
     sh.env.SF_USERNAME = userData.result.username;
     sh.env.SF_PASSWORD = userData.result.password;
@@ -521,10 +521,10 @@ function showFinalInstructions() {
         )
     );
     log('');
-    log('1. Run this sfdx CLI command:');
+    log('1. Run this Salesforce CLI command:');
     log(
         chalk.dim(
-            `       sfdx force:org:open -u ${sh.env.SFDX_SCRATCH_ORG} -p /lightning/settings/personal/ResetApiToken/home`
+            `       sf org open -o ${sh.env.SFDX_SCRATCH_ORG} -p /lightning/settings/personal/ResetApiToken/home`
         )
     );
     log("2. Click 'Reset Security Token' on the page that the above command");
@@ -559,11 +559,11 @@ function showFinalInstructions() {
         )
     );
     log(
-        '4. (Optional) Run this sfdx CLI command, and activate the `Pulsar Bold` theme:'
+        '4. (Optional) Run this Salesforce CLI command, and activate the `Pulsar Bold` theme:'
     );
     log(
         chalk.dim(
-            `       sfdx force:org:open -u ${sh.env.SFDX_SCRATCH_ORG} -p /lightning/setup/ThemingAndBranding/home`
+            `       sf org open -o ${sh.env.SFDX_SCRATCH_ORG} -p /lightning/setup/ThemingAndBranding/home`
         )
     );
     log(
@@ -575,11 +575,11 @@ function showFinalInstructions() {
     );
     log(`       Proceed as a Pulsar Motors Salesperson:
         ${chalk.dim(
-            `sfdx force:org:open -u ${sh.env.SFDX_SCRATCH_ORG} -p /lightning/n/Car_Configurator`
+            `sf org open -o ${sh.env.SFDX_SCRATCH_ORG} -p /lightning/n/Car_Configurator`
         )}`);
     log(`       Finish the demo as a Pulsar Motors Service Manager:
         ${chalk.dim(
-            `sfdx force:org:open -u ${sh.env.SFDX_SCRATCH_ORG} -p /lightning/o/Case/list`
+            `sf org open -o ${sh.env.SFDX_SCRATCH_ORG} -p /lightning/o/Case/list`
         )}`);
     log('');
 }
@@ -590,7 +590,7 @@ function showCleanupInstructions() {
     );
     log(
         chalk.dim(
-            `       sfdx force:org:delete -u ${sh.env.SFDX_SCRATCH_ORG} ${COMMAND_DELIMITER}`
+            `       sf org delete scratch -o ${sh.env.SFDX_SCRATCH_ORG} ${COMMAND_DELIMITER}`
         )
     );
     if (sh.env.HEROKU_MQTT_APP_NAME)
