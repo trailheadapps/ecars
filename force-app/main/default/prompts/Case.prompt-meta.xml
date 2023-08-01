@@ -16,7 +16,7 @@
         <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
         <startDate>2020-10-12</startDate>
         <stepNumber>1</stepNumber>
-        <targetAppDeveloperName>ECars</targetAppDeveloperName>
+        <customApplication>ECars</customApplication>
         <targetPageKey1>Case</targetPageKey1>
         <targetPageKey2>view</targetPageKey2>
         <targetPageType>standard__recordPage</targetPageType>
