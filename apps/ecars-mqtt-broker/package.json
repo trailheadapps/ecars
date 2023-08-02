@@ -9,7 +9,7 @@
         "lint": "eslint '**/*.{js,ts}'"
     },
     "dependencies": {
-        "aedes": "^0.48.1",
+        "aedes": "^0.50.0",
         "mqtt": "^4.3.5",
         "websocket-stream": "^5.5.2"
     },
