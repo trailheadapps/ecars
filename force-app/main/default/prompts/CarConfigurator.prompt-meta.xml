@@ -16,7 +16,6 @@
         <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
         <startDate>2020-10-12</startDate>
         <stepNumber>1</stepNumber>
-        <customApplication>ECars</customApplication>
         <targetPageKey1>Car_Configurator</targetPageKey1>
         <targetPageType>standard__navItemPage</targetPageType>
         <timesToDisplay>2</timesToDisplay>
@@ -37,7 +36,6 @@
         <shouldDisplayActionButton>false</shouldDisplayActionButton>
         <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
         <stepNumber>2</stepNumber>
-        <customApplication>ECars</customApplication>
         <targetPageKey1>Car_Configurator</targetPageKey1>
         <targetPageType>standard__navItemPage</targetPageType>
         <title>Heroku PDF Service</title>
@@ -59,7 +57,6 @@
         <shouldDisplayActionButton>true</shouldDisplayActionButton>
         <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
         <stepNumber>3</stepNumber>
-        <customApplication>ECars</customApplication>
         <targetPageKey1>Lead</targetPageKey1>
         <targetPageKey2>view</targetPageKey2>
         <targetPageType>standard__recordPage</targetPageType>
