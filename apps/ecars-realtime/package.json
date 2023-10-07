@@ -22,7 +22,7 @@
         "@ecars/db": "file:packages/ecars-db",
         "@ecars/events-connector": "file:packages/ecars-events-connector",
         "@ecars/mqtt-agent": "file:packages/ecars-mqtt-agent",
-        "@faker-js/faker": "^7.6.0",
+        "@faker-js/faker": "^8.1.0",
         "aedes": "^0.48.0",
         "body-parser": "^1.19.1",
         "debug": "^4.3.3",
