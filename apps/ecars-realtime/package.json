@@ -32,7 +32,7 @@
     },
     "devDependencies": {
         "jest": "^29.3.1",
-        "lerna": "^6.0.3",
+        "lerna": "^8.0.1",
         "rimraf": "^4.1.2"
     },
     "engines": {
