@@ -9,6 +9,6 @@
     "dependencies": {
         "@faker-js/faker": "^7.6.0",
         "debug": "^4.3.4",
-        "mqtt": "^4.3.7"
+        "mqtt": "^5.3.6"
     }
 }
